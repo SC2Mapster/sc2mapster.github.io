@@ -1,5 +1,7 @@
 ---
 title: Basic Introduction to Layouts
+categories:
+- UI
 tags:
 - ui
 - layout
