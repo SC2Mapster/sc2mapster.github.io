@@ -5,7 +5,7 @@ tags:
 - ui
 - layout
 author: TheSkunk
-layout: post
+layout: default
 ---
 
 ## What are Layouts?
