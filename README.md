@@ -4,7 +4,9 @@ The goal for this site is to provide some more indepth guides for map and mode d
 
 If you wish to contribute, drop a line over the [Issues](https://github.com/SC2Mapster/sc2mapster.github.io/issues) section of the team page, and we will be willing to either make you part of the team or include guides you write (full credit of course).
 
+## Where to Learn
 
+Head over the [tutorials](tutorials.html).
 
 ## How to contribute
 
