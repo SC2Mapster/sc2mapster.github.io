@@ -1,10 +1,13 @@
 ---
+title: Basic Introduction to Layouts
+date: 2018-02-06 08:04:00 Z
+categories:
+- ui
+- layout
 layout: post
-title:  "Basic Introduction to Layouts"
-date:   2018-02-06 02:04:00 -0600
-categories: ui layout
 author: TheSkunk
 ---
+
 ## What are Layouts?
 Layouts are a way of creating or modifying Dialogs (or the User Interface) for your SC2 Arcades by writing XML rather than the traditional means of using Triggers. For an example, this creates a full-screen image:
 ```xml
