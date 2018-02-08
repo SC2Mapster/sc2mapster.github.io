@@ -61,7 +61,7 @@ In your map go to `File > Dependencies`. Select `Add Other`. Select the Layout M
 ### NotePad++
 Which is easier to read:
 
-```
+``` text
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <Desc>
 	<Frame type="Frame" name="GameUI/UIContainer" file="GameUI">
