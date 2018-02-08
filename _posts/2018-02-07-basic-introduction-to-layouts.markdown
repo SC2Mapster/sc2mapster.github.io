@@ -1,9 +1,8 @@
 ---
 title: Basic Introduction to Layouts
-date: 2018-02-06 08:04:00 Z
+date: 2018-02-07 08:04:00 Z
 categories:
 - ui
-- layout
 tags:
 - ui
 - layout
