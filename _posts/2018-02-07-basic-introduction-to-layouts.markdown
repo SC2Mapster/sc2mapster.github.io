@@ -1,12 +1,12 @@
 ---
 title: Basic Introduction to Layouts
+date: 2018-02-07 08:04:00 Z
 categories:
 - UI
 tags:
 - ui
 - layout
 author: TheSkunk
-Field name: 
 layout: post
 ---
 
