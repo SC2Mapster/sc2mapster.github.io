@@ -8,6 +8,16 @@ If you wish to contribute, drop a line over the [Issues](https://github.com/SC2M
 
 Head over the [tutorials](tutorials.html).
 
+## Open Development Maps
+
+The following is a list of maps that have been opensourced:
+
+### StarCraft 2
+* [NOTD 2](https://github.com/ArcanePariah/NOTD2) by ArcanePariah
+
+### Warcraft 3
+* [Power Towers](https://github.com/Strilanc/Wc3PowerTowers) by Strilanc
+
 ## How to contribute
 
 Take a look at how can you [contribute](contribute.html).

@@ -875,6 +875,7 @@ Result:
 ![My helpful screenshot]({{ "/assets/slOfoTf.png" | absolute_url }})
 
 ## Basic Troubleshooting
+
 Number one tip: Pay attention to errors. Errors appear at the top of your screen in red. You may be in the habit of closing those out as soon as you test, but don’t do that. They’re useful.
 
 **Some examples:**
@@ -907,9 +908,6 @@ If Not: You probably screwed up anchors/sizing. It’s easy to do. Keep fiddling
 ### My changes didn’t appear!
 
 When I first started, this would happen a lot just because I forgot to save my Layouts in NotePad++ before testing -- or back before I realized Control+Alt+F11 doesn’t load all changes.
-
-
-
 
 ## Credits
 
