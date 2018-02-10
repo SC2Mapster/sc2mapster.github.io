@@ -40,9 +40,58 @@
 
     <div class="container">
       <section id="main_content">
-        <h1>Basic Introduction to Layouts</h1>
+        
 
-<p class="view">by TheSkunk (<em><small>7 February 2018</small></em>)</p>
+<h1>Basic Introduction to Layouts</h1>
+<p class="view">by <a href="mailto:Skunk.T@gmail.com">TheSkunk</a> (<em><small>7 February 2018</small></em>)</p>
+
+<ul>
+  <li><a href="#what-are-layouts">What are Layouts?</a></li>
+  <li><a href="#why-layouts">Why Layouts?</a></li>
+  <li><a href="#getting-started-workflow">Getting Started: Workflow</a>
+    <ul>
+      <li><a href="#setting-up-a-layout-dependency-mod">Setting up a Layout Dependency Mod</a></li>
+      <li><a href="#notepad">NotePad++</a></li>
+    </ul>
+  </li>
+  <li><a href="#a-basic-introduction">A Basic Introduction</a>
+    <ul>
+      <li><a href="#anchors">Anchors</a></li>
+    </ul>
+  </li>
+  <li><a href="#making-your-first-real-layout">Making your first real Layout</a>
+    <ul>
+      <li><a href="#finding-textures">Finding Textures</a></li>
+      <li><a href="#texture-types">Texture Types</a></li>
+      <li><a href="#introduction-to-templates">Introduction to Templates</a></li>
+      <li><a href="#refreshing-game-ui">Refreshing Game UI</a></li>
+      <li><a href="#trigger-hookups">Trigger Hookups</a></li>
+      <li><a href="#modifying-existing-ui">Modifying Existing UI</a></li>
+      <li><a href="#creating-your-own-templates">Creating Your Own Templates</a></li>
+    </ul>
+  </li>
+  <li><a href="#other-cool-tricks">Other Cool Tricks</a>
+    <ul>
+      <li><a href="#referencing-other-frames">Referencing Other Frames</a></li>
+      <li><a href="#constants">Constants</a></li>
+      <li><a href="#asset-referencing">Asset Referencing</a></li>
+      <li><a href="#stategroups-and-animations">Stategroups and Animations</a>
+        <ul>
+          <li><a href="#animations">Animations</a></li>
+          <li><a href="#stategroups">StateGroups</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#learning-resources">Learning Resources</a></li>
+  <li><a href="#basic-troubleshooting">Basic Troubleshooting</a>
+    <ul>
+      <li><a href="#help-my-frame-isnt-showing-up">Help? My frame isn’t showing up!</a></li>
+      <li><a href="#my-changes-didnt-appear">My changes didn’t appear!</a></li>
+    </ul>
+  </li>
+  <li><a href="#credits">Credits</a></li>
+</ul>
 
 <h2 id="what-are-layouts">What are Layouts?</h2>
 <p>Layouts are a way of creating or modifying Dialogs (or the User Interface) for your SC2 Arcades by writing XML rather than the traditional means of using Triggers. For an example, this creates a full-screen image:</p>
@@ -228,7 +277,7 @@ In your map go to <code class="highlighter-rouge">File &gt; Dependencies</code>.
 
 <p>In our case, we created an image – pretty straight-forward. Everything after that is indented further, and defines the property of this frame – until it is closed with &lt;/Frame&gt;.</p>
 
-<h2 id="anchors">Anchors</h2>
+<h3 id="anchors">Anchors</h3>
 
 <p>The first property we defined was Anchors:</p>
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     <span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Left"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Min"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
@@ -451,7 +500,7 @@ With that in mind, create our background image so our XML looks like this:</p>
 
 <p>(Tip: Go to the Text editor (F8) and click on “Font Styles” to search for font styles or create your own.)</p>
 
-<h2 id="introduction-to-templates">Introduction to Templates</h2>
+<h3 id="introduction-to-templates">Introduction to Templates</h3>
 
 <p>So at this point, we want to create our Buttons. But if you just created a “Button” frame, you’d find that it’s invisible – just like our “Frame”. To make a Button actually look like something, we’d have to create an image inside of it. And to make our Button have text, we’d have to create a Label inside of it. And so on!</p>
 
@@ -505,7 +554,7 @@ So, to modify that label after we’ve created a button using this template, we�
 
 <p>Save your layout file, then hit test in the SC2 Editor. Don’t close out the the game once you see how it looks! Just alt-tab back to this tutorial.</p>
 
-<h2 id="refreshing-game-ui">Refreshing Game UI</h2>
+<h3 id="refreshing-game-ui">Refreshing Game UI</h3>
 
 <p>You may notice all of your buttons are anchored to the same position and overlap. When working with Dialogs in Triggers, to get things positioned correctly you’d have to test, close the test, change the position, test again, and repeat until items were positioned where you want them.</p>
 
@@ -536,7 +585,7 @@ So, to modify that label after we’ve created a button using this template, we�
 
 <p>There is a button to the middle-left which allows you to see the properties of a selected item, and the frame tree on the right shows you a hierarchy of created frames. You can mouse around the screen and select Frames. This is useful particularly if a frame you created does not appear at all in-game – you can use this feature to see if it was actually created, and is just invisible for some reason.</p>
 
-<h2 id="trigger-hookups">Trigger Hookups</h2>
+<h3 id="trigger-hookups">Trigger Hookups</h3>
 
 <p>Great, we have some buttons – now how do we make them do something?  Using layouts, we can make pressing these buttons change other layouts – say, we could make clicking the “Zerg” button change your frame to be Purple.</p>
 
@@ -557,7 +606,7 @@ So, to modify that label after we’ve created a button using this template, we�
 
 <p>As you can see, from there you can set them to variables as they register as “Last created dialog items.” After that, you can use them in triggers like you  normally would! Try it out by making it so it spawns you a Zealot, Marine, or Zergling when you press one of the buttons, and then hides the ContainerFrame.</p>
 
-<h2 id="modifying-existing-ui">Modifying Existing UI</h2>
+<h3 id="modifying-existing-ui">Modifying Existing UI</h3>
 
 <p>So far, we’ve created our own UI elements. What if you wanted to modify the default game UI?</p>
 
@@ -607,8 +656,9 @@ So, to modify that label after we’ve created a button using this template, we�
 <span class="nt">&lt;/Desc&gt;</span>
 </code></pre></div></div>
 
-<p>Basically, the frame-viewer in-game is good for knowing the layout of things, and the UI editor is good for knowing their properties (height, width, etc). 
-Creating Your Own Templates</p>
+<p>Basically, the frame-viewer in-game is good for knowing the layout of things, and the UI editor is good for knowing their properties (height, width, etc).</p>
+
+<h3 id="creating-your-own-templates">Creating Your Own Templates</h3>
 
 <p>Templates are a huge part of what makes Layouts so great. How do you create your own?</p>
 

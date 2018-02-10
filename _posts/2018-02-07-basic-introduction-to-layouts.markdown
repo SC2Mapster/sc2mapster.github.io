@@ -198,7 +198,7 @@ If you’ve made Dialogs with Triggers before, some of them like “Labels” or
 In our case, we created an image -- pretty straight-forward. Everything after that is indented further, and defines the property of this frame -- until it is closed with </Frame>.
 
 
-## Anchors
+### Anchors
 
 The first property we defined was Anchors:
 ```xml
@@ -435,7 +435,7 @@ Now we need to add our Label:
 
 (Tip: Go to the Text editor (F8) and click on "Font Styles" to search for font styles or create your own.)
 
-## Introduction to Templates
+### Introduction to Templates
 
 So at this point, we want to create our Buttons. But if you just created a “Button” frame, you’d find that it’s invisible -- just like our “Frame”. To make a Button actually look like something, we’d have to create an image inside of it. And to make our Button have text, we’d have to create a Label inside of it. And so on!
 
@@ -492,7 +492,7 @@ Copy and paste that XML (huge time saver) and create two more buttons and change
 
 Save your layout file, then hit test in the SC2 Editor. Don’t close out the the game once you see how it looks! Just alt-tab back to this tutorial.
 
-## Refreshing Game UI
+### Refreshing Game UI
 
 You may notice all of your buttons are anchored to the same position and overlap. When working with Dialogs in Triggers, to get things positioned correctly you’d have to test, close the test, change the position, test again, and repeat until items were positioned where you want them.
 
@@ -524,7 +524,7 @@ You can also use Control+Alt+F12 for a frame viewer. This will allow you to trou
 
 There is a button to the middle-left which allows you to see the properties of a selected item, and the frame tree on the right shows you a hierarchy of created frames. You can mouse around the screen and select Frames. This is useful particularly if a frame you created does not appear at all in-game -- you can use this feature to see if it was actually created, and is just invisible for some reason.
 
-## Trigger Hookups
+### Trigger Hookups
 
 Great, we have some buttons -- now how do we make them do something?  Using layouts, we can make pressing these buttons change other layouts -- say, we could make clicking the “Zerg” button change your frame to be Purple.
 
@@ -545,7 +545,7 @@ As you can see, from there you can set them to variables as they register as “
 
 
 
-## Modifying Existing UI
+### Modifying Existing UI
 
 So far, we’ve created our own UI elements. What if you wanted to modify the default game UI?
 
@@ -597,7 +597,8 @@ So, to move the minimap to the middle of the screen and change it’s size, we c
 ```
 
 Basically, the frame-viewer in-game is good for knowing the layout of things, and the UI editor is good for knowing their properties (height, width, etc). 
-Creating Your Own Templates
+
+### Creating Your Own Templates
 
 Templates are a huge part of what makes Layouts so great. How do you create your own?
 
