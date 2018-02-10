@@ -9,3 +9,4 @@ collections:
     title: Uploads
     output: true
 theme: jekyll-theme-hacker
+repository: Sc2mapster/sc2mapster.github.io

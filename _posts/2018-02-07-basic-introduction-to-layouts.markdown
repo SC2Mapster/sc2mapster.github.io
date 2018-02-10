@@ -7,7 +7,7 @@ tags:
 - ui
 - layout
 author: TheSkunk
-layout: default
+layout: post
 ---
 
 ## What are Layouts?
@@ -49,11 +49,14 @@ Getting started and setting up your work flow can be the most intimidating part 
 
 ### Setting up a Layout Dependency Mod
 1. Open the SC2 Editor, go to “File > New > Dependent Mod”
-1. The dependencies you choose (LotV, Campaign, etc) don’t matter
-1. Once created, access the UI module by clicking the UI module button or pressing “Shift+F6”.
-1. In the UI module, Right Click and select Add Layout.
-1. Name it “MainFrame”
-1. Save your mod as .SC2Components, and save it under “C:\StarCraft II\Mods” or your equivalent folder.
+2. The dependencies you choose (LotV, Campaign, etc) don’t matter
+3. Once created, access the UI module by clicking the UI module button or pressing “Shift+F6”.
+	![My helpful screenshot]({{ "/assets/xbixqRU.png" | absolute_url }})
+4. In the UI module, Right Click and select Add Layout.
+	![My helpful screenshot]({{ "/assets/V11gtNR.png" | absolute_url }})
+5. Name it “MainFrame”
+6. Save your mod as .SC2Components, and save it under “C:\StarCraft II\Mods” or your equivalent folder.
+	![My helpful screenshot]({{ "/assets/iUvuWYu.png" | absolute_url }})
 
 Now close the mod, and open (or create) the map you wish to create layouts for. 
 In your map go to `File > Dependencies`. Select `Add Other`. Select the Layout Mod and hit “OK”. Once you’ve added this, save your map.
@@ -101,17 +104,18 @@ OR
 This “syntax highlighting” makes it easier to spot mistakes and gives a little more order to the chaos of XML. You can use any program capable of syntax highlighting XML, but if you don’t already have a favorite, I recommend downloading [Notepad++](https://notepad-plus-plus.org/) because it’s lightweight and gets the job done. 
 
 Once you’ve installed it, go to `Settings > Preferences > New Document` and set Default Language to XML.
+![My helpful screenshot]({{ "/assets/pqwW6LH.png" | absolute_url }})
 
 ## A Basic Introduction
 Now that we’ve done the obnoxious setup, we can get started for real. To open your layout file, use file explorer to navigate to where you saved your layouts .SC2Components file. From there, open the Base.SC2Data folder, then the UI folder, then the Layout folder. After that, you should see your MainFrame.SC2Layout file, like so:
-
+![My helpful screenshot]({{ "/assets/jIoWQbI.png" | absolute_url }})
 
 Open this file in NotePad++ or your program of choice:
-
+![My helpful screenshot]({{ "/assets/szOFW4j.png" | absolute_url }})
 
 
 It will look more or less like this:
-
+![My helpful screenshot]({{ "/assets/jIxkZzF.png" | absolute_url }})
 
 To start off, try copy-pasting this text into your layout file:
 
@@ -135,6 +139,7 @@ Then hit `Save` or `Save All` in Notepad++ to save your Layout.
 
 In the editor, your map should still be open. Because the layout file you edited is actually part of your mod that your map is using, when you edit and save .SC2Layout files in Notepad++, they will automatically update for your map - no need to save or reload the map file. All you need to do is hit that test map button and see how it looks! If all went well, you should be greeted in-game by a full-screen SC2 LotV Logo:
 
+![My helpful screenshot]({{ "/assets/rMoB9iU.png" | absolute_url }})
 
 Now, to explain that XML a bit more:
 
@@ -215,6 +220,7 @@ Anchors are composed of these for basic values, in layman's terms:
 * **Pos:** How far you want the side to go in it’s given direction. You can use real values to specify a percentage along the horizontal or vertical axis instead of Min, Max, or Mid -- for an example, 0.5 is equivalent to Mid
 * **Offset:** Offset (in pixels) for the given anchor
 
+![My helpful screenshot]({{ "/assets/OC86sqf.png" | absolute_url }})
 
 
 You can think of anchors as little grappling hooks that pull the edges of a frame in a given direction. For an example, this anchor: 
@@ -253,7 +259,9 @@ Let's change that, and set a fixed size! Replace your XML with this:
 
 Save, and then test with the editor again. Now our image will be a set size, anchored to the top-left:
 
-You can learn more about anchors by reading this tutorial by rtschutter, and you can use this image as a reference:
+![My helpful screenshot]({{ "/assets/mRHuZFt.png" | absolute_url }})
+
+You can learn more about anchors by reading this [tutorial by rtschutter](https://docs.google.com/document/d/1HSms99CSdLuh1gH80G29-xMGAE00_vXT6IDIHeDJe54/edit?usp=sharing), and you can use this image as a reference:
 ![Anchor Reference](https://i.imgur.com/G9C8weS.jpg)
 
 
@@ -284,7 +292,9 @@ Centered:
 
 
 And try setting “offset” to 25 for some margins/padding!
-Making your first real Layout
+
+## Making your first real Layout
+
 Let’s make something practical, that you may have done before in Triggers: a race selection screen. There are some more basics you need to learn:
 
 1. Creating new Layouts
@@ -292,11 +302,15 @@ Let’s make something practical, that you may have done before in Triggers: a r
 
 Although you could keep working in your current layout file, you need to know how to create new Layouts. To start off with, go back to File Explorer where you navigated to your Layouts folder:
 
+![My helpful screenshot]({{ "/assets/tNYTHpp.png" | absolute_url }})
+
 Copy and paste your “Main Frame.SC2Layout”. Rename it to “RaceSelect”.
 
-Then, open DescIndex.SC2Layout in Notepad++.
+Then, open **DescIndex.SC2Layout** in Notepad++.
 
 DescIndex is basically a list of all of your layouts, so the game knows what to load. You just need to duplicate the “Include” line and change the name to your new RaceSelect layout, so the DescIndex file looks like this:
+
+![My helpful screenshot]({{ "/assets/HNygemW.png" | absolute_url }})
 
 Save and close out of DescIndex, and open your RaceSelect.SC2Layout.
 
@@ -372,7 +386,7 @@ In the SC2 editor, if you go to Window > Console, and then type “Browse” int
  
 ### Texture Types
 
-Different textures have to be set to different Texture Types. Ours is NineSlice, but you can see the Wiki for other TextureTypes.
+Different textures have to be set to different Texture Types. Ours is NineSlice, but you can see the [Wiki for other TextureTypes](https://sc2mapster.gamepedia.com/UI/Frame_Properties/TextureType).
 
 ```xml
 <Anchor relative="$parent"/>
@@ -433,6 +447,7 @@ Luckily, you don’t have to tediously construct a Button out of other frame typ
 
 Of course, this is just one Template you can use. If you open the UI Editor (Shift-F6) in the SC2 editor, you can find Templates by searching for them. Many Templates can be found in the “StandardTemplates” folder.
 
+![My helpful screenshot]({{ "/assets/m7otJat.png" | absolute_url }})
 
 Once you have created something from a Template, to edit the child-frames created by the template, you just have to “recreate” them. To this end, you sometimes have to look up your template. For an example, if you want to change the text of a Button you used during this template, you have to look at the original template to see what the label was called. In this case, our template creates the label like this: 
 
@@ -505,6 +520,8 @@ There are some limitations -- generally speaking, “Control+Alt+F11” will onl
 
 You can also use Control+Alt+F12 for a frame viewer. This will allow you to troubleshoot your layouts by seeing if they were created properly or not.
 
+![My helpful screenshot]({{ "/assets/Qn2tUkU.png" | absolute_url }})
+
 There is a button to the middle-left which allows you to see the properties of a selected item, and the frame tree on the right shows you a hierarchy of created frames. You can mouse around the screen and select Frames. This is useful particularly if a frame you created does not appear at all in-game -- you can use this feature to see if it was actually created, and is just invisible for some reason.
 
 ## Trigger Hookups
@@ -515,6 +532,7 @@ But you can’t make layouts affect the game itself outside of affecting other p
 
 Luckily, this is really easy. You just use an action called “Hookup Standard Dialog Item”
 
+![My helpful screenshot]({{ "/assets/RT6miih.png" | absolute_url }})
 
 Two things are important: 
 
@@ -542,11 +560,13 @@ Create a new layout:
 
 Now, to edit an existing UI element you need to know it’s hierarchy and the way it’s put together. Generally, you can do this using both the UI Editor and with Control+Alt+F12 when testing in-game. Say we want to edit the mini-map. Hit test map in the editor, use Control+Alt+F12, and click on the Minimap:
 
+
+
 You can see how on the right-hand Frame Tree that the hierarchy is “Game UI > UI Container > ConsoleUIContainer > Minimap Panel”
 
 This helps us know the path, but we can take a closer look at the properties by going to the UI editor. Search for “Minimap” and you will find the Minimap Panel. Then you can see it’s child frames and learn about how it’s created:
 
-
+![My helpful screenshot]({{ "/assets/pZ1V5Yk.png" | absolute_url }})
 
 So, to move the minimap to the middle of the screen and change it’s size, we can do this:
 
@@ -733,6 +753,8 @@ https://sc2mapster.gamepedia.com/UI/Referencing#Asset_Reference
 
 You just need to go to your Mod folder in File Explorer,
 
+![My helpful screenshot]({{ "/assets/tNYTHpp.png" | absolute_url }})
+
 But back out of your Layout and UI folders. In your Base.SC2Data folder, create a “GameData” folder if one doesn’t exist already, and then create a plain Asset.txt file in it, if one doesn’t exist. Then, as the Wiki suggets, put:
 
 ```
@@ -757,8 +779,9 @@ Boom! Now your frame will look differently depending on the race of the player.
 ### Stategroups and Animations
 
 You can do a lot with both Animations and State Groups and they are pretty complicated so I wont be explaining them in-depth. I advise reading about them on the Wiki:
-sc2mapster.gamepedia.com/UI/Animations
-sc2mapster.gamepedia.com/UI/State_Groups
+* sc2mapster.gamepedia.com/UI/Animations
+* sc2mapster.gamepedia.com/UI/State_Groups
+
 And looking up existing layouts in the game that use them.
 
 #### Animations
@@ -792,7 +815,7 @@ At the very start of the tutorial, I gave you this bit of XML:
 ```
 ...containing a basic animation. 
 
-This animation is triggered “OnShown” meaning as soon as the Layout becomes visible - in Trigger terms, this is the “Event.” Controllers are the “Actions” - this one is a Fade, meaning it changes the transparency, or alpha, of the frame. Keys are like keyframes in traditional animation: they dictate what the value should be at what time. In this case, the first Key begins at 0 seconds (immediately) and sets the frame to fully visible. The second key occurs at 3 seconds, and sets the alpha to 0. This means the animation makes the frame fade from fully visible to fully transparent over 3 seconds, as soon as it is shown. 
+This animation is triggered “OnShown” meaning as soon as the Layout becomes visible - in Trigger terms, this is the “Event.” Controllers are the “Actions” - this one is a Fade, meaning it changes the transparency, or alpha, of the frame. Keys are like keyframes in traditional animation: they dictate what the value should be at what time. In this case, the first Key begins at 0 seconds \(immediately\) and sets the frame to fully visible. The second key occurs at 3 seconds, and sets the alpha to 0. This means the animation makes the frame fade from fully visible to fully transparent over 3 seconds, as soon as it is shown. 
 This: action="Reset,Play"/> means that every time the animation is triggered by the Event (OnShown) it resets the animation back to the first Key, and plays again. 
 Like triggers, your animations can also have conditions. So, for our animation:
 
@@ -820,7 +843,9 @@ StateGroups are pretty cool too, allowing you to set various states frames can b
 If you want a challenge, you can copy the XML for that frame here: https://pastebin.com/9wKessCm
 
 And try to learn how Stategroups can be used and how they can interact with animations. In general, I advise looking at other layouts to see how State Groups can be used. 
-Learning Resources
+
+
+## Learning Resources
 
 How do you learn more from here? I advise looking up Frame Types and Frame Properties on the Wiki.
 
@@ -833,6 +858,7 @@ But as you’ll quickly find out, the wiki is missing vast amounts of informatio
 
 For an example, as of writing this the Wiki has nothing on ScrollableFrame. So just search the UI editor for examples with Control+F like this: 
 
+![My helpful screenshot]({{ "/assets/w66KVyL.png" | absolute_url }})
 
 As you can see, it turned up a ScrollableFrame. Usually, the best thing to do is copy all of this frame into your own layout and then tinker with it to see how things work.
 
@@ -842,25 +868,35 @@ They were very patient in babysitting me until I got the hang of things. Two tip
 
 Shorter XML you can make properly formatted like so:
 
+![My helpful screenshot]({{ "/assets/ym3VCqX.png" | absolute_url }})
 
 Result:
 
-
-
+![My helpful screenshot]({{ "/assets/slOfoTf.png" | absolute_url }})
 
 ## Basic Troubleshooting
 Number one tip: Pay attention to errors. Errors appear at the top of your screen in red. You may be in the habit of closing those out as soon as you test, but don’t do that. They’re useful.
 
-Some examples:
+**Some examples:**
+
+![My helpful screenshot]({{ "/assets/JwxFaff.png" | absolute_url }})
 
 This means the font style doesn’t exist. You probably have this error if you followed this tutorial exactly, because that’s a typo I made when setting the font style for the button labels. It shouldn’t have the word “Layout” in it. You can delete that line entirely, fix it, or look up or create  your own Font Style to use instead. This was a genuine mistake on my part, but I left it in so you could learn troubleshooting.
 
+![My helpful screenshot]({{ "/assets/c39Kqwp.png" | absolute_url }})
+
 Anytime an error ends with “XML: not well-formed” it means you goofed up your syntax. Common errors include missing quotation marks, equals signs, brackets, or slashes. In this case, I’m missing a “>” at the end of this line:
 
+![My helpful screenshot]({{ "/assets/SPCSxbJ.png" | absolute_url }})
+
 The full error message told me the error was on line 34. Usually the mistake happens a line before. NotePad++ shows line counts to the left, so I could easily scroll to line 33 and find my mistake.
-Any Error With “Anchor” in it
+
+**Any Error With “Anchor” in it**
+
 If an error message has “Anchor” in it, you probably screwed up your Anchors somehow!
-Any Error With “[Frame] not able to be hooked up in [Path]”
+
+**Any Error With “[Frame] not able to be hooked up in [Path]”**
+
 While you may have done your hookups via triggers wrong, try fixing your other errors first. Good chances this appears just because a different error broke your Layout, and because your layout is broken, it obviously can’t be hooked up via triggers because it failed to be created in the first place.
 
 ### Help? My frame isn’t showing up!

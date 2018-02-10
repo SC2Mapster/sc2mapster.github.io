@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=ece1152cb2b6f55b5000497bee506e0e0b04b9ca">
+
+<!-- Begin Jekyll SEO tag v2.3.0 -->
+<title>Basic Introduction to Layouts | Sc2mapster.Github.Io</title>
+<meta property="og:title" content="Basic Introduction to Layouts" />
+<meta name="author" content="TheSkunk" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="What are Layouts? Layouts are a way of creating or modifying Dialogs (or the User Interface) for your SC2 Arcades by writing XML rather than the traditional means of using Triggers. For an example, this creates a full-screen image: &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; standalone=&quot;yes&quot;?&gt; &lt;Desc&gt; &lt;Frame type=&quot;Frame&quot; name=&quot;GameUI/UIContainer&quot; file=&quot;GameUI&quot;&gt; &lt;Frame type=&quot;Image&quot; name=&quot;ScreenFade&quot;&gt; &lt;Anchor side=&quot;Top&quot; relative=&quot;$parent&quot; pos=&quot;Min&quot; offset=&quot;0&quot;/&gt; &lt;Anchor side=&quot;Bottom&quot; relative=&quot;$parent&quot; pos=&quot;Max&quot; offset=&quot;0&quot;/&gt; &lt;Anchor side=&quot;Left&quot; relative=&quot;$parent&quot; pos=&quot;Min&quot; offset=&quot;0&quot;/&gt; &lt;Anchor side=&quot;Right&quot; relative=&quot;$parent&quot; pos=&quot;Max&quot; offset=&quot;0&quot;/&gt; &lt;Texture val=&quot;Assets/Textures/Loading Screen.dds&quot;/&gt; &lt;Width val=&quot;3000&quot;/&gt; &lt;Height val=&quot;2000&quot;/&gt; &lt;/Frame&gt; &lt;/Frame&gt; &lt;/Desc&gt;" />
+<meta property="og:description" content="What are Layouts? Layouts are a way of creating or modifying Dialogs (or the User Interface) for your SC2 Arcades by writing XML rather than the traditional means of using Triggers. For an example, this creates a full-screen image: &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; standalone=&quot;yes&quot;?&gt; &lt;Desc&gt; &lt;Frame type=&quot;Frame&quot; name=&quot;GameUI/UIContainer&quot; file=&quot;GameUI&quot;&gt; &lt;Frame type=&quot;Image&quot; name=&quot;ScreenFade&quot;&gt; &lt;Anchor side=&quot;Top&quot; relative=&quot;$parent&quot; pos=&quot;Min&quot; offset=&quot;0&quot;/&gt; &lt;Anchor side=&quot;Bottom&quot; relative=&quot;$parent&quot; pos=&quot;Max&quot; offset=&quot;0&quot;/&gt; &lt;Anchor side=&quot;Left&quot; relative=&quot;$parent&quot; pos=&quot;Min&quot; offset=&quot;0&quot;/&gt; &lt;Anchor side=&quot;Right&quot; relative=&quot;$parent&quot; pos=&quot;Max&quot; offset=&quot;0&quot;/&gt; &lt;Texture val=&quot;Assets/Textures/Loading Screen.dds&quot;/&gt; &lt;Width val=&quot;3000&quot;/&gt; &lt;Height val=&quot;2000&quot;/&gt; &lt;/Frame&gt; &lt;/Frame&gt; &lt;/Desc&gt;" />
+<link rel="canonical" href="http://localhost:4000/ui/2018/02/07/basic-introduction-to-layouts.html" />
+<meta property="og:url" content="http://localhost:4000/ui/2018/02/07/basic-introduction-to-layouts.html" />
+<meta property="og:site_name" content="Sc2mapster.Github.Io" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-02-07T08:04:00+00:00" />
+<script type="application/ld+json">
+{"publisher":null,"headline":"Basic Introduction to Layouts","dateModified":"2018-02-07T08:04:00+00:00","datePublished":"2018-02-07T08:04:00+00:00","sameAs":null,"url":"http://localhost:4000/ui/2018/02/07/basic-introduction-to-layouts.html","author":{"@type":"Person","name":"TheSkunk"},"description":"What are Layouts? Layouts are a way of creating or modifying Dialogs (or the User Interface) for your SC2 Arcades by writing XML rather than the traditional means of using Triggers. For an example, this creates a full-screen image: &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; standalone=&quot;yes&quot;?&gt; &lt;Desc&gt; &lt;Frame type=&quot;Frame&quot; name=&quot;GameUI/UIContainer&quot; file=&quot;GameUI&quot;&gt; &lt;Frame type=&quot;Image&quot; name=&quot;ScreenFade&quot;&gt; &lt;Anchor side=&quot;Top&quot; relative=&quot;$parent&quot; pos=&quot;Min&quot; offset=&quot;0&quot;/&gt; &lt;Anchor side=&quot;Bottom&quot; relative=&quot;$parent&quot; pos=&quot;Max&quot; offset=&quot;0&quot;/&gt; &lt;Anchor side=&quot;Left&quot; relative=&quot;$parent&quot; pos=&quot;Min&quot; offset=&quot;0&quot;/&gt; &lt;Anchor side=&quot;Right&quot; relative=&quot;$parent&quot; pos=&quot;Max&quot; offset=&quot;0&quot;/&gt; &lt;Texture val=&quot;Assets/Textures/Loading Screen.dds&quot;/&gt; &lt;Width val=&quot;3000&quot;/&gt; &lt;Height val=&quot;2000&quot;/&gt; &lt;/Frame&gt; &lt;/Frame&gt; &lt;/Desc&gt;","image":null,"name":null,"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/ui/2018/02/07/basic-introduction-to-layouts.html"},"@type":"BlogPosting","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Sc2mapster.Github.Io</h1>
+        <h2>Github page for Starcraft 2 Modding Guides</h2>
+
+        <section id="downloads">
+          
+          <a href="http://github.com/Sc2mapster/sc2mapster.github.io" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1>Basic Introduction to Layouts</h1>
+
+<p class="view">by TheSkunk (<em><small>7 February 2018</small></em>)</p>
+
+<h2 id="what-are-layouts">What are Layouts?</h2>
+<p>Layouts are a way of creating or modifying Dialogs (or the User Interface) for your SC2 Arcades by writing XML rather than the traditional means of using Triggers. For an example, this creates a full-screen image:</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8" standalone="yes"?&gt;</span>
+<span class="nt">&lt;Desc&gt;</span>
+	<span class="nt">&lt;Frame</span> <span class="na">type=</span><span class="s">"Frame"</span> <span class="na">name=</span><span class="s">"GameUI/UIContainer"</span> <span class="na">file=</span><span class="s">"GameUI"</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;Frame</span> <span class="na">type=</span><span class="s">"Image"</span> <span class="na">name=</span><span class="s">"ScreenFade"</span><span class="nt">&gt;</span>
+			<span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Top"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Min"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+			<span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Bottom"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Max"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+			<span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Left"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Min"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+			<span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Right"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Max"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>				
+			<span class="nt">&lt;Texture</span> <span class="na">val=</span><span class="s">"Assets/Textures/Loading Screen.dds"</span><span class="nt">/&gt;</span>
+			<span class="nt">&lt;Width</span> <span class="na">val=</span><span class="s">"3000"</span><span class="nt">/&gt;</span>
+			<span class="nt">&lt;Height</span> <span class="na">val=</span><span class="s">"2000"</span><span class="nt">/&gt;</span>
+		<span class="nt">&lt;/Frame&gt;</span>
+	<span class="nt">&lt;/Frame&gt;</span>
+<span class="nt">&lt;/Desc&gt;</span>
+</code></pre></div></div>
+
+<h2 id="why-layouts">Why Layouts?</h2>
+<p>Layouts are:</p>
+<ul>
+  <li>Faster and easier to create</li>
+  <li>More powerful</li>
+  <li>Achieve more responsive results</li>
+</ul>
+
+<p>Aside from the fact that typing (or copy+pasting) XML is faster than using the trigger editor, the ability to do things like create your own templates greatly increases the speed and convenience of using layouts. For minor changes, like adjusting the size and positioning of items, you can actually refresh your changes in the game live, instead of relaunching the map every time you want to see the smallest change.</p>
+
+<p>There are also properties and frame types you simply cannot change or create via triggers, and cool animations or state-groups only possible with layouts. Some visual aspects, like effects when you mouse over dialog items, which would previously require a trigger with a mouse-over activation event, can be done purely with layouts which makes them more responsive.</p>
+
+<p>There are a lot of compelling reasons to use layouts, and they aren’t actually that hard to learn!</p>
+
+<h2 id="getting-started-workflow">Getting Started: Workflow</h2>
+<ul>
+  <li>Set up a Layouts dependency mod</li>
+  <li>Download <a href="https://notepad-plus-plus.org/">Notepad++</a> or similar alternative</li>
+</ul>
+
+<p>Getting started and setting up your work flow can be the most intimidating part of learning Layouts, particularly if you are a beginner map maker and aren’t familiar with saving mods as .SC2Components.</p>
+
+<h3 id="setting-up-a-layout-dependency-mod">Setting up a Layout Dependency Mod</h3>
+<ol>
+  <li>Open the SC2 Editor, go to “File &gt; New &gt; Dependent Mod”</li>
+  <li>The dependencies you choose (LotV, Campaign, etc) don’t matter</li>
+  <li>Once created, access the UI module by clicking the UI module button or pressing “Shift+F6”.
+ <img src="http://localhost:4000/assets/xbixqRU.png" alt="My helpful screenshot" /></li>
+  <li>In the UI module, Right Click and select Add Layout.
+ <img src="http://localhost:4000/assets/V11gtNR.png" alt="My helpful screenshot" /></li>
+  <li>Name it “MainFrame”</li>
+  <li>Save your mod as .SC2Components, and save it under “C:\StarCraft II\Mods” or your equivalent folder.
+ <img src="http://localhost:4000/assets/iUvuWYu.png" alt="My helpful screenshot" /></li>
+</ol>
+
+<p>Now close the mod, and open (or create) the map you wish to create layouts for. 
+In your map go to <code class="highlighter-rouge">File &gt; Dependencies</code>. Select <code class="highlighter-rouge">Add Other</code>. Select the Layout Mod and hit “OK”. Once you’ve added this, save your map.</p>
+
+<h3 id="notepad">NotePad++</h3>
+<p>Which is easier to read:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;?xml version="1.0" encoding="utf-8" standalone="yes"?&gt;
+&lt;Desc&gt;
+	&lt;Frame type="Frame" name="GameUI/UIContainer" file="GameUI"&gt;
+		&lt;Frame type="Image" name="LoadingScreenFade"&gt;
+			&lt;Anchor side="Top" relative="$parent" pos="Min" offset="0"/&gt;
+			&lt;Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/&gt;
+			&lt;Anchor side="Left" relative="$parent" pos="Min" offset="0"/&gt;
+			&lt;Anchor side="Right" relative="$parent" pos="Max" offset="0"/&gt;				
+			&lt;Texture val="Assets/Textures/Loading Screen.dds"/&gt;
+			&lt;Width val="3000"/&gt;
+			&lt;Height val="2000"/&gt;
+		&lt;/Frame&gt;
+	&lt;/Frame&gt;
+&lt;/Desc&gt;
+</code></pre></div></div>
+
+<p>OR</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8" standalone="yes"?&gt;</span>
+<span class="nt">&lt;Desc&gt;</span>
+	<span class="nt">&lt;Frame</span> <span class="na">type=</span><span class="s">"Frame"</span> <span class="na">name=</span><span class="s">"GameUI/UIContainer"</span> <span class="na">file=</span><span class="s">"GameUI"</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;Frame</span> <span class="na">type=</span><span class="s">"Image"</span> <span class="na">name=</span><span class="s">"LoadingScreenFade"</span><span class="nt">&gt;</span>
+			<span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Top"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Min"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+			<span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Bottom"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Max"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+			<span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Left"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Min"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+			<span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Right"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Max"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>				
+			<span class="nt">&lt;Texture</span> <span class="na">val=</span><span class="s">"Assets/Textures/Loading Screen.dds"</span><span class="nt">/&gt;</span>
+			<span class="nt">&lt;Width</span> <span class="na">val=</span><span class="s">"3000"</span><span class="nt">/&gt;</span>
+			<span class="nt">&lt;Height</span> <span class="na">val=</span><span class="s">"2000"</span><span class="nt">/&gt;</span>
+		<span class="nt">&lt;/Frame&gt;</span>
+	<span class="nt">&lt;/Frame&gt;</span>
+<span class="nt">&lt;/Desc&gt;</span>
+</code></pre></div></div>
+<p>?</p>
+
+<p>This “syntax highlighting” makes it easier to spot mistakes and gives a little more order to the chaos of XML. You can use any program capable of syntax highlighting XML, but if you don’t already have a favorite, I recommend downloading <a href="https://notepad-plus-plus.org/">Notepad++</a> because it’s lightweight and gets the job done.</p>
+
+<p>Once you’ve installed it, go to <code class="highlighter-rouge">Settings &gt; Preferences &gt; New Document</code> and set Default Language to XML.
+<img src="http://localhost:4000/assets/pqwW6LH.png" alt="My helpful screenshot" /></p>
+
+<h2 id="a-basic-introduction">A Basic Introduction</h2>
+<p>Now that we’ve done the obnoxious setup, we can get started for real. To open your layout file, use file explorer to navigate to where you saved your layouts .SC2Components file. From there, open the Base.SC2Data folder, then the UI folder, then the Layout folder. After that, you should see your MainFrame.SC2Layout file, like so:
+<img src="http://localhost:4000/assets/jIoWQbI.png" alt="My helpful screenshot" /></p>
+
+<p>Open this file in NotePad++ or your program of choice:
+<img src="http://localhost:4000/assets/szOFW4j.png" alt="My helpful screenshot" /></p>
+
+<p>It will look more or less like this:
+<img src="http://localhost:4000/assets/jIxkZzF.png" alt="My helpful screenshot" /></p>
+
+<p>To start off, try copy-pasting this text into your layout file:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8" standalone="yes"?&gt;</span>
+<span class="nt">&lt;Desc&gt;</span>
+	<span class="nt">&lt;Frame</span> <span class="na">type=</span><span class="s">"Frame"</span> <span class="na">name=</span><span class="s">"GameUI/UIContainer"</span> <span class="na">file=</span><span class="s">"GameUI"</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;Frame</span> <span class="na">type=</span><span class="s">"Image"</span> <span class="na">name=</span><span class="s">"FullScreenImage"</span><span class="nt">&gt;</span>
+			<span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Top"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Min"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+			<span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Bottom"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Max"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+			<span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Left"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Min"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+			<span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Right"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Max"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+			
+			<span class="nt">&lt;Texture</span> <span class="na">val=</span><span class="s">"Assets/Textures/ui_glues_voidlogoloadingscreen.dds"</span><span class="nt">/&gt;</span>
+		<span class="nt">&lt;/Frame&gt;</span>
+	<span class="nt">&lt;/Frame&gt;</span>
+<span class="nt">&lt;/Desc&gt;</span>
+</code></pre></div></div>
+
+<p>Then hit <code class="highlighter-rouge">Save</code> or <code class="highlighter-rouge">Save All</code> in Notepad++ to save your Layout.</p>
+
+<p>In the editor, your map should still be open. Because the layout file you edited is actually part of your mod that your map is using, when you edit and save .SC2Layout files in Notepad++, they will automatically update for your map - no need to save or reload the map file. All you need to do is hit that test map button and see how it looks! If all went well, you should be greeted in-game by a full-screen SC2 LotV Logo:</p>
+
+<p><img src="http://localhost:4000/assets/rMoB9iU.png" alt="My helpful screenshot" /></p>
+
+<p>Now, to explain that XML a bit more:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8" standalone="yes"?&gt;</span>
+<span class="nt">&lt;Desc&gt;</span>
+	<span class="nt">&lt;Frame</span> <span class="na">type=</span><span class="s">"Frame"</span> <span class="na">name=</span><span class="s">"GameUI/UIContainer"</span> <span class="na">file=</span><span class="s">"GameUI"</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;Frame</span> <span class="na">type=</span><span class="s">"Image"</span> <span class="na">name=</span><span class="s">"FullScreenImage"</span><span class="nt">&gt;</span>
+			<span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Top"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Min"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+			<span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Bottom"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Max"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+			<span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Left"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Min"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+			<span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Right"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Max"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>			
+			<span class="nt">&lt;Texture</span> <span class="na">val=</span><span class="s">"Assets/Textures/ui_glues_voidlogoloadingscreen.dds"</span><span class="nt">/&gt;</span>
+		<span class="nt">&lt;/Frame&gt;</span>
+	<span class="nt">&lt;/Frame&gt;</span>
+<span class="nt">&lt;/Desc&gt;</span>
+</code></pre></div></div>
+
+<p>The dialogs which make up User Interfaces for SC2 are composed out of Frames. A “Frame” can be anything from an Image to a Button. Most of the time, UI is made out of a multitude of different frames, often nested within each other. Usually, it beings with a container Frame that is of the frame type “Frame”.</p>
+
+<p>Our tutorial frames are going to start like this:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8" standalone="yes"?&gt;</span>
+<span class="nt">&lt;Desc&gt;</span>
+	<span class="nt">&lt;Frame</span> <span class="na">type=</span><span class="s">"Frame"</span> <span class="na">name=</span><span class="s">"GameUI/UIContainer"</span> <span class="na">file=</span><span class="s">"GameUI"</span><span class="nt">&gt;</span>
+		
+	<span class="nt">&lt;/Frame&gt;</span>
+<span class="nt">&lt;/Desc&gt;</span>
+</code></pre></div></div>
+
+<p>GameUI is a .SC2Layout the game automatically creates to hold UI. UIContainer is a frame inside that Layout that holds the default SC2 UI, so it is a natural place to put your layouts. This doesn’t create anything new per se, it just tells the game where we want our frames to be created.</p>
+
+<p>Now, the actual new frame we created was this:</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;Frame</span> <span class="na">type=</span><span class="s">"Image"</span> <span class="na">name=</span><span class="s">"FullScreenImage"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Left"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Min"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Right"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Max"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Top"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Min"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Bottom"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Max"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+			
+      <span class="nt">&lt;Texture</span> <span class="na">val=</span><span class="s">"Assets/Textures/ui_glues_voidlogoloadingscreen.dds"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/Frame&gt;</span>
+</code></pre></div></div>
+
+<p>A basic frame declaration looks like this:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;Frame</span> <span class="na">type=</span><span class="s">"Image"</span> <span class="na">name=</span><span class="s">"FullScreenImage"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<p>You declare the type of frame with <code class="highlighter-rouge">type=</code> and then give it a name with <code class="highlighter-rouge">name=</code>. You can view a list of most Frame types here: https://sc2mapster.gamepedia.com/UI/Frame_Types</p>
+
+<p>If you’ve made Dialogs with Triggers before, some of them like “Labels” or “Buttons” you should already be familiar with.</p>
+
+<p>In our case, we created an image – pretty straight-forward. Everything after that is indented further, and defines the property of this frame – until it is closed with &lt;/Frame&gt;.</p>
+
+<h2 id="anchors">Anchors</h2>
+
+<p>The first property we defined was Anchors:</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     <span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Left"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Min"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Right"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Max"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Top"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Min"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Bottom"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Max"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>Again, if you’re used to making Triggers via Dialogs, you’re probably familiar with the basic concept of Anchors – but it’s more complex with layouts. For one thing, Anchors can actually determine the size of frames in Layouts. You notice we do not ever set a size value for our image. Instead, our Anchors determine the size.</p>
+
+<p>Anchors are composed of these for basic values, in layman’s terms:</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Top"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Min"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Side:</strong> What side of the frame is being “pulled”</li>
+  <li><strong>Relative:</strong> To what other frame is this frame being “pulled” towards</li>
+  <li><strong>Pos:</strong> How far you want the side to go in it’s given direction. You can use real values to specify a percentage along the horizontal or vertical axis instead of Min, Max, or Mid – for an example, 0.5 is equivalent to Mid</li>
+  <li><strong>Offset:</strong> Offset (in pixels) for the given anchor</li>
+</ul>
+
+<p><img src="http://localhost:4000/assets/OC86sqf.png" alt="My helpful screenshot" /></p>
+
+<p>You can think of anchors as little grappling hooks that pull the edges of a frame in a given direction. For an example, this anchor:</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     <span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Left"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Min"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>Is pulling the Left Side to the Min most direction on left-right axis, relative to its parent frame.
+So in the case of our “Image” frame and it’s anchors:</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     <span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Left"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Min"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Right"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Max"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Top"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Min"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Bottom"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Max"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>Because our “Parent” frame is the entire GameUI/UIContainer, it pulls each individual side as far as it can go, the edge of the screen. Because no size is set for our image, these Anchors determine its size.</p>
+
+<p>Let’s change that, and set a fixed size! Replace your XML with this:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8" standalone="yes"?&gt;</span>
+<span class="nt">&lt;Desc&gt;</span>
+	<span class="nt">&lt;Frame</span> <span class="na">type=</span><span class="s">"Frame"</span> <span class="na">name=</span><span class="s">"GameUI/UIContainer"</span> <span class="na">file=</span><span class="s">"GameUI"</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;Frame</span> <span class="na">type=</span><span class="s">"Image"</span> <span class="na">name=</span><span class="s">"FullScreenImage"</span><span class="nt">&gt;</span>
+			<span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Top"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Min"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+			<span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Left"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Min"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+			
+			<span class="nt">&lt;Texture</span> <span class="na">val=</span><span class="s">"Assets/Textures/ui_glues_voidlogoloadingscreen.dds"</span><span class="nt">/&gt;</span>
+			<span class="nt">&lt;Width</span> <span class="na">val=</span><span class="s">"640"</span><span class="nt">/&gt;</span>
+			<span class="nt">&lt;Height</span> <span class="na">val=</span><span class="s">"360"</span><span class="nt">/&gt;</span>
+		<span class="nt">&lt;/Frame&gt;</span>
+	<span class="nt">&lt;/Frame&gt;</span>
+<span class="nt">&lt;/Desc&gt;</span>
+</code></pre></div></div>
+
+<p>Save, and then test with the editor again. Now our image will be a set size, anchored to the top-left:</p>
+
+<p><img src="http://localhost:4000/assets/mRHuZFt.png" alt="My helpful screenshot" /></p>
+
+<p>You can learn more about anchors by reading this <a href="https://docs.google.com/document/d/1HSms99CSdLuh1gH80G29-xMGAE00_vXT6IDIHeDJe54/edit?usp=sharing">tutorial by rtschutter</a>, and you can use this image as a reference:
+<img src="https://i.imgur.com/G9C8weS.jpg" alt="Anchor Reference" /></p>
+
+<p>For an example, try changing the position of the image to any of the four corners, or centered in the middle:</p>
+
+<p>Top Right:</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Top"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Min"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Right"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Max"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+<p>Bottom Right:</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Bottom"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Max"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Right"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Max"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+<p>Bottom Left:</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Bottom"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Max"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Left"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Min"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+<p>Centered:</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Top"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Min"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Left"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Min"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Right"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Max"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Bottom"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Max"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>And try setting “offset” to 25 for some margins/padding!</p>
+
+<h2 id="making-your-first-real-layout">Making your first real Layout</h2>
+
+<p>Let’s make something practical, that you may have done before in Triggers: a race selection screen. There are some more basics you need to learn:</p>
+
+<ol>
+  <li>Creating new Layouts</li>
+  <li>Hooking up Layouts in Triggers</li>
+</ol>
+
+<p>Although you could keep working in your current layout file, you need to know how to create new Layouts. To start off with, go back to File Explorer where you navigated to your Layouts folder:</p>
+
+<p><img src="http://localhost:4000/assets/tNYTHpp.png" alt="My helpful screenshot" /></p>
+
+<p>Copy and paste your “Main Frame.SC2Layout”. Rename it to “RaceSelect”.</p>
+
+<p>Then, open <strong>DescIndex.SC2Layout</strong> in Notepad++.</p>
+
+<p>DescIndex is basically a list of all of your layouts, so the game knows what to load. You just need to duplicate the “Include” line and change the name to your new RaceSelect layout, so the DescIndex file looks like this:</p>
+
+<p><img src="http://localhost:4000/assets/HNygemW.png" alt="My helpful screenshot" /></p>
+
+<p>Save and close out of DescIndex, and open your RaceSelect.SC2Layout.</p>
+
+<p>Remember, you always want this as your starting point:</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8" standalone="yes"?&gt;</span>
+<span class="nt">&lt;Desc&gt;</span>
+	<span class="nt">&lt;Frame</span> <span class="na">type=</span><span class="s">"Frame"</span> <span class="na">name=</span><span class="s">"GameUI/UIContainer"</span> <span class="na">file=</span><span class="s">"GameUI"</span><span class="nt">&gt;</span>
+		
+	<span class="nt">&lt;/Frame&gt;</span>
+<span class="nt">&lt;/Desc&gt;</span>
+</code></pre></div></div>
+
+<p>Before we just created an image. However, if your Dialog is going to include more than one Frame, you generally want to create a container Frame for it. Think of the “Frame” type of Frame as an equivalent to your Trigger’s “Dialog” – it’s not anything by itself, it’s just a container for Dialog Items – or, in our case, other frames and frame types. Inside our frame, we are going to create:</p>
+
+<ul>
+  <li>An Image (The Background)</li>
+  <li>A Label (Title saying “Choose Race”)</li>
+  <li>Three Buttons (A button for each race)</li>
+</ul>
+
+<p>So, let’s say we want this “Dialog” – or, more accurately, a “Frame” type of frame called “Container Frame” to be 800x600 and be centered on the screen:</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8" standalone="yes"?&gt;</span>
+<span class="nt">&lt;Desc&gt;</span>
+	<span class="nt">&lt;Frame</span> <span class="na">type=</span><span class="s">"Frame"</span> <span class="na">name=</span><span class="s">"GameUI/UIContainer"</span> <span class="na">file=</span><span class="s">"GameUI"</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;Frame</span> <span class="na">type=</span><span class="s">"Frame"</span> <span class="na">name=</span><span class="s">"ContainerFrame"</span><span class="nt">&gt;</span>
+			<span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Top"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Min"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+			<span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Left"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Min"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+			<span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Bottom"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Max"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+			<span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Right"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Max"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+			
+			<span class="nt">&lt;Height</span> <span class="na">val=</span><span class="s">"800"</span><span class="nt">/&gt;</span>
+			<span class="nt">&lt;Width</span> <span class="na">val=</span><span class="s">"600"</span><span class="nt">/&gt;</span>
+		<span class="nt">&lt;/Frame&gt;</span>
+	<span class="nt">&lt;/Frame&gt;</span>
+<span class="nt">&lt;/Desc&gt;</span>
+</code></pre></div></div>
+
+<p>It’s important to note that unlike trigger Dialogs, frames don’t <em>look</em> like anything. This currently will be invisible. But we want a nice background to our Dialog, and do to this, we’ll need to create an image. Remember to use proper indentation - to this end, remember you can indent with “Tab” and un-indent with Shift-Tab.</p>
+
+<p>Generally, keep all of your anchors at the top, and a space between them and the rest of the properties – as you can see above. Furthermore, include a space before and after nested frames. 
+With that in mind, create our background image so our XML looks like this:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8" standalone="yes"?&gt;</span>
+<span class="nt">&lt;Desc&gt;</span>
+	<span class="nt">&lt;Frame</span> <span class="na">type=</span><span class="s">"Frame"</span> <span class="na">name=</span><span class="s">"GameUI/UIContainer"</span> <span class="na">file=</span><span class="s">"GameUI"</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;Frame</span> <span class="na">type=</span><span class="s">"Frame"</span> <span class="na">name=</span><span class="s">"ContainerFrame"</span><span class="nt">&gt;</span>
+			<span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Top"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Min"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+			<span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Left"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Min"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+			<span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Bottom"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Max"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+			<span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Right"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Max"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+			
+           			 <span class="nt">&lt;Height</span> <span class="na">val=</span><span class="s">"600"</span><span class="nt">/&gt;</span>
+           			 <span class="nt">&lt;Width</span> <span class="na">val=</span><span class="s">"800"</span><span class="nt">/&gt;</span>
+			
+			<span class="nt">&lt;Frame</span> <span class="na">type=</span><span class="s">"Image"</span> <span class="na">name=</span><span class="s">"Background"</span><span class="nt">&gt;</span>
+				<span class="nt">&lt;Anchor</span> <span class="na">relative=</span><span class="s">"$parent"</span><span class="nt">/&gt;</span>
+				
+				<span class="nt">&lt;Texture</span> <span class="na">val=</span><span class="s">"Assets/Textures/ui_ingame_tutorial_textborder_terr.dds"</span><span class="nt">/&gt;</span>
+				<span class="nt">&lt;TextureType</span> <span class="na">val=</span><span class="s">"NineSlice"</span><span class="nt">/&gt;</span>
+			<span class="nt">&lt;/Frame&gt;</span>
+			
+		<span class="nt">&lt;/Frame&gt;</span>
+	<span class="nt">&lt;/Frame&gt;</span>
+<span class="nt">&lt;/Desc&gt;</span>
+</code></pre></div></div>
+
+<h3 id="finding-textures">Finding Textures</h3>
+
+<p>In the SC2 editor, if you go to Window &gt; Console, and then type “Browse” into the console, you can search for textures, models, etc. If you enter “Assets/Textures/ui” into the search, it’s a good way to look for textures to use in your UI.</p>
+
+<h3 id="texture-types">Texture Types</h3>
+
+<p>Different textures have to be set to different Texture Types. Ours is NineSlice, but you can see the <a href="https://sc2mapster.gamepedia.com/UI/Frame_Properties/TextureType">Wiki for other TextureTypes</a>.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;Anchor</span> <span class="na">relative=</span><span class="s">"$parent"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>Just using the Relative property without Side or Pos is basically saying “use the same anchors as the relative frame” which in this case, is the parent frame.</p>
+
+<p>Now we need to add our Label:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8" standalone="yes"?&gt;</span>
+<span class="nt">&lt;Desc&gt;</span>
+	<span class="nt">&lt;Frame</span> <span class="na">type=</span><span class="s">"Frame"</span> <span class="na">name=</span><span class="s">"GameUI/UIContainer"</span> <span class="na">file=</span><span class="s">"GameUI"</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;Frame</span> <span class="na">type=</span><span class="s">"Frame"</span> <span class="na">name=</span><span class="s">"ContainerFrame"</span><span class="nt">&gt;</span>
+			<span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Top"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Min"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+			<span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Left"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Min"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+			<span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Bottom"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Max"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+			<span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Right"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Max"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+			
+          			 <span class="nt">&lt;Height</span> <span class="na">val=</span><span class="s">"600"</span><span class="nt">/&gt;</span>
+            			<span class="nt">&lt;Width</span> <span class="na">val=</span><span class="s">"800"</span><span class="nt">/&gt;</span>
+			
+			<span class="nt">&lt;Frame</span> <span class="na">type=</span><span class="s">"Image"</span> <span class="na">name=</span><span class="s">"Background"</span><span class="nt">&gt;</span>
+				<span class="nt">&lt;Anchor</span> <span class="na">relative=</span><span class="s">"$parent"</span><span class="nt">/&gt;</span>
+				
+				<span class="nt">&lt;Texture</span> <span class="na">val=</span><span class="s">"Assets/Textures/ui_ingame_tutorial_textborder_terr.dds"</span><span class="nt">/&gt;</span>
+				<span class="nt">&lt;TextureType</span> <span class="na">val=</span><span class="s">"NineSlice"</span><span class="nt">/&gt;</span>
+			<span class="nt">&lt;/Frame&gt;</span>
+			
+			<span class="nt">&lt;Frame</span> <span class="na">type=</span><span class="s">"Label"</span> <span class="na">name=</span><span class="s">"Title"</span><span class="nt">&gt;</span>
+			
+				<span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Top"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Min"</span> <span class="na">offset=</span><span class="s">"60"</span><span class="nt">/&gt;</span>
+				<span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Left"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Mid"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+				<span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Right"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Mid"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+				
+				<span class="nt">&lt;Style</span> <span class="na">val=</span><span class="s">"TutorialMenuTitle"</span><span class="nt">/&gt;</span>
+				<span class="nt">&lt;Width</span> <span class="na">val=</span><span class="s">"600"</span><span class="nt">/&gt;</span>
+				<span class="nt">&lt;Text</span> <span class="na">val=</span><span class="s">"Choose your race"</span><span class="nt">/&gt;</span>
+			<span class="nt">&lt;/Frame&gt;</span>
+			
+		<span class="nt">&lt;/Frame&gt;</span>
+	<span class="nt">&lt;/Frame&gt;</span>
+<span class="nt">&lt;/Desc&gt;</span>
+</code></pre></div></div>
+
+<p>(Tip: Go to the Text editor (F8) and click on “Font Styles” to search for font styles or create your own.)</p>
+
+<h2 id="introduction-to-templates">Introduction to Templates</h2>
+
+<p>So at this point, we want to create our Buttons. But if you just created a “Button” frame, you’d find that it’s invisible – just like our “Frame”. To make a Button actually look like something, we’d have to create an image inside of it. And to make our Button have text, we’d have to create a Label inside of it. And so on!</p>
+
+<p>Luckily, you don’t have to tediously construct a Button out of other frame types. You can just create your Button using a Template that already has images set up:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;Frame</span> <span class="na">type=</span><span class="s">"Button"</span> <span class="na">name=</span><span class="s">"ChooseButton"</span> <span class="na">template=</span><span class="s">"StandardTemplates/StandardButtonTemplate"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<p>Of course, this is just one Template you can use. If you open the UI Editor (Shift-F6) in the SC2 editor, you can find Templates by searching for them. Many Templates can be found in the “StandardTemplates” folder.</p>
+
+<p><img src="http://localhost:4000/assets/m7otJat.png" alt="My helpful screenshot" /></p>
+
+<p>Once you have created something from a Template, to edit the child-frames created by the template, you just have to “recreate” them. To this end, you sometimes have to look up your template. For an example, if you want to change the text of a Button you used during this template, you have to look at the original template to see what the label was called. In this case, our template creates the label like this:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>       <span class="nt">&lt;Frame</span> <span class="na">type=</span><span class="s">"Label"</span> <span class="na">name=</span><span class="s">"Label"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Top"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Min"</span> <span class="na">offset=</span><span class="s">"4"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Bottom"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Max"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Left"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Min"</span> <span class="na">offset=</span><span class="s">"20"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Right"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Max"</span> <span class="na">offset=</span><span class="s">"-20"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;DescFlags</span> <span class="na">val=</span><span class="s">"Internal"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/Frame&gt;</span>
+
+So, to modify that label after we’ve created a button using this template, we’d do it like this:
+
+```xml
+<span class="nt">&lt;Frame</span> <span class="na">type=</span><span class="s">"Button"</span> <span class="na">name=</span><span class="s">"ChooseProtoss"</span> <span class="na">template=</span><span class="s">"StandardTemplates/StandardButtonTemplate"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;Frame</span> <span class="na">type=</span><span class="s">"Label"</span> <span class="na">name=</span><span class="s">"Label"</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;Text</span> <span class="na">val=</span><span class="s">"Protoss"</span><span class="nt">/&gt;</span>
+	<span class="nt">&lt;/Frame&gt;</span>
+<span class="nt">&lt;/Frame&gt;</span>
+</code></pre></div></div>
+
+<p>Of course, you need to set anchors and, if desired, change other properties about the button:</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;Frame</span> <span class="na">type=</span><span class="s">"Button"</span> <span class="na">name=</span><span class="s">"ChooseProtoss"</span> <span class="na">template=</span><span class="s">"StandardTemplates/StandardButtonTemplate"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Top"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Min"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Left"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Min"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Bottom"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Max"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Right"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Max"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+				
+      <span class="nt">&lt;Height</span> <span class="na">val=</span><span class="s">"100"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;Width</span> <span class="na">val=</span><span class="s">"300"</span><span class="nt">/&gt;</span>
+		
+      <span class="nt">&lt;Frame</span> <span class="na">type=</span><span class="s">"Label"</span> <span class="na">name=</span><span class="s">"Label"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;Text</span> <span class="na">val=</span><span class="s">"Protoss"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;Style</span> <span class="na">val=</span><span class="s">"LayoutDebugPanelTitle"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;/Frame&gt;</span>
+<span class="nt">&lt;/Frame&gt;</span>
+</code></pre></div></div>
+
+<p>Copy and paste that XML (huge time saver) and create two more buttons and change the names of the frames as well as the text of the label so you have buttons for each race. Your final XML should look like this: https://pastebin.com/hXcxtYrE</p>
+
+<p>Save your layout file, then hit test in the SC2 Editor. Don’t close out the the game once you see how it looks! Just alt-tab back to this tutorial.</p>
+
+<h2 id="refreshing-game-ui">Refreshing Game UI</h2>
+
+<p>You may notice all of your buttons are anchored to the same position and overlap. When working with Dialogs in Triggers, to get things positioned correctly you’d have to test, close the test, change the position, test again, and repeat until items were positioned where you want them.</p>
+
+<p>With layouts, there is a better way! With your test still open, edit your Layout by adding a offset value to your Zerg and Terran Top anchors:</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;Frame</span> <span class="na">type=</span><span class="s">"Button"</span> <span class="na">name=</span><span class="s">"ChooseTerran"</span> <span class="na">template=</span><span class="s">"StandardTemplates/StandardButtonTemplate"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Top"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Min"</span> <span class="na">offset=</span><span class="s">"150"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Left"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Min"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Bottom"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Max"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Right"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Max"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+
+			
+<span class="nt">&lt;Frame</span> <span class="na">type=</span><span class="s">"Button"</span> <span class="na">name=</span><span class="s">"ChooseZerg"</span> <span class="na">template=</span><span class="s">"StandardTemplates/StandardButtonTemplate"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Top"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Min"</span> <span class="na">offset=</span><span class="s">"-150"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Left"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Min"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Bottom"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Max"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Right"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Max"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>Save your layouts, then tab back to your running test and press “Control+Alt+F11”</p>
+
+<p>This will reload the Game UI, and your changes should appear. You can tab back to your Layout and change the offset if you want them to be spaced even further, and do the same thing again. Likewise, you can change the size of your holding frame if you think it looks too wide.</p>
+
+<p>There are some limitations – generally speaking, “Control+Alt+F11” will only update minor value changes like size and offset. You can give it a try, but if a change you made didn’t show up, instead of presuming your edit didn’t work, you should close out of the test and re-launch from the editor. After a while, you will get a feeling for what kind of changes can be updated with “Control+Alt+F11” and what ones require you to restart the test.</p>
+
+<p>You can also use Control+Alt+F12 for a frame viewer. This will allow you to troubleshoot your layouts by seeing if they were created properly or not.</p>
+
+<p><img src="http://localhost:4000/assets/Qn2tUkU.png" alt="My helpful screenshot" /></p>
+
+<p>There is a button to the middle-left which allows you to see the properties of a selected item, and the frame tree on the right shows you a hierarchy of created frames. You can mouse around the screen and select Frames. This is useful particularly if a frame you created does not appear at all in-game – you can use this feature to see if it was actually created, and is just invisible for some reason.</p>
+
+<h2 id="trigger-hookups">Trigger Hookups</h2>
+
+<p>Great, we have some buttons – now how do we make them do something?  Using layouts, we can make pressing these buttons change other layouts – say, we could make clicking the “Zerg” button change your frame to be Purple.</p>
+
+<p>But you can’t make layouts affect the game itself outside of affecting other parts of the UI/Layouts. Instead, you need to hook up your layout via triggers so that you can cause things to happen via triggers.</p>
+
+<p>Luckily, this is really easy. You just use an action called “Hookup Standard Dialog Item”</p>
+
+<p><img src="http://localhost:4000/assets/RT6miih.png" alt="My helpful screenshot" /></p>
+
+<p>Two things are important:</p>
+
+<ul>
+  <li>Frame Type</li>
+  <li>The Path</li>
+</ul>
+
+<p>For an example, notice for the Frame I used “Panel” and for the buttons I used “Button” as the frame type. For the path, you just have to follow the hierarchy of your layouts. They all begin with the “UIContainer” we create them in, and you follow the path from there. For our frame, we just need UIContainer/ContainerFrame. For our buttons, we continue that path with UIContainer/ContainerFrame/ChooseProtoss.</p>
+
+<p>As you can see, from there you can set them to variables as they register as “Last created dialog items.” After that, you can use them in triggers like you  normally would! Try it out by making it so it spawns you a Zealot, Marine, or Zergling when you press one of the buttons, and then hides the ContainerFrame.</p>
+
+<h2 id="modifying-existing-ui">Modifying Existing UI</h2>
+
+<p>So far, we’ve created our own UI elements. What if you wanted to modify the default game UI?</p>
+
+<p>This can be done pretty easily, just like you change child frames created by templates all you need to do is “recreate” them using the same names/hierarchy. Let’s give it a shot.</p>
+
+<p>Create a new layout:</p>
+
+<ul>
+  <li>Go to your Base.SC2Data\UI\Layout folder in File Explorer</li>
+  <li>Create a new text file and name it whatever you want, ending in .SC2Layout</li>
+  <li>Edit DescIndex.SC2Layout to include your new Layout</li>
+  <li>Open your new Layout to get started</li>
+</ul>
+
+<p>Now, to edit an existing UI element you need to know it’s hierarchy and the way it’s put together. Generally, you can do this using both the UI Editor and with Control+Alt+F12 when testing in-game. Say we want to edit the mini-map. Hit test map in the editor, use Control+Alt+F12, and click on the Minimap:</p>
+
+<p>You can see how on the right-hand Frame Tree that the hierarchy is “Game UI &gt; UI Container &gt; ConsoleUIContainer &gt; Minimap Panel”</p>
+
+<p>This helps us know the path, but we can take a closer look at the properties by going to the UI editor. Search for “Minimap” and you will find the Minimap Panel. Then you can see it’s child frames and learn about how it’s created:</p>
+
+<p><img src="http://localhost:4000/assets/pZ1V5Yk.png" alt="My helpful screenshot" /></p>
+
+<p>So, to move the minimap to the middle of the screen and change it’s size, we can do this:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8" standalone="yes"?&gt;</span>
+<span class="nt">&lt;Desc&gt;</span>
+    <span class="nt">&lt;Frame</span> <span class="na">type=</span><span class="s">"GameUI"</span> <span class="na">name=</span><span class="s">"GameUI"</span> <span class="na">file=</span><span class="s">"GameUI"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;Frame</span> <span class="na">type=</span><span class="s">"Frame"</span> <span class="na">name=</span><span class="s">"UIContainer"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;Frame</span> <span class="na">type=</span><span class="s">"Frame"</span> <span class="na">name=</span><span class="s">"ConsoleUIContainer"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;Frame</span> <span class="na">type=</span><span class="s">"MinimapPanel"</span> <span class="na">name=</span><span class="s">"MinimapPanel"</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Top"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Min"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+		<span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Left"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Min"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+		<span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Bottom"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Max"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+		<span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Right"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Max"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+				
+		<span class="nt">&lt;Height</span> <span class="na">val=</span><span class="s">"500"</span><span class="nt">/&gt;</span>
+		<span class="nt">&lt;Width</span> <span class="na">val=</span><span class="s">"500"</span><span class="nt">/&gt;</span>
+					
+		<span class="nt">&lt;Frame</span> <span class="na">type=</span><span class="s">"Minimap"</span> <span class="na">name=</span><span class="s">"Minimap"</span><span class="nt">&gt;</span>
+			<span class="nt">&lt;Height</span> <span class="na">val=</span><span class="s">"500"</span><span class="nt">/&gt;</span>
+			<span class="nt">&lt;Width</span> <span class="na">val=</span><span class="s">"500"</span><span class="nt">/&gt;</span>
+		<span class="nt">&lt;/Frame&gt;</span>
+	        <span class="nt">&lt;/Frame&gt;</span>
+	<span class="nt">&lt;/Frame&gt;</span>
+         <span class="nt">&lt;/Frame&gt;</span>
+     <span class="nt">&lt;/Frame&gt;</span>
+<span class="nt">&lt;/Desc&gt;</span>
+</code></pre></div></div>
+
+<p>Basically, the frame-viewer in-game is good for knowing the layout of things, and the UI editor is good for knowing their properties (height, width, etc). 
+Creating Your Own Templates</p>
+
+<p>Templates are a huge part of what makes Layouts so great. How do you create your own?</p>
+
+<p>The same way you create any layout, with two differences.</p>
+
+<p>This isn’t needed:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;Frame</span> <span class="na">type=</span><span class="s">"Frame"</span> <span class="na">name=</span><span class="s">"GameUI/UIContainer"</span> <span class="na">file=</span><span class="s">"GameUI"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<p>So if we wanted to make our image layout from before as a template, we’d do it like this:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8" standalone="yes"?&gt;</span>
+<span class="nt">&lt;Desc&gt;</span>
+	<span class="nt">&lt;Frame</span> <span class="na">type=</span><span class="s">"Image"</span> <span class="na">name=</span><span class="s">"FullScreenImage"</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Top"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Min"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+		<span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Left"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Min"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+		
+		<span class="nt">&lt;Texture</span> <span class="na">val=</span><span class="s">"Assets/Textures/ui_glues_voidlogoloadingscreen.dds"</span><span class="nt">/&gt;</span>
+		<span class="nt">&lt;Width</span> <span class="na">val=</span><span class="s">"640"</span><span class="nt">/&gt;</span>
+		<span class="nt">&lt;Height</span> <span class="na">val=</span><span class="s">"360"</span><span class="nt">/&gt;</span>
+
+		<span class="nt">&lt;/Frame&gt;</span>
+	<span class="nt">&lt;/Frame&gt;</span>
+<span class="nt">&lt;/Desc&gt;</span>
+</code></pre></div></div>
+
+<p>The second important thing is that when adding them to your DescIndex.SC2Layout, they need to be above all of your other layouts. I usually add a comment to separate my Templates from my other Layouts:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8" standalone="yes"?&gt;</span>
+<span class="nt">&lt;Desc&gt;</span>
+	<span class="c">&lt;!-- Templates --&gt;</span>
+   	 <span class="nt">&lt;Include</span> <span class="na">path=</span><span class="s">"UI/Layout/UnitModelFrameTemplate.SC2Layout"</span><span class="nt">/&gt;</span>
+	<span class="nt">&lt;Include</span> <span class="na">path=</span><span class="s">"UI/Layout/StatusBar.SC2Layout"</span><span class="nt">/&gt;</span>
+	<span class="c">&lt;!-- Actual Layouts --&gt;</span>
+    	<span class="nt">&lt;Include</span> <span class="na">path=</span><span class="s">"UI/Layout/MainFrame.SC2Layout"</span><span class="nt">/&gt;</span>
+	<span class="nt">&lt;Include</span> <span class="na">path=</span><span class="s">"UI/Layout/CutsceneFrame.SC2Layout"</span><span class="nt">/&gt;</span>
+	<span class="nt">&lt;Include</span> <span class="na">path=</span><span class="s">"UI/Layout/ModifyingCommandCard.SC2Layout"</span><span class="nt">/&gt;</span>
+	<span class="nt">&lt;Include</span> <span class="na">path=</span><span class="s">"UI/Layout/LearningControlButtons.SC2Layout"</span><span class="nt">/&gt;</span>
+	<span class="nt">&lt;Include</span> <span class="na">path=</span><span class="s">"UI/Layout/ScrollFrame.SC2Layout"</span><span class="nt">/&gt;</span>
+	<span class="nt">&lt;Include</span> <span class="na">path=</span><span class="s">"UI/Layout/TabControl.SC2Layout"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/Desc&gt;</span>
+</code></pre></div></div>
+
+<p>This is probably a good time to mention that you can turn a line into a comment with “CTRL+K” and un-comment them with “CTRL+SHIFT+K”.</p>
+
+<p>When creating from our template, you reference the name of the layout itself, and then the name of the first frame. You must create a frame of the same type as the first frame of your layout. To use our example, say we saved:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8" standalone="yes"?&gt;</span>
+<span class="nt">&lt;Desc&gt;</span>
+	<span class="nt">&lt;Frame</span> <span class="na">type=</span><span class="s">"Image"</span> <span class="na">name=</span><span class="s">"FullScreenImage"</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Top"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Min"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+		<span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Left"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Min"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+		
+		<span class="nt">&lt;Texture</span> <span class="na">val=</span><span class="s">"Assets/Textures/ui_glues_voidlogoloadingscreen.dds"</span><span class="nt">/&gt;</span>
+		<span class="nt">&lt;Width</span> <span class="na">val=</span><span class="s">"640"</span><span class="nt">/&gt;</span>
+		<span class="nt">&lt;Height</span> <span class="na">val=</span><span class="s">"360"</span><span class="nt">/&gt;</span>
+
+		<span class="nt">&lt;/Frame&gt;</span>
+	<span class="nt">&lt;/Frame&gt;</span>
+<span class="nt">&lt;/Desc&gt;</span>
+</code></pre></div></div>
+
+<p>As TemplateImage.SC2layout. To use this as a template when creating a frame in any of our other layout’s, we’d do this:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;Frame</span> <span class="na">type=</span><span class="s">"Image"</span> <span class="na">name=</span><span class="s">”AnyNameHere"</span> <span class="na">template=</span><span class="s">"TemplateImage/FullScreenImage"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<p>As you can see, the frame type is “Image” because that’s the same type as the first frame in our Template. The Template Path is TemplateImage/FullScreenImage because that’s the name of the template layout file followed by the name of the first frame created within it. Pretty simple stuff!</p>
+
+<h2 id="other-cool-tricks">Other Cool Tricks</h2>
+
+<h3 id="referencing-other-frames">Referencing Other Frames</h3>
+
+<p>Throughout this tutorial, we’ve used $parent when anchoring:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>		<span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Top"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Min"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>Meaning the Anchor is relative to the parent. However, you can reference a lot of other things. Going back to our Race Selection layout, for an example, we could anchor our first race button to the top of the screen, but our other buttons could be anchored to the button itself. In the following example, the Protoss button is anchored to the parent frame, but the Terran button is anchored to the Protoss button and the Zerg button is anchored to the Terran button:</p>
+
+<p>Protoss Button Anchors:</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;Frame</span> <span class="na">type=</span><span class="s">"Button"</span> <span class="na">name=</span><span class="s">"ChooseProtoss"</span> <span class="na">template=</span><span class="s">"StandardTemplates/StandardButtonTemplate"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Top"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Min"</span> <span class="na">offset=</span><span class="s">"120"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Left"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Mid"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Right"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Mid"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+<p>Terran Button Anchors:</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;Frame</span> <span class="na">type=</span><span class="s">"Button"</span> <span class="na">name=</span><span class="s">"ChooseTerran"</span> <span class="na">template=</span><span class="s">"StandardTemplates/StandardButtonTemplate"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Bottom"</span> <span class="na">relative=</span><span class="s">"$parent/ChooseProtoss"</span> <span class="na">pos=</span><span class="s">"Max"</span> <span class="na">offset=</span><span class="s">"100"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Left"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Mid"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Right"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Mid"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+<p>Zerg Button Anchors:</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;Frame</span> <span class="na">type=</span><span class="s">"Button"</span> <span class="na">name=</span><span class="s">"ChooseZerg"</span> <span class="na">template=</span><span class="s">"StandardTemplates/StandardButtonTemplate"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Bottom"</span> <span class="na">relative=</span><span class="s">"$parent/ChooseTerran"</span> <span class="na">pos=</span><span class="s">"Max"</span> <span class="na">offset=</span><span class="s">"100"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Left"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Mid"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Right"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Mid"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>This is cool, because now if you want to move all of the buttons, you can change the Protoss button’s offset from the top of the dialog, and the other two buttons will move with it – rather than having to change 3 values, you only have to change one.</p>
+
+<p>You can learn more about referencing at: https://sc2mapster.gamepedia.com/UI/Referencing</p>
+
+<h3 id="constants">Constants</h3>
+<p>You can define constants to use in your layouts:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;Constant</span> <span class="na">name=</span><span class="s">"Alpha_PlayerBar_Background"</span> <span class="na">val=</span><span class="s">"230"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;Constant</span> <span class="na">name=</span><span class="s">"Color_RaceIcon_Background"</span> <span class="na">val=</span><span class="s">"19,19,19"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;Constant</span> <span class="na">name=</span><span class="s">"Visible_ExtraUnitInfo"</span> <span class="na">val=</span><span class="s">"False"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;Constant</span> <span class="na">name=</span><span class="s">"ToggleUI"</span> <span class="na">val=</span><span class="s">"Control+W"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>Which you can then reference by prefixing with a #. For an example, we could create a “margin” constant for our Race Select Layout, and use it to track the distance between our buttons:</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;Constant</span> <span class="na">name=</span><span class="s">"Margin"</span> <span class="na">val=</span><span class="s">"120"</span><span class="nt">/&gt;</span>
+			
+<span class="nt">&lt;Frame</span> <span class="na">type=</span><span class="s">"Button"</span> <span class="na">name=</span><span class="s">"ChooseProtoss"</span> <span class="na">template=</span><span class="s">"StandardTemplates/StandardButtonTemplate"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Top"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Min"</span> <span class="na">offset=</span><span class="s">"120"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Left"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Mid"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Right"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Mid"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/Frame&gt;</span>
+			
+<span class="nt">&lt;Frame</span> <span class="na">type=</span><span class="s">"Button"</span> <span class="na">name=</span><span class="s">"ChooseTerran"</span> <span class="na">template=</span><span class="s">"StandardTemplates/StandardButtonTemplate"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Bottom"</span> <span class="na">relative=</span><span class="s">"$parent/ChooseProtoss"</span> <span class="na">pos=</span><span class="s">"Max"</span> <span class="na">offset=</span><span class="s">"#Margin"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Left"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Mid"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Right"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Mid"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/Frame&gt;</span>
+			
+<span class="nt">&lt;Frame</span> <span class="na">type=</span><span class="s">"Button"</span> <span class="na">name=</span><span class="s">"ChooseZerg"</span> <span class="na">template=</span><span class="s">"StandardTemplates/StandardButtonTemplate"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Bottom"</span> <span class="na">relative=</span><span class="s">"$parent/ChooseTerran"</span> <span class="na">pos=</span><span class="s">"Max"</span> <span class="na">offset=</span><span class="s">"#Margin"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Left"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Mid"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Right"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Mid"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/Frame&gt;</span>
+</code></pre></div></div>
+<p>Now if we want to change the space between the Protoss, Terran, and Zerg buttons later we just have to change our Margin constant. This has a ton of uses, and of course you can store more than just ints with constants.</p>
+
+<h3 id="asset-referencing">Asset Referencing</h3>
+<p>Asset referencing lets you set up layouts to automatically use different textures (and other assets) depending on the race of the player.</p>
+
+<p>A good explanation can be found here:
+https://sc2mapster.gamepedia.com/UI/Referencing#Asset_Reference</p>
+
+<p>You just need to go to your Mod folder in File Explorer,</p>
+
+<p><img src="http://localhost:4000/assets/tNYTHpp.png" alt="My helpful screenshot" /></p>
+
+<p>But back out of your Layout and UI folders. In your Base.SC2Data folder, create a “GameData” folder if one doesn’t exist already, and then create a plain Asset.txt file in it, if one doesn’t exist. Then, as the Wiki suggets, put:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>UI/BorderTexture=Assets\Textures\ui_ingame_tutorial_textborder_terr.dds
+UI/BorderTexture_Prot=Assets\Textures\ui_ingame_tutorial_textborder_prot.dds
+UI/BorderTexture_Zerg=Assets\Textures\ui_ingame_tutorial_textborder_zerg.dds
+</code></pre></div></div>
+
+<p>In your Assets.txt file. Then, go back to your Race Select layout, and change</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;Frame</span> <span class="na">type=</span><span class="s">"Image"</span> <span class="na">name=</span><span class="s">"Background"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;Anchor</span> <span class="na">relative=</span><span class="s">"$parent"</span><span class="nt">/&gt;</span>
+				
+      <span class="nt">&lt;Texture</span> <span class="na">val=</span><span class="s">"@@UI/BorderTexture"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;TextureType</span> <span class="na">val=</span><span class="s">"NineSlice"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/Frame&gt;</span>
+</code></pre></div></div>
+
+<p>Boom! Now your frame will look differently depending on the race of the player.</p>
+
+<h3 id="stategroups-and-animations">Stategroups and Animations</h3>
+
+<p>You can do a lot with both Animations and State Groups and they are pretty complicated so I wont be explaining them in-depth. I advise reading about them on the Wiki:</p>
+<ul>
+  <li>sc2mapster.gamepedia.com/UI/Animations</li>
+  <li>sc2mapster.gamepedia.com/UI/State_Groups</li>
+</ul>
+
+<p>And looking up existing layouts in the game that use them.</p>
+
+<h4 id="animations">Animations</h4>
+<p>At the very start of the tutorial, I gave you this bit of XML:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8" standalone="yes"?&gt;</span>
+<span class="nt">&lt;Desc&gt;</span>
+	<span class="nt">&lt;Frame</span> <span class="na">type=</span><span class="s">"Frame"</span> <span class="na">name=</span><span class="s">"GameUI/UIContainer"</span> <span class="na">file=</span><span class="s">"GameUI"</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;Frame</span> <span class="na">type=</span><span class="s">"Image"</span> <span class="na">name=</span><span class="s">"LoadingScreenFade"</span><span class="nt">&gt;</span>
+			<span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Top"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Min"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+			<span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Bottom"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Max"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+			<span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Left"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Min"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+			<span class="nt">&lt;Anchor</span> <span class="na">side=</span><span class="s">"Right"</span> <span class="na">relative=</span><span class="s">"$parent"</span> <span class="na">pos=</span><span class="s">"Max"</span> <span class="na">offset=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+				
+			<span class="nt">&lt;Texture</span> <span class="na">val=</span><span class="s">"Assets/Textures/Loading Screen.dds"</span><span class="nt">/&gt;</span>
+			<span class="nt">&lt;Width</span> <span class="na">val=</span><span class="s">"3000"</span><span class="nt">/&gt;</span>
+			<span class="nt">&lt;Height</span> <span class="na">val=</span><span class="s">"2000"</span><span class="nt">/&gt;</span>
+			
+			<span class="nt">&lt;Animation</span> <span class="na">name=</span><span class="s">"Show"</span><span class="nt">&gt;</span>
+				<span class="nt">&lt;Event</span> <span class="na">event=</span><span class="s">"OnShown"</span> <span class="na">action=</span><span class="s">"Reset,Play"</span><span class="nt">/&gt;</span>
+		 
+				<span class="nt">&lt;Controller</span> <span class="na">type=</span><span class="s">"Fade"</span> <span class="na">end=</span><span class="s">"Pause"</span><span class="nt">&gt;</span>
+					<span class="nt">&lt;Key</span> <span class="na">type=</span><span class="s">"Curve"</span> <span class="na">time=</span><span class="s">"0"</span> <span class="na">value=</span><span class="s">"255"</span> <span class="na">out=</span><span class="s">"Slow"</span><span class="nt">/&gt;</span>
+					<span class="nt">&lt;Key</span> <span class="na">type=</span><span class="s">"Curve"</span> <span class="na">time=</span><span class="s">"3"</span> <span class="na">value=</span><span class="s">"0"</span> <span class="na">in=</span><span class="s">"Slow"</span><span class="nt">/&gt;</span>
+				<span class="nt">&lt;/Controller&gt;</span>
+			<span class="nt">&lt;/Animation&gt;</span>
+		<span class="nt">&lt;/Frame&gt;</span>
+	<span class="nt">&lt;/Frame&gt;</span>
+<span class="nt">&lt;/Desc&gt;</span>
+</code></pre></div></div>
+<p>…containing a basic animation.</p>
+
+<p>This animation is triggered “OnShown” meaning as soon as the Layout becomes visible - in Trigger terms, this is the “Event.” Controllers are the “Actions” - this one is a Fade, meaning it changes the transparency, or alpha, of the frame. Keys are like keyframes in traditional animation: they dictate what the value should be at what time. In this case, the first Key begins at 0 seconds (immediately) and sets the frame to fully visible. The second key occurs at 3 seconds, and sets the alpha to 0. This means the animation makes the frame fade from fully visible to fully transparent over 3 seconds, as soon as it is shown. 
+This: action=”Reset,Play”/&gt; means that every time the animation is triggered by the Event (OnShown) it resets the animation back to the first Key, and plays again. 
+Like triggers, your animations can also have conditions. So, for our animation:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;Animation</span> <span class="na">name=</span><span class="s">"Show"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;Event</span> <span class="na">event=</span><span class="s">"OnShown"</span> <span class="na">action=</span><span class="s">"Reset,Play"</span><span class="nt">/&gt;</span>
+		 
+	<span class="nt">&lt;Controller</span> <span class="na">type=</span><span class="s">"Fade"</span> <span class="na">end=</span><span class="s">"Pause"</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;Key</span> <span class="na">type=</span><span class="s">"Curve"</span> <span class="na">time=</span><span class="s">"0"</span> <span class="na">value=</span><span class="s">"255"</span> <span class="na">out=</span><span class="s">"Slow"</span><span class="nt">/&gt;</span>
+		<span class="nt">&lt;Key</span> <span class="na">type=</span><span class="s">"Curve"</span> <span class="na">time=</span><span class="s">"3"</span> <span class="na">value=</span><span class="s">"0"</span> <span class="na">in=</span><span class="s">"Slow"</span><span class="nt">/&gt;</span>
+	<span class="nt">&lt;/Controller&gt;</span>
+<span class="nt">&lt;/Animation&gt;</span>
+</code></pre></div></div>
+<p>Event: OnShown
+Action: Reset, Play
+Controller: Fade
+	End: Pause (The animation only plays once)</p>
+
+<p>Try adding this animation to one of your own layouts. Then, go to the Wiki and look for other events, actions, controllers, and controller ends to try for different effects. Try changing the controller End type from Pause to “PingPong”</p>
+
+<h4 id="stategroups">StateGroups</h4>
+
+<p>StateGroups are pretty cool too, allowing you to set various states frames can be in. For an example, I made a more complex race select UI where the main frame had a State for each race, and this State changed the look of the frame. In turn, all of my race selection buttons had an animation that set the state of my parent frame. The result looked like this: https://streamable.com/ovymf</p>
+
+<p>If you want a challenge, you can copy the XML for that frame here: https://pastebin.com/9wKessCm</p>
+
+<p>And try to learn how Stategroups can be used and how they can interact with animations. In general, I advise looking at other layouts to see how State Groups can be used.</p>
+
+<h2 id="learning-resources">Learning Resources</h2>
+
+<p>How do you learn more from here? I advise looking up Frame Types and Frame Properties on the Wiki.</p>
+
+<ul>
+  <li>Frame Types: https://sc2mapster.gamepedia.com/UI/Frame_Types</li>
+  <li>Frame Properties: https://sc2mapster.gamepedia.com/UI/Frame_Properties</li>
+</ul>
+
+<p>Anything that’s yellow has more information about if you click on it – you can start by skimming those, looking for anything you think you’ll want to use.</p>
+
+<p>But as you’ll quickly find out, the wiki is missing vast amounts of information. The next step is usually to search up that frame type or property in the UI editor. The search bar is kind of useless, but you can use “Control+F” and check “Search All Layouts”</p>
+
+<p>For an example, as of writing this the Wiki has nothing on ScrollableFrame. So just search the UI editor for examples with Control+F like this:</p>
+
+<p><img src="http://localhost:4000/assets/w66KVyL.png" alt="My helpful screenshot" /></p>
+
+<p>As you can see, it turned up a ScrollableFrame. Usually, the best thing to do is copy all of this frame into your own layout and then tinker with it to see how things work.</p>
+
+<p>Often times you can learn from Heroes of the Storm layouts, since they are similar. Of course, if you run into trouble you can always ask the kind folks in the #userinterface channel on the Sc2mapster Discord: https://discord.gg/sNkMufq</p>
+
+<p>They were very patient in babysitting me until I got the hang of things. Two tips: Share long XML using https://hastebin.com</p>
+
+<p>Shorter XML you can make properly formatted like so:</p>
+
+<p><img src="http://localhost:4000/assets/ym3VCqX.png" alt="My helpful screenshot" /></p>
+
+<p>Result:</p>
+
+<p><img src="http://localhost:4000/assets/slOfoTf.png" alt="My helpful screenshot" /></p>
+
+<h2 id="basic-troubleshooting">Basic Troubleshooting</h2>
+<p>Number one tip: Pay attention to errors. Errors appear at the top of your screen in red. You may be in the habit of closing those out as soon as you test, but don’t do that. They’re useful.</p>
+
+<p><strong>Some examples:</strong></p>
+
+<p><img src="http://localhost:4000/assets/JwxFaff.png" alt="My helpful screenshot" /></p>
+
+<p>This means the font style doesn’t exist. You probably have this error if you followed this tutorial exactly, because that’s a typo I made when setting the font style for the button labels. It shouldn’t have the word “Layout” in it. You can delete that line entirely, fix it, or look up or create  your own Font Style to use instead. This was a genuine mistake on my part, but I left it in so you could learn troubleshooting.</p>
+
+<p><img src="http://localhost:4000/assets/c39Kqwp.png" alt="My helpful screenshot" /></p>
+
+<p>Anytime an error ends with “XML: not well-formed” it means you goofed up your syntax. Common errors include missing quotation marks, equals signs, brackets, or slashes. In this case, I’m missing a “&gt;” at the end of this line:</p>
+
+<p><img src="http://localhost:4000/assets/SPCSxbJ.png" alt="My helpful screenshot" /></p>
+
+<p>The full error message told me the error was on line 34. Usually the mistake happens a line before. NotePad++ shows line counts to the left, so I could easily scroll to line 33 and find my mistake.</p>
+
+<p><strong>Any Error With “Anchor” in it</strong></p>
+
+<p>If an error message has “Anchor” in it, you probably screwed up your Anchors somehow!</p>
+
+<p><strong>Any Error With “[Frame] not able to be hooked up in [Path]”</strong></p>
+
+<p>While you may have done your hookups via triggers wrong, try fixing your other errors first. Good chances this appears just because a different error broke your Layout, and because your layout is broken, it obviously can’t be hooked up via triggers because it failed to be created in the first place.</p>
+
+<h3 id="help-my-frame-isnt-showing-up">Help? My frame isn’t showing up!</h3>
+
+<p>If Created from a Template: Make sure your frame type is the same as the frame type of your template. Double-Check the frame types match. 
+If Not: You probably screwed up anchors/sizing. It’s easy to do. Keep fiddling with anchors and/or set a height/width for your frame. Try copying anchors you know work from a different frame to troubleshoot.</p>
+
+<h3 id="my-changes-didnt-appear">My changes didn’t appear!</h3>
+
+<p>When I first started, this would happen a lot just because I forgot to save my Layouts in NotePad++ before testing – or back before I realized Control+Alt+F11 doesn’t load all changes.</p>
+
+<h2 id="credits">Credits</h2>
+
+<p>Thanks to Pirate, who not only had a significant part in teaching me layouts – but also I copied a bit from his tutorial</p>
+
+<p>Thanks to rtschutter, I link to his WIP anchoring tutorial</p>
+
+<p>Thanks to everyone in the sc2mapster #userinterface channel who taught me layouts, some names:  Pirate, willuwontu, Broot, ArcaneDurandel, rtschutter, and Pirate</p>
+
+
+
+  <small>tags: <em>ui</em> - <em>layout</em></small>
+
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>
