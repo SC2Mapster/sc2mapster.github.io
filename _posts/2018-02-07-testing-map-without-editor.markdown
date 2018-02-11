@@ -1,6 +1,6 @@
 ---
 title: Testing your map without using the editor
-date: 2018-02-10 08:04:00 Z
+date: 2018-02-07 08:04:00 Z
 categories:
 - UI
 tags:
