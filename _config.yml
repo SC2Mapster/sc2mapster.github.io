@@ -8,5 +8,13 @@ collections:
   uploads:
     title: Uploads
     output: true
+  editor_tutorials:
+    output: true
 theme: jekyll-theme-hacker
 repository: Sc2mapster/sc2mapster.github.io
+defaults:
+  - scope:
+      path: ""
+      type: "editor_tutorials"
+    values:
+      layout: post

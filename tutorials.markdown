@@ -4,6 +4,8 @@ date: 2018-02-08 06:39:00 Z
 ---
 
 <h1>{{ page.title }}</h1>
+<h2>Blizzard Tutorials</h2>
+<p>You can find blizzard written tutorials over <a href="editor-tutorials.html">here</a>.</p>
 <h2>UI</h2>
 <ul>
   {% for post in site.categories.UI %}

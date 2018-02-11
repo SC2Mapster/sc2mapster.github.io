@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=e59fb72e5ef60f32a67b812874e7b28118997c7b">
+
+<!-- Begin Jekyll SEO tag v2.3.0 -->
+<title>Game Variants | Sc2mapster Github</title>
+<meta property="og:title" content="Game Variants" />
+<meta name="author" content="jrepp" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="GAME VARIANTS" />
+<meta property="og:description" content="GAME VARIANTS" />
+<link rel="canonical" href="http://localhost:4000/editor_tutorials/01_Introduction/012_Game_Variants.html" />
+<meta property="og:url" content="http://localhost:4000/editor_tutorials/01_Introduction/012_Game_Variants.html" />
+<meta property="og:site_name" content="Sc2mapster Github" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-02-11T11:12:18+00:00" />
+<script type="application/ld+json">
+{"publisher":null,"headline":"Game Variants","dateModified":"2018-02-11T11:12:18+00:00","datePublished":"2018-02-11T11:12:18+00:00","sameAs":null,"url":"http://localhost:4000/editor_tutorials/01_Introduction/012_Game_Variants.html","author":{"@type":"Person","name":"jrepp"},"description":"GAME VARIANTS","image":null,"name":null,"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/editor_tutorials/01_Introduction/012_Game_Variants.html"},"@type":"BlogPosting","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Sc2mapster Github</h1>
+        <h2>Github page for Starcraft 2 Modding Guides</h2>
+
+        <section id="downloads">
+          
+          <a href="http://github.com/Sc2mapster/sc2mapster.github.io" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        
+
+<h1>Game Variants</h1>
+<p class="view">by <a href="mailto:jacobrepp@gmail.com">jrepp</a> (<em><small>11 February 2018</small></em>)</p>
+
+<ul>
+  <li><a href="#game-variants">GAME VARIANTS</a>
+    <ul>
+      <li><a href="#variants---lobby-view">VARIANTS - LOBBY VIEW</a></li>
+      <li><a href="#game-type">GAME TYPE</a></li>
+      <li><a href="#game-attributes">GAME ATTRIBUTES</a></li>
+      <li><a href="#player-attributes">PLAYER ATTRIBUTES</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="game-variants">GAME VARIANTS</h1>
+
+<p>Setting Game Variants allows a developer to specify the options
+available to players in a map’s Battle.net lobbies. Together with Game
+Attributes, game variants control the distinctions for the different
+modes in which your project may be presented. These variants can only be
+set in a map document, not in a mod file. They are configured by
+navigating to Map -&gt; Game Variants from anywhere in the Editor. You can
+see the location in the image below.</p>
+
+<p><img src="./012_Game_Variants/image1.png" alt="Image" /></p>
+
+<p>Navigating to Game Variants</p>
+
+<p>Once you’ve selected Game Variants, you will be presented with the
+following window.</p>
+
+<p><img src="./012_Game_Variants/image2.png" alt="Image" /></p>
+
+<p>Game Variants Window</p>
+
+<p>Note the leftmost sidebar, titled ‘Variants’. This list details all of
+the modes available for the game and will remain active through any of
+the tabbed views you select. You can create a new variant by
+right-clicking in this side bar and selecting ‘Add’ or ‘Add Standard.’</p>
+
+<p>If you are working on a new project, before you can start editing
+variants you’ll need to opt out of the default settings by unchecking
+the Use Default Variants option at the bottom-left corner of the
+variants window. Highlighting a variant from the sidebar will allow you
+to change its settings in the three tabs: Game Type, Game Attributes,
+and Player Attributes. The settings in these tabs are detailed later in
+this article.</p>
+
+<h2 id="variants---lobby-view">VARIANTS - LOBBY VIEW</h2>
+
+<p>Game variants are used to define the options available to the host of an
+Arcade lobby. These options are accessible through the ‘Settings’ panel
+of a typical lobby, as shown in the image below.</p>
+
+<p><img src="./012_Game_Variants/image3.png" alt="Image" /></p>
+
+<p>Default Lobby</p>
+
+<h2 id="game-type">GAME TYPE</h2>
+
+<p><img src="./012_Game_Variants/image4.png" alt="Image" /></p>
+
+<p>Game Type Tab</p>
+
+<p>The basic settings of a variant are established in the Game Type tab.
+The Mode defines what is generally thought of as the variant, while the
+Category offers a sorting option. These will be reflected later in the
+‘Category’ and ‘Mode’ fields that players see in the game lobby. The
+Genre setting for a game, which is found on a dropdown at the top of the
+variants window, defines the main search category under which the map
+will be sorted on the Arcade.</p>
+
+<h2 id="game-attributes">GAME ATTRIBUTES</h2>
+
+<p><img src="./012_Game_Variants/image5.png" alt="Image" /></p>
+
+<p>Game Attributes Tab</p>
+
+<p>The Game Attributes tab determines most of the configurable values found
+in the ‘Settings’ section of a typical lobby. Each of the five
+attributes here may be set to a default value. In some cases, they can
+have values removed from the list possible selections using the Removed
+Values option. The details of each attribute are broken down in the
+following table.</p>
+
+<hr />
+<p>Attribute   Details
+  ———– ——————————————————————
+  Game        The duration of time after which the game is concluded. Typically,
+  Duration    this is set to Infinite and a game will have its own methodology
+              for determining when play has ended.</p>
+
+<p>Game        Determines match history and build order visibility options. This
+  Privacy     is primarily used to support high-level competitive play, where
+              players may wish to keep certain game information private. The
+              standard setting, Normal, sets both match history and build orders
+              to visible after a game.</p>
+
+<p>Game Speed  Determines the specific game speed at which the engine will run.
+              The standard is Faster.</p>
+
+<p>Lobby Delay Sets a countdown timer which will play after the game is launched
+              from the lobby. The standard is 10 seconds.</p>
+
+<p>Locked      Sets the alliance lock status. Unlocked alliances will allow
+  Alliances   players to negotiate who their allies and enemies are within the
+              game. By default this is displayed, but Locked. It may also be
+              Hidden, which locks alliances but will not show what those
+              alliances are.
+  ——————————————————————————</p>
+
+<p>In order to understand how these attributes are set within a lobby, it
+is important understand the concept of Access. Every attribute has a
+specific Access that determines whether or not it can be changed in the
+game lobby. If an attribute is set to Unlocked, it may be altered in the
+lobby. A Locked attribute can be seen in the lobby, but cannot be
+changed. A Hidden attribute can neither be seen nor changed. Any
+attribute that is configurable in the lobby can only be set by the lobby
+host.</p>
+
+<h2 id="player-attributes">PLAYER ATTRIBUTES</h2>
+
+<p><img src="./012_Game_Variants/image6.png" alt="Image" /></p>
+
+<p>Player Attributes Tab</p>
+
+<p>The Player Attributes tab is a more in-depth version of Player
+Properties. Here you can set attributes for each individual player,
+including Race, Color, Handicap, and other standard melee options.</p>
+
+<p>Much like the Game Attributes tab, the Access for every attribute can be
+set here, but here it is handled on a per-player basis.</p>
+
+
+
+  <small>tags: <em></em></small>
+
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

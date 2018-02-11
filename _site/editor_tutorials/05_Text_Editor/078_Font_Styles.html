@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=e59fb72e5ef60f32a67b812874e7b28118997c7b">
+
+<!-- Begin Jekyll SEO tag v2.3.0 -->
+<title>Font Styles | Sc2mapster Github</title>
+<meta property="og:title" content="Font Styles" />
+<meta name="author" content="jrepp" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="FONT STYLES" />
+<meta property="og:description" content="FONT STYLES" />
+<link rel="canonical" href="http://localhost:4000/editor_tutorials/05_Text_Editor/078_Font_Styles.html" />
+<meta property="og:url" content="http://localhost:4000/editor_tutorials/05_Text_Editor/078_Font_Styles.html" />
+<meta property="og:site_name" content="Sc2mapster Github" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-02-11T11:12:18+00:00" />
+<script type="application/ld+json">
+{"publisher":null,"headline":"Font Styles","dateModified":"2018-02-11T11:12:18+00:00","datePublished":"2018-02-11T11:12:18+00:00","sameAs":null,"url":"http://localhost:4000/editor_tutorials/05_Text_Editor/078_Font_Styles.html","author":{"@type":"Person","name":"jrepp"},"description":"FONT STYLES","image":null,"name":null,"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/editor_tutorials/05_Text_Editor/078_Font_Styles.html"},"@type":"BlogPosting","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Sc2mapster Github</h1>
+        <h2>Github page for Starcraft 2 Modding Guides</h2>
+
+        <section id="downloads">
+          
+          <a href="http://github.com/Sc2mapster/sc2mapster.github.io" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        
+
+<h1>Font Styles</h1>
+<p class="view">by <a href="mailto:jacobrepp@gmail.com">jrepp</a> (<em><small>11 February 2018</small></em>)</p>
+
+<ul>
+  <li><a href="#font-styles">FONT STYLES</a>
+    <ul>
+      <li><a href="#creating-a-font-style">CREATING A FONT STYLE</a></li>
+      <li><a href="#create-font-style-from-template">CREATE FONT STYLE FROM TEMPLATE</a></li>
+      <li><a href="#applying-a-font-style">APPLYING A FONT STYLE</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="font-styles">FONT STYLES</h1>
+
+<p>Font Styles allow you to change the basic presentation of your text.
+Font styles don’t need to be particularly elaborate or exotic. They
+represent any distinction made to a font from the default text used by
+the game.</p>
+
+<h2 id="creating-a-font-style">CREATING A FONT STYLE</h2>
+
+<p>Creating font styles lets you use font assets from outside the standard
+dependencies. You can set up styles with any choice of existing or
+imported fonts, but for this exercise you’ll use a free font sample of
+OpenSans. First, import the font using the Importer. You can get there
+via Module -&gt; Import. There, right-click inside the white box and
+select ‘Import Files,’ then locate the font file, either a .ttf or .otf,
+and click ‘Ok.’ Saving your project after the import should present you
+with the following.</p>
+
+<p><img src="./078_Font_Styles/image1.png" alt="Image" /></p>
+
+<p>Imported Font</p>
+
+<p>Font styles themselves are created from the Text Editor. To build a font
+style, navigate there via Modules -&gt; Text. Move to the ‘Font Styles’
+heading and right-click in the main listing. Select ‘Add Style’ to
+begin, as shown below.</p>
+
+<p><img src="./078_Font_Styles/image2.png" alt="Image" /></p>
+
+<p>Adding a Font Style</p>
+
+<p>In the ‘Style Properties’ pop up, set the ‘Name’ to ‘OpenSans18.’ This
+denotes the font type and its intended size.</p>
+
+<p><img src="./078_Font_Styles/image3.png" alt="Image" /></p>
+
+<p>Style Naming</p>
+
+<p>Once the font style has been created, you can configure it using the
+panel on the right-hand side of the Text Editor. In this case, set Font
+Height to 18, Horizontal Justify to Left, and Vertical Justify to
+Middle. Set the text’s color to white. The set fields should look as
+follows.</p>
+
+<p><img src="./078_Font_Styles/image4.png" alt="Image" /></p>
+
+<p>Configured OpenSans18 Style</p>
+
+<p>Turn your attention to the ‘Text Preview’ to get a feel for the style.
+With the options above set correctly, it should look as shown in the
+image below.</p>
+
+<p><img src="./078_Font_Styles/image5.png" alt="Image" /></p>
+
+<p>OpenSans18 Style Preview</p>
+
+<h2 id="create-font-style-from-template">CREATE FONT STYLE FROM TEMPLATE</h2>
+
+<p>From here you can create more font styles using the ‘OpenSans18’ style
+as a template. This will set all fields of the child style to that of
+its parent. This option is a useful timesaver, you can use it to build
+out a family of styles that has a degree of consistency.</p>
+
+<p>Create a new font style from a template by navigating to ‘Add Font
+Style’ in the Text Editor. Name the style ‘OpenSans48’ then set its
+‘Template’ to ‘OpenSans18,’ as shown below.</p>
+
+<p><img src="./078_Font_Styles/image6.png" alt="Image" /></p>
+
+<p>Style Creation from Template</p>
+
+<p>Configure this style’s Font Height to 48, then check the Shadow flag and
+set a Shadow Offset of 2. Add an Outline Width of 4 then set the two
+color choices to (R175, G237, B230) and (R133, G220, B139). Alternately,
+you can choose to experiment with how the font looks now. This should
+leave you with a style panel that looks as shown in the image below.</p>
+
+<p><img src="./078_Font_Styles/image7.png" alt="Image" /></p>
+
+<p>Configured OpenSans48 Style</p>
+
+<p>The preview will now show a more substantial typeface, as in the image
+below.</p>
+
+<p><img src="./078_Font_Styles/image8.png" alt="Image" /></p>
+
+<p>OpenSans48 Style Preview</p>
+
+<h2 id="applying-a-font-style">APPLYING A FONT STYLE</h2>
+
+<p>Once created, you can apply font styles from anywhere in the Editor that
+you can edit text. The Text Editor is a top-down solution for changing
+the content or font styles of any text within a project. Navigating to
+the ‘Text’ tab will display a list of all the project text. This view is
+shown below.</p>
+
+<p><img src="./078_Font_Styles/image9.png" alt="Image" /></p>
+
+<p>Text Editor Main View</p>
+
+<p>Highlighting an instance of text will push its details to the right-hand
+side of the screen, which consists of three sub-panels, Text Entry, Text
+Controls, and Text Preview.</p>
+
+<p><img src="./078_Font_Styles/image10.png" alt="Image" /></p>
+
+<p>Text Entry – Text Controls – Text Preview</p>
+
+<p>You can apply a style to a highlighted piece of text by selecting it
+from the ‘Apply Style’ dropdown.</p>
+
+<p><img src="./078_Font_Styles/image11.png" alt="Image" /></p>
+
+<p>Selecting Style for Application</p>
+
+<p>Clicking the ‘Apply Style’ button will finish the operation by appending
+a style tag around the text entry. A style tag will precede the raw text
+with &lt;s val =’Style Name”&gt; and follow it with &lt;/s&gt;. These elements
+instruct the game to change the contained text’s style at run-time. For
+now, you can preview the text output from the Text Preview panel.</p>
+
+<p><img src="./078_Font_Styles/image12.png" alt="Image" /></p>
+
+<p>Text with Applied Font Style</p>
+
+<p>Alternately, you can style text while you fill any text field in the
+Trigger Editor. Selecting a text field and navigating to the ‘Value’
+source should bring up another editor reminiscent of the Text Editor.</p>
+
+<p><img src="./078_Font_Styles/image13.png" alt="Image" /></p>
+
+<p>Styling a Text Field</p>
+
+<p>As before, highlight any inputted text to unlock the Text Controls.
+Select a style with the ‘Apply Style’ dropdown and click the button
+itself to style the text. The results of this process are shown below.</p>
+
+<p><img src="./078_Font_Styles/image14.png" alt="Image" /></p>
+
+<p>Styled Text in the Trigger Editor</p>
+
+<p>In this case, you can test the updated text by launching the map.
+Pictured below is a standard example of the styled text in the
+game-view.</p>
+
+<p><img src="./078_Font_Styles/image15.png" alt="Image" /></p>
+
+<p>Styled Text in Game-View</p>
+
+
+
+  <small>tags: <em></em></small>
+
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

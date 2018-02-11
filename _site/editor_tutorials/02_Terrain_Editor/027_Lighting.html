@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=e59fb72e5ef60f32a67b812874e7b28118997c7b">
+
+<!-- Begin Jekyll SEO tag v2.3.0 -->
+<title>Lighting | Sc2mapster Github</title>
+<meta property="og:title" content="Lighting" />
+<meta name="author" content="jrepp" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="LIGHTING" />
+<meta property="og:description" content="LIGHTING" />
+<link rel="canonical" href="http://localhost:4000/editor_tutorials/02_Terrain_Editor/027_Lighting.html" />
+<meta property="og:url" content="http://localhost:4000/editor_tutorials/02_Terrain_Editor/027_Lighting.html" />
+<meta property="og:site_name" content="Sc2mapster Github" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-02-11T11:12:18+00:00" />
+<script type="application/ld+json">
+{"publisher":null,"headline":"Lighting","dateModified":"2018-02-11T11:12:18+00:00","datePublished":"2018-02-11T11:12:18+00:00","sameAs":null,"url":"http://localhost:4000/editor_tutorials/02_Terrain_Editor/027_Lighting.html","author":{"@type":"Person","name":"jrepp"},"description":"LIGHTING","image":null,"name":null,"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/editor_tutorials/02_Terrain_Editor/027_Lighting.html"},"@type":"BlogPosting","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Sc2mapster Github</h1>
+        <h2>Github page for Starcraft 2 Modding Guides</h2>
+
+        <section id="downloads">
+          
+          <a href="http://github.com/Sc2mapster/sc2mapster.github.io" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        
+
+<h1>Lighting</h1>
+<p class="view">by <a href="mailto:jacobrepp@gmail.com">jrepp</a> (<em><small>11 February 2018</small></em>)</p>
+
+<ul>
+  <li><a href="#lighting">LIGHTING</a>
+    <ul>
+      <li><a href="#lighting-details">LIGHTING DETAILS</a></li>
+      <li><a href="#demoing-lighting">DEMOING LIGHTING</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="lighting">LIGHTING</h1>
+
+<p>The Editor features a robust lighting system that you can use to create
+a wide palette of moods, looks, and feels for your project. The image
+below is an example of how the same scene can be realized in different
+ways by editing the lighting alone.</p>
+
+<p><img src="./027_Lighting/image1.png" alt="Image" /></p>
+
+<p>Varied Lighting on the Same Scene</p>
+
+<h2 id="lighting-details">LIGHTING DETAILS</h2>
+
+<p>Lighting is actually accomplished in a number of different ways in the
+StarCraft engine. You may recall seeing light sources like street lamps
+props and mining lights attached to characters. Some spell and ability
+effects can even dynamically light a scene in interesting ways, but this
+article will focus on global lighting effects within a map.</p>
+
+<p>The lighting in a map is set to one particular style at a time. It can
+then be dynamically altered to other styles during gameplay. You’ll find
+these lighting styles in an extensive data type called Lights, which is
+handled directly through the Data Editor. Due to the number of options
+available when working with lighting, the Editor also features a special
+tool called the Lighting Window. This interface collects all of the
+lighting controls and puts them alongside the pre-built lighting styles
+within the Editor.</p>
+
+<p><img src="./027_Lighting/image2.png" alt="Image" /></p>
+
+<p>Varied Lighting on the Same Scene</p>
+
+<h2 id="demoing-lighting">DEMOING LIGHTING</h2>
+
+<p>Open the demo map provided with this article. You’ll see that it
+contains a scene in which a bar front is lit with a default lighting
+setting that looks like natural sunlight. First, you’ll learn how to
+change the lighting from day to night, then how to use triggers to
+slowly reintroduce daytime lighting, simulating a sunrise.</p>
+
+<p>The best place to start is in the Data Editor. Lighting is applied on
+the basis of the current Terrain Type. This is the designation in data
+for the landscape controlling the textures, style of doodads, and so
+forth. The demo map is set to the ‘Agria (Jungle)’ type. Open the
+‘Terrain Type Tab’ by clicking on the ‘New Tab’ + button and navigating
+to Edit Terrain Data -&gt; Terrain Types. Now, set the lighting by double
+clicking on the ‘Lighting’ property as shown below.</p>
+
+<p><img src="./027_Lighting/image3.png" alt="Image" /></p>
+
+<p>Lighting Data Property</p>
+
+<p>If you’re unsure what Terrain Type your map is using, you can see it by
+navigating to Map -&gt; Map Textures. The field ‘Current Texture Set’ will
+provide the answer, as shown below.</p>
+
+<p><img src="./027_Lighting/image4.png" alt="Image" /></p>
+
+<p>Checking Terrain Type</p>
+
+<p>Clicking on the ‘Lighting’ field will launch the ‘Object Values’ window.
+Find the ‘Mar Sara Night Test’ lighting, select it, and click ‘Ok.’</p>
+
+<p><img src="./027_Lighting/image5.png" alt="Image" /></p>
+
+<p>Selecting Lighting</p>
+
+<p>Confirm that you’ve successfully changed the terrain’s lighting by
+opening the Terrain Module and selecting Render -&gt; Show Lighting -&gt;
+Game Lighting. The main view should show a much darker, twilit scene.
+The difference between the original lighting settings and the new ones
+is shown below.</p>
+
+<p><img src="./027_Lighting/image6.png" alt="Image" /></p>
+
+<p>Lighting Changes</p>
+
+<p>Now go to the Trigger Editor and open the ‘Initialization’ trigger. This
+trigger uses some actions that remove the game’s UI, reveal the map for
+view, and apply a standard camera. Add a new ‘Wait’ action by
+right-clicking under the ‘Actions’ heading and navigating to New -&gt; New
+Action. Set the ‘Time’ field of this action to 2.0. Then add the ‘Set
+Lighting’ action, using the same procedure. Set the ‘Light’ field to
+‘Mar Sara Day Test’ and change the ‘Blend Time’ to 6.0. This should
+leave you with the following.</p>
+
+<p><img src="./027_Lighting/image7.png" alt="Image" /></p>
+
+<p>Prepared Trigger</p>
+
+<p>The map is now complete. If you run a test, after a brief wait, the
+current lighting style, ‘Mar Sara Night Test’ will slowly change,
+blending into ‘Mara Sara Day Test.’ Giving a night-to-day lighting
+transition just like a sunrise. Launch the ‘Test Map’ function to see
+the result. It will slowly change the scene’s setting, similar to the
+sequence shown below.</p>
+
+<p><img src="./027_Lighting/image8.png" alt="Image" /></p>
+
+<p>Lighting Changes Simulating a Sunrise</p>
+
+
+
+  <small>tags: <em></em></small>
+
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

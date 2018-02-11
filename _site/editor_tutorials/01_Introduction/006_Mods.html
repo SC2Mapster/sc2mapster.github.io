@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=e59fb72e5ef60f32a67b812874e7b28118997c7b">
+
+<!-- Begin Jekyll SEO tag v2.3.0 -->
+<title>Mods | Sc2mapster Github</title>
+<meta property="og:title" content="Mods" />
+<meta name="author" content="jrepp" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="MODS" />
+<meta property="og:description" content="MODS" />
+<link rel="canonical" href="http://localhost:4000/editor_tutorials/01_Introduction/006_Mods.html" />
+<meta property="og:url" content="http://localhost:4000/editor_tutorials/01_Introduction/006_Mods.html" />
+<meta property="og:site_name" content="Sc2mapster Github" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-02-11T11:12:18+00:00" />
+<script type="application/ld+json">
+{"publisher":null,"headline":"Mods","dateModified":"2018-02-11T11:12:18+00:00","datePublished":"2018-02-11T11:12:18+00:00","sameAs":null,"url":"http://localhost:4000/editor_tutorials/01_Introduction/006_Mods.html","author":{"@type":"Person","name":"jrepp"},"description":"MODS","image":null,"name":null,"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/editor_tutorials/01_Introduction/006_Mods.html"},"@type":"BlogPosting","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Sc2mapster Github</h1>
+        <h2>Github page for Starcraft 2 Modding Guides</h2>
+
+        <section id="downloads">
+          
+          <a href="http://github.com/Sc2mapster/sc2mapster.github.io" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        
+
+<h1>Mods</h1>
+<p class="view">by <a href="mailto:jacobrepp@gmail.com">jrepp</a> (<em><small>11 February 2018</small></em>)</p>
+
+<ul>
+  <li><a href="#mods">MODS</a>
+    <ul>
+      <li><a href="#mod-types">MOD TYPES</a></li>
+      <li><a href="#mod-usages">MOD USAGES</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="mods">MODS</h1>
+
+<p>Mods separate the assets of a game from a map file. As a result, they
+can never be launched within StarCraft itself, only handled in the
+Editor. Mods are eventually made usable by being placed within a map
+file. The map’s requirement of these mod files is known as a dependency.
+The advantage of this arrangement is easy to explain; separating game
+data from map terrain allows a mod to be hosted within various different
+maps. This means that a custom game mode can be ported to many
+differently designed locations, whether for aesthetic or gameplay
+reasons.</p>
+
+<h2 id="mod-types">MOD TYPES</h2>
+
+<p>Mod type is largely dictated by where the mods are being applied. There
+are two groups. The more typical Dependent mods contain triggers, data,
+and any type of non-terrain editor information. You can upload these
+mods to Battle.net using the Editor. However, to make a full game, they
+will eventually need to be added as a dependency to an active map within
+the Editor. This design makes them a basic organization and utility
+construct, ready for use in any map which would use custom data.</p>
+
+<p>Extension mods similarly contain all types of game changing data and are
+built within the Editor, but in contrast they are applied within the
+‘Custom Games’ interface on Battle.net by selecting a base map, then an
+extension mod. This allows a division of map and mod design. In this
+way, mod makers can use maps in various capacities without the need for
+explicit collaboration. Extension mods can also contain Dependent mod
+dependencies, and as such can be thought of as an application of the
+basic dependant mods.</p>
+
+<p>Observer Interfaces are a special subclass of extension mods. These mods
+can only make alterations to the UI segments of the Editor. This has
+special applications in customizing the competitive spectating
+experience of StarCraft matches. These interfaces can also be activated
+for use in replay viewing.</p>
+
+<h2 id="mod-usages">MOD USAGES</h2>
+
+<p>Mods are useful for avoiding redundancy. Imagine you had designed a
+custom campaign that carried special rules, characters, and player
+decisions through a series of ten maps. Without the use of a mod, you
+would have to replicate these custom rules for every single episode of
+the campaign. By moving elements of the game into a data construct, a
+mod, you eliminate the need to repeatedly rebuild maps.</p>
+
+<p>The use of mods becomes even more crucial when you consider the
+possibility of continued updates to your custom campaign. Without a
+standard mod dependency, each update cycle will result in you needing to
+make alterations to every single map. You might copy and paste data from
+map to map for each update, but without the ability to control any of
+these versions, the possibility of catastrophic failure looms large.
+Mods will organize these changes and propagate them out to every single
+map utilizing the mod, saving you significant effort.</p>
+
+<p>Beyond this, mods make it possible for you to separate work on a project
+by partitioning large portions of a game’s design into individual mods.
+This allows multiple developers to collaborate on a single project, with
+each working on different aspects of the project, such as cutscenes,
+data, and terrain.</p>
+
+<p>Mods are often used to bundle a lot of assets in order to streamline
+play on Battle.net and the Arcade. Remember that in StarCraft files are
+stored on the Battle.net servers, then downloaded and accessed locally.
+If the mod portion of a project remains unchanged between versions of a
+game, despite alterations to the rest of the game, players won’t need to
+download those mods again. If used well, this can ease both the
+development process and sharing games online. Supporting this, mod files
+can reach a maximum of 100 MB, while maps have a maximum size of 20 MB.
+This encourages smart data use and increases a map’s ability to use
+custom assets.</p>
+
+
+
+  <small>tags: <em></em></small>
+
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

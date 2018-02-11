@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=e59fb72e5ef60f32a67b812874e7b28118997c7b">
+
+<!-- Begin Jekyll SEO tag v2.3.0 -->
+<title>Click Response Behavior | Sc2mapster Github</title>
+<meta property="og:title" content="Click Response Behavior" />
+<meta name="author" content="jrepp" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="CLICK RESPONSE BEHAVIOR" />
+<meta property="og:description" content="CLICK RESPONSE BEHAVIOR" />
+<link rel="canonical" href="http://localhost:4000/editor_tutorials/04_Data_Editor/070_Click_Response_Behavior.html" />
+<meta property="og:url" content="http://localhost:4000/editor_tutorials/04_Data_Editor/070_Click_Response_Behavior.html" />
+<meta property="og:site_name" content="Sc2mapster Github" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-02-11T11:12:18+00:00" />
+<script type="application/ld+json">
+{"publisher":null,"headline":"Click Response Behavior","dateModified":"2018-02-11T11:12:18+00:00","datePublished":"2018-02-11T11:12:18+00:00","sameAs":null,"url":"http://localhost:4000/editor_tutorials/04_Data_Editor/070_Click_Response_Behavior.html","author":{"@type":"Person","name":"jrepp"},"description":"CLICK RESPONSE BEHAVIOR","image":null,"name":null,"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/editor_tutorials/04_Data_Editor/070_Click_Response_Behavior.html"},"@type":"BlogPosting","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Sc2mapster Github</h1>
+        <h2>Github page for Starcraft 2 Modding Guides</h2>
+
+        <section id="downloads">
+          
+          <a href="http://github.com/Sc2mapster/sc2mapster.github.io" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        
+
+<h1>Click Response Behavior</h1>
+<p class="view">by <a href="mailto:jacobrepp@gmail.com">jrepp</a> (<em><small>11 February 2018</small></em>)</p>
+
+<ul>
+  <li><a href="#click-response-behavior">CLICK RESPONSE BEHAVIOR</a>
+    <ul>
+      <li><a href="#demoing-click-response-behavior">DEMOING CLICK RESPONSE BEHAVIOR</a></li>
+      <li><a href="#setting-the-behaviors-fields">SETTING THE BEHAVIOR’S FIELDS</a></li>
+      <li><a href="#applying-the-click-response-behavior">APPLYING THE CLICK RESPONSE BEHAVIOR</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="click-response-behavior">CLICK RESPONSE BEHAVIOR</h1>
+
+<p>The Click Response Behavior applies an effect in response to a player’s
+clicks on its hosting unit. This is an esoteric behavior that is used in
+StarCraft’s data dependencies just once, inside each map tileset’s local
+wildlife, the critters. If you weren’t aware, critters in StarCraft, and
+in the lineage of –Craft games, exhibit some spontaneous behavior after
+being clicked repeatedly. If you haven’t had the pleasure, there are far
+worse ways to spend your time than testing this behavior now.</p>
+
+<p><img src="./070_Click_Response_Behavior/image1.png" alt="Image" /></p>
+
+<p>Click a Critter 30 TImes</p>
+
+<p>Despite its lack of traditional use, the click response behavior shows
+an interesting direct relationship between player input and a data
+effect. It’s worth investigating.</p>
+
+<h2 id="demoing-click-response-behavior">DEMOING CLICK RESPONSE BEHAVIOR</h2>
+
+<p>Open the demo map provided with this article. There you’ll find a small
+Zerg base with a flock of mutalisks drifting outside, as shown below.</p>
+
+<p><img src="./070_Click_Response_Behavior/image2.png" alt="Image" /></p>
+
+<p>Demo Map Course</p>
+
+<p>This course has been configured to allow the player to spawn mutalisks
+from the hatcheries for free and at an accelerated pace. You’ll take
+advantage of this by adding a custom click response behavior that
+destroys mutalisks after a series of clicks.</p>
+
+<p>Start assembling the behavior by moving to the Data Editor and
+navigating to the behaviors tab. If the tab is not already open you can
+launch it by navigating to + -&gt; Edit Game Data -&gt; Behaviors.
+Right-click inside the main behaviors window and select ‘Add Behavior.’
+This will appear as shown in the image below.</p>
+
+<p><img src="./070_Click_Response_Behavior/image3.png" alt="Image" /></p>
+
+<p>Creating a Behavior</p>
+
+<p>In the behavior creation window, enter ‘Mutalisk Destroy’ as the name,
+then click ‘Suggest’ to generate an ID. Now set the ‘Behavior Type’ to
+‘Click Response.’ The finished creation window should like this.</p>
+
+<p><img src="./070_Click_Response_Behavior/image4.png" alt="Image" /></p>
+
+<p>Click Response Behavior Creation</p>
+
+<p>Click ‘Ok’ to finish the creation and return to the main Data Editor
+screen.</p>
+
+<h2 id="setting-the-behaviors-fields">SETTING THE BEHAVIOR’S FIELDS</h2>
+
+<p>Once you’ve created the behavior, select it to edit its fields. First,
+move to the ‘Count’ field, where you will set the number of clicks
+required to apply the behavior. Double click the field to launch a
+‘Object Values’ window and set the ‘Count’ value to 5, as shown below.</p>
+
+<p><img src="./070_Click_Response_Behavior/image5.png" alt="Image" /></p>
+
+<p>Setting Behavior Click Count</p>
+
+<p>Next, move to the ‘Count Delay’ field. Double click the field to launch
+another ‘Object Values’ window and set its value to 0.5. This will set a
+timer that runs between clicks. If this value is exceeded, the click
+count will be reset. This can be useful if the behavior needs some sort
+of protection against being set off accidentally during normal use.</p>
+
+<p><img src="./070_Click_Response_Behavior/image6.png" alt="Image" /></p>
+
+<p>Setting Behavior Count Delay</p>
+
+<p>Now move to the ‘Count Effect’ field, select it, and double click to
+launch its editing window. This field will set the effect to be
+triggered in response to the clicks. This is a good location to come
+back to later for experimentation, but for now select ‘Suicide.’ This
+will command to unit to be removed on repeated clicking.</p>
+
+<p><img src="./070_Click_Response_Behavior/image7.png" alt="Image" /></p>
+
+<p>Setting Click Response Effect</p>
+
+<p>Now select ‘Ok’ to finish the behavior’s construction. The finished
+fields should look as they do in the image below.</p>
+
+<p><img src="./070_Click_Response_Behavior/image8.png" alt="Image" /></p>
+
+<p>Completed Behavior Fields</p>
+
+<h2 id="applying-the-click-response-behavior">APPLYING THE CLICK RESPONSE BEHAVIOR</h2>
+
+<p>The behavior is now completely prepared and ready to be hooked into
+gameplay. One nice attribute of this behavior type is that you can slot
+it directly into a unit, making it quite easy to set up. This is
+sensible, as the behavior grants an effect that responds directly to
+player input, so the behavior’s most natural location is within the unit
+itself. You can make this connection by navigating to the units tab or
+opening it via + -&gt; Edit Game Data -&gt; Units. From here, select the
+‘Mutalisk’ and move to its ‘Behaviors’ field.</p>
+
+<p><img src="./070_Click_Response_Behavior/image9.png" alt="Image" /></p>
+
+<p>Mutalisk Behavior Field</p>
+
+<p>Double click the ‘Behaviors’ field to launch the ‘Object Values’ window.
+Right-click inside the ‘Behaviors’ box and select ‘Add Value.’ This will
+add a blank behavior to the unit, as shown below.</p>
+
+<p><img src="./070_Click_Response_Behavior/image10.png" alt="Image" /></p>
+
+<p>Adding Mutalisk Behavior</p>
+
+<p>Once created, highlight the new value and find the ‘Mutalisk Destroy’
+behavior with either the window’s search feature or the scroll bar.</p>
+
+<p><img src="./070_Click_Response_Behavior/image11.png" alt="Image" /></p>
+
+<p>Mutalisk Destroy Behavior is Set</p>
+
+<p>Click ‘Ok’ to select the behavior. At this point, you have one last
+change to make to the unit. By default, units do not respond to player
+clicks as a data event. They may be clickable and useable within the
+gameplay view, but as a signal they produce no event on the data side of
+things. To correct this, highlight the ‘Mutalisk’ and navigate to its
+‘Flags’ field. Double click the field to launch it, then move to the
+‘Cannot Be Clicked’ flag and deselect it.</p>
+
+<p><img src="./070_Click_Response_Behavior/image12.png" alt="Image" /></p>
+
+<p>Allowing the Mutalisk to be Clicked</p>
+
+<p>Click ‘Ok’ to return to the main Data Editor view. The map is now
+complete and you can run the ‘Test Document’ feature. If you inspect a
+mutalisk inside the map, you’ll find that they’re now tagged with a
+behavior status, as shown below.</p>
+
+<p><img src="./070_Click_Response_Behavior/image13.png" alt="Image" /></p>
+
+<p>Mutalisk with Mutalisk Destroy Behavior</p>
+
+<p>Clicking on this mutalisk five times will reveal the design of this
+behavior.</p>
+
+<p><img src="./070_Click_Response_Behavior/image14.png" alt="Image" /></p>
+
+<p>Mutalisk Click Response Effect</p>
+
+
+
+  <small>tags: <em></em></small>
+
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

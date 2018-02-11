@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=e59fb72e5ef60f32a67b812874e7b28118997c7b">
+
+<!-- Begin Jekyll SEO tag v2.3.0 -->
+<title>Points Layer | Sc2mapster Github</title>
+<meta property="og:title" content="Points Layer" />
+<meta name="author" content="jrepp" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="POINTS LAYER" />
+<meta property="og:description" content="POINTS LAYER" />
+<link rel="canonical" href="http://localhost:4000/editor_tutorials/02_Terrain_Editor/023_Points_Layer.html" />
+<meta property="og:url" content="http://localhost:4000/editor_tutorials/02_Terrain_Editor/023_Points_Layer.html" />
+<meta property="og:site_name" content="Sc2mapster Github" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-02-11T11:12:18+00:00" />
+<script type="application/ld+json">
+{"publisher":null,"headline":"Points Layer","dateModified":"2018-02-11T11:12:18+00:00","datePublished":"2018-02-11T11:12:18+00:00","sameAs":null,"url":"http://localhost:4000/editor_tutorials/02_Terrain_Editor/023_Points_Layer.html","author":{"@type":"Person","name":"jrepp"},"description":"POINTS LAYER","image":null,"name":null,"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/editor_tutorials/02_Terrain_Editor/023_Points_Layer.html"},"@type":"BlogPosting","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Sc2mapster Github</h1>
+        <h2>Github page for Starcraft 2 Modding Guides</h2>
+
+        <section id="downloads">
+          
+          <a href="http://github.com/Sc2mapster/sc2mapster.github.io" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        
+
+<h1>Points Layer</h1>
+<p class="view">by <a href="mailto:jacobrepp@gmail.com">jrepp</a> (<em><small>11 February 2018</small></em>)</p>
+
+<ul>
+  <li><a href="#points-layer">POINTS LAYER</a>
+    <ul>
+      <li><a href="#points-palette">POINTS PALETTE</a></li>
+      <li><a href="#point-types">POINT TYPES</a></li>
+      <li><a href="#point-properties">POINT PROPERTIES</a></li>
+      <li><a href="#demoing-points">DEMOING POINTS</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="points-layer">POINTS LAYER</h1>
+
+<p>The Points Layer uses marking elements called points. Points communicate
+locations to other Modules and can be accessed from the Terrain Bar
+using the icon pictured below.</p>
+
+<p><img src="./023_Points_Layer/image1.png" alt="Image" /></p>
+
+<p>Points Layer Icon</p>
+
+<h2 id="points-palette">POINTS PALETTE</h2>
+
+<p>The Points Palette is where you’ll find the tools for creating the
+different types of points, as well as a list of every active point in
+the map. You can find it on the left-hand side of the Terrain Editor
+when the Points Layer is active.</p>
+
+<p><img src="./023_Points_Layer/image2.png" alt="Image" /></p>
+
+<p>Units Preview and Existing Object List</p>
+
+<p>There are four types of points, Normal Points, Start Locations, Sound
+Emitters, and 3D Points. You can place each of them by selecting their
+respective tools and clicking on the desired location on the map. This
+will mark that location with a point and create a marker at the
+location. You can move points after they’ve been placed by selecting and
+dragging the marker. Despite the appearance of their markers, points
+don’t take up any space and will not be visible outside of the Editor.
+You can also hide the markers individually by right-clicking on a point
+in the Points Palette and changing their Show in Editor property. Point
+markers appear in the Editor as shown in the image below.</p>
+
+<p><img src="./023_Points_Layer/image3.png" alt="Image" /></p>
+
+<p>Four Types of Point Markers</p>
+
+<h2 id="point-types">POINT TYPES</h2>
+
+<p><img src="./023_Points_Layer/image7.png" alt="Image" /> they mark a specific coordinate
+on the map in the XY plane.</p>
+
+<p><img src="./023_Points_Layer/image7.png" alt="Image" /> to players, marking their
+initial starting positions. This is a special distinction which receives
+several uses throughout the Editor. These points mark the location for
+spawning the base and workers in standard melee games. They also set the
+default initial camera position for their respective players.</p>
+
+<p><img src="./023_Points_Layer/image7.png" alt="Image" /> sounds at their location.
+Typically they produce environmental noises within a specific distance
+range on the map. This means you can use them as a sort of audio doodad,
+creating decorative and atmospheric sound.</p>
+
+<p><img src="./023_Points_Layer/image7.png" alt="Image" /> but have an additional Height
+value, meaning they are used to mark a coordinate in XYZ or 3D space.</p>
+
+<h2 id="point-properties">POINT PROPERTIES</h2>
+
+<p>Points have a number of configuration options that you can set from the
+‘Point Properties’ window. You can access this window by double clicking
+a point’s marker in the Terrain Module. Alternatively, you can double
+click a point’s name in the list on the Points Palette. Below you will
+find an example of a Point Properties window and a breakdown of the
+options it gives you.</p>
+
+<p><img src="./023_Points_Layer/image8.png" alt="Image" /></p>
+
+<p>Point Properties</p>
+
+<hr />
+<p>Property   Description
+  ———- ——————————————————————-
+  Name       Labels the point for identification in the Points Palette.</p>
+
+<p>Position   The location of the point on the map as an XY value.</p>
+
+<p>Rotation   An angle stored within the point for possible use. The default
+             facing of a point is 270 degrees. A point with a custom marker will
+             show this facing.</p>
+
+<p>Color      Tints the point’s marker a select color. This option is not
+             available for Start Locations.</p>
+
+<p>Attach To  Selecting a unit with ‘Choose’ will immediately set the point’s
+             position to that of the unit. The point will then stay attached to
+             the unit as it moves, allowing it to serve as a marker for the
+             unit’s position. Useful for communicating dynamic locations to
+             other Modules.</p>
+
+<p>Model      Customizes the point’s marker model.</p>
+
+<p>Height     For 3D points only. Sets the Z component of the point’s location.</p>
+
+<p>Sound      For Sound Emitters only. Sets the sound to be played by the
+             emitter.
+  ——————————————————————————</p>
+
+<h2 id="demoing-points">DEMOING POINTS</h2>
+
+<p>Open the demo map provided with this article. You’ll see a small course
+nestled on a space platform with several points already placed. The
+course should appear as in the image below.</p>
+
+<p><img src="./023_Points_Layer/image9.png" alt="Image" /></p>
+
+<p>Demo Map Course</p>
+
+<p>The objective here is to make use of some existing trigger code that
+will spawn a marine, then allow the beacon on the map to teleport the
+marine from one platform to another. Navigate to the Trigger Editor and
+note the ‘Initialization’ trigger. A trigger for creating a marine has
+already been set up, but it requires a point for the marine to be
+spawned at. This trigger appears as follows.</p>
+
+<p><img src="./023_Points_Layer/image10.png" alt="Image" /></p>
+
+<p>Trigger Requiring a Spawn Point</p>
+
+<p>Create that point by navigating to the Terrain Editor and clicking on
+the Normal Point tool in the Points Palette. Click somewhere near the
+start location on the leftmost space platform to create a point. Double
+click the new marker to open the ‘Point Properties’ window and label the
+point ‘Marine Spawn Location.’ You should be looking at something like
+the image below.</p>
+
+<p><img src="./023_Points_Layer/image11.png" alt="Image" /></p>
+
+<p>Labelling a Point</p>
+
+<p>Return to the Trigger Editor and set the ‘Point’ value of the creation
+trigger to Marine Spawn Location. The finished trigger should match the
+image below.</p>
+
+<p><img src="./023_Points_Layer/image12.png" alt="Image" /></p>
+
+<p>Point Hooked up to Trigger</p>
+
+<p>Your marine is now prepared to use the teleportation system, but if you
+turn your attention to the map you’ll notice that the points controlling
+the teleportation have been moved out of position. You’ll find it useful
+to use ‘Object Groups’ to help you reposition those points. You can find
+them by navigating to Map -&gt; Object Groups -&gt; Points.</p>
+
+<p>Grouping these points together will let you manipulate them all at once.
+First, you’ll have to put them all into one group. Right-click in the
+leftmost subview and select Add Group. Name the group ‘Teleporter
+Points’ and then right-click in the rightmost subview and select Add
+Points. This will launch the ‘Placed Objects’ window, where you can add
+the points to a group. Select Teleporter Point 01a, Teleporter Point
+01b, Teleporter Spark Point 01a, and Teleporter Spark Point 01b, then
+click ‘Ok.’ This procedure is shown in the image below.</p>
+
+<p><img src="./023_Points_Layer/image13.png" alt="Image" /></p>
+
+<p>Creating the Object Group</p>
+
+<p>Now you should make sure that Use Group Selection is on by navigating to
+Tools -&gt; Use Group Selection. This means that moving any point in a
+group will move all of the other points in that group as well. Use this
+by selecting one of the grouped teleporter points. Move the leftmost
+point to the leftmost beacon on the space platform. Both sets of points
+should now line up with the beacons, as shown below.</p>
+
+<p><img src="./023_Points_Layer/image14.png" alt="Image" /></p>
+
+<p>Aligning the Points to the Teleportation Beacons</p>
+
+<p>Running the map as a test should now spawn a marine at the ‘Marine Spawn
+Point.’ From there, you can move the marine onto the beacon, which will
+cause him to teleport to the rightmost platform, then back again.</p>
+
+<p><img src="./023_Points_Layer/image15.png" alt="Image" /></p>
+
+<p>Teleportation Complete</p>
+
+
+
+  <small>tags: <em></em></small>
+
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

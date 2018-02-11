@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=e59fb72e5ef60f32a67b812874e7b28118997c7b">
+
+<!-- Begin Jekyll SEO tag v2.3.0 -->
+<title>Trigger Editor Interface | Sc2mapster Github</title>
+<meta property="og:title" content="Trigger Editor Interface" />
+<meta name="author" content="jrepp" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="TRIGGER EDITOR INTERFACE" />
+<meta property="og:description" content="TRIGGER EDITOR INTERFACE" />
+<link rel="canonical" href="http://localhost:4000/editor_tutorials/03_Trigger_Editor/033_Trigger_Editor_Interface.html" />
+<meta property="og:url" content="http://localhost:4000/editor_tutorials/03_Trigger_Editor/033_Trigger_Editor_Interface.html" />
+<meta property="og:site_name" content="Sc2mapster Github" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-02-11T11:12:18+00:00" />
+<script type="application/ld+json">
+{"publisher":null,"headline":"Trigger Editor Interface","dateModified":"2018-02-11T11:12:18+00:00","datePublished":"2018-02-11T11:12:18+00:00","sameAs":null,"url":"http://localhost:4000/editor_tutorials/03_Trigger_Editor/033_Trigger_Editor_Interface.html","author":{"@type":"Person","name":"jrepp"},"description":"TRIGGER EDITOR INTERFACE","image":null,"name":null,"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/editor_tutorials/03_Trigger_Editor/033_Trigger_Editor_Interface.html"},"@type":"BlogPosting","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Sc2mapster Github</h1>
+        <h2>Github page for Starcraft 2 Modding Guides</h2>
+
+        <section id="downloads">
+          
+          <a href="http://github.com/Sc2mapster/sc2mapster.github.io" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        
+
+<h1>Trigger Editor Interface</h1>
+<p class="view">by <a href="mailto:jacobrepp@gmail.com">jrepp</a> (<em><small>11 February 2018</small></em>)</p>
+
+<ul>
+  <li><a href="#trigger-editor-interface">TRIGGER EDITOR INTERFACE</a>
+    <ul>
+      <li><a href="#the-interface">THE INTERFACE</a></li>
+      <li><a href="#viewing-options">VIEWING OPTIONS</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="trigger-editor-interface">TRIGGER EDITOR INTERFACE</h1>
+
+<p>The Trigger Editor is a construction-site for triggers, actions, events,
+and all the other elements that make up the logic of the trigger system.
+The moment you start working in the Trigger Editor, the logic you build
+will be made active in the map immedaitely, enforcing rules, building
+mechanics, and creating gameplay.</p>
+
+<h2 id="the-interface">THE INTERFACE</h2>
+
+<p><img src="./033_Trigger_Editor_Interface/image1.png" alt="Image" /></p>
+
+<p>Trigger Editor Interface View</p>
+
+<p>The Trigger Editor offers a clean, ordered representation of all the
+logic elements active in a project. Any developers with programming
+experience will note the resemblance to a standard text editor. The
+lynchpin of this interface is the Triggers Panel, shown below.</p>
+
+<p><img src="./033_Trigger_Editor_Interface/image2.png" alt="Image" /></p>
+
+<p>Triggers Panel</p>
+
+<p>Inside the Triggers Panel you’ll find a list of all the active trigger
+elements in a project. As well as providing an overview, this will be
+your primary means of navigating your project. Selecting an element in
+this panel will display its information in the middle of your screen,
+inside the Trigger Content Panel.</p>
+
+<p><img src="./033_Trigger_Editor_Interface/image3.png" alt="Image" /></p>
+
+<p>Trigger Content Panel</p>
+
+<p>Depending on the type of element you’ve selected, this panel can take on
+a number of different layouts.</p>
+
+<p><img src="./033_Trigger_Editor_Interface/image4.png" alt="Image" /></p>
+
+<p>Variable Content – Definition Content – Trigger Content</p>
+
+<p>When the Use Subviews option is enabled, this view will also introduce a
+Trigger Content Panel Subview, which shows the fields of an element
+alongside any available tooltips.</p>
+
+<p><img src="./033_Trigger_Editor_Interface/image5.png" alt="Image" /></p>
+
+<p>Trigger Content Panel Subview</p>
+
+<p>As your project grows, you’ll find another manageability option
+available in the form of the Trigger Explorer. Enabling this will append
+a viewer to the Triggers Panel showing a breakdown of the components
+inside the currently selected element. You can use this to scan through
+a larger project’s components as quickly as possible.</p>
+
+<p><img src="./033_Trigger_Editor_Interface/image6.png" alt="Image" /></p>
+
+<p>Trigger Explorer</p>
+
+<p>Projects can grow to include libraries, which are collections of trigger
+elements shared between multiple maps. All of the standard, pre-made
+elements are also included in a map via libraries. You can find a list
+of all the libraries currently in a map in the Libraries Panel.</p>
+
+<p><img src="./033_Trigger_Editor_Interface/image7.png" alt="Image" /></p>
+
+<p>Libraries Panel</p>
+
+<p>The segment of the Main Toolbar available from this module is the
+Trigger Bar.</p>
+
+<p><img src="./033_Trigger_Editor_Interface/image8.png" alt="Image" /></p>
+
+<p>Trigger Bar</p>
+
+<p>All of the Trigger Editor’s viewing and creation options are made
+available here for your convenience. Below you’ll find a table that
+breaks down the options available from the Trigger Bar.</p>
+
+<hr />
+<p>Action         Effect
+  ————– ————————————————————
+  Back           Reverts commands backward through the Trigger Editor
+                 history.</p>
+
+<p>Forward        Reverts commands forwards through the Trigger Editor
+                 history.</p>
+
+<p>View Raw Data  Changes the view from plain-language to raw script
+                 identifiers and Galaxy function calls.</p>
+
+<p>Show Libraries Toggles the Libraries Panel on or off.</p>
+
+<p>Use Subviews   Toggles the Trigger Content Panel Subview on or off.</p>
+
+<p>New Element    Creates a new element of the type that is currently
+                 selected.</p>
+
+<p>New Folder     Creates a folder in the Triggers Panel.</p>
+
+<p>New Comment    Creates a comment at the current cursor location.</p>
+
+<p>New Trigger    Creates a trigger in the Triggers Panel.</p>
+
+<p>New Event      Creates an event in the Trigger Content Panel.</p>
+
+<p>New Condition  Creates a condition in the Trigger Content Panel.</p>
+
+<p>New Action     Creates an action in the Trigger Content Panel.</p>
+
+<p>New Condition  Creates a condition definition in the Triggers Panel.
+  Definition</p>
+
+<p>New Action     Creates an action definition in the Triggers Panel.
+  Definition</p>
+
+<p>New Function   Creates a function in the Triggers Panel.</p>
+
+<p>New Parameter  Creates a parameter in an active definition within the
+                 Trigger Content Panel.</p>
+
+<p>New Preset     Creates a preset in the Triggers Panel.
+  Type</p>
+
+<p>New Preset     Creates a value in an active preset within the Trigger
+  Value          Content Panel.</p>
+
+<p>New Record     Creates a record in the Triggers Panel.</p>
+
+<p>New            Creates a sub-function in a currently active function within
+  Sub-function   the Trigger Content Panel. For this, you must have the
+  type           Sub-functions flag checked in ‘Function Options.’</p>
+
+<p>New Variable   Creates a Global variable in the Triggers Panel or a Local
+                 Variable in the Trigger Content Panel depending on cursor
+                 position.
+  —————————————————————————</p>
+
+<h2 id="viewing-options">VIEWING OPTIONS</h2>
+
+<p>Using the View Raw Data option will translate the plain-language
+statements of the Trigger Editor into the Galaxy function calls, as
+shown in the image below.</p>
+
+<p><img src="./033_Trigger_Editor_Interface/image9.png" alt="Image" /></p>
+
+<p>View Raw Data</p>
+
+<p>This can be useful if you’d like to move into script editing. Moreover,
+you can use the View Script option to look at the actual game scripts.
+Selecting this option will launch the Script Test window shown below.</p>
+
+<p><img src="./033_Trigger_Editor_Interface/image10.png" alt="Image" /></p>
+
+<p>Script Test Window via View Script</p>
+
+
+
+  <small>tags: <em></em></small>
+
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

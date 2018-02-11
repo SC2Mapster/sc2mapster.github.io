@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=e59fb72e5ef60f32a67b812874e7b28118997c7b">
+
+<!-- Begin Jekyll SEO tag v2.3.0 -->
+<title>Pathing Layer | Sc2mapster Github</title>
+<meta property="og:title" content="Pathing Layer" />
+<meta name="author" content="jrepp" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="PATHING LAYER" />
+<meta property="og:description" content="PATHING LAYER" />
+<link rel="canonical" href="http://localhost:4000/editor_tutorials/02_Terrain_Editor/026_Pathing_Layer.html" />
+<meta property="og:url" content="http://localhost:4000/editor_tutorials/02_Terrain_Editor/026_Pathing_Layer.html" />
+<meta property="og:site_name" content="Sc2mapster Github" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-02-11T11:12:18+00:00" />
+<script type="application/ld+json">
+{"publisher":null,"headline":"Pathing Layer","dateModified":"2018-02-11T11:12:18+00:00","datePublished":"2018-02-11T11:12:18+00:00","sameAs":null,"url":"http://localhost:4000/editor_tutorials/02_Terrain_Editor/026_Pathing_Layer.html","author":{"@type":"Person","name":"jrepp"},"description":"PATHING LAYER","image":null,"name":null,"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/editor_tutorials/02_Terrain_Editor/026_Pathing_Layer.html"},"@type":"BlogPosting","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Sc2mapster Github</h1>
+        <h2>Github page for Starcraft 2 Modding Guides</h2>
+
+        <section id="downloads">
+          
+          <a href="http://github.com/Sc2mapster/sc2mapster.github.io" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        
+
+<h1>Pathing Layer</h1>
+<p class="view">by <a href="mailto:jacobrepp@gmail.com">jrepp</a> (<em><small>11 February 2018</small></em>)</p>
+
+<ul>
+  <li><a href="#pathing-layer">PATHING LAYER</a>
+    <ul>
+      <li><a href="#pathing-palette">PATHING PALETTE</a></li>
+      <li><a href="#pathing-types">PATHING TYPES</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="pathing-layer">PATHING LAYER</h1>
+
+<p>The Pathing Layer is where you control pathing within your map. As a
+concept, pathing describes which actions are permissible within an area,
+such as moving, building, or flying. Laying down pathing zones
+determines the rules governing where these actions can take place. You
+can access this layer from the Terrain Bar by clicking on the icon
+pictured below.</p>
+
+<p><img src="./026_Pathing_Layer/image1.png" alt="Image" /></p>
+
+<p>Pathing Layer Icon</p>
+
+<h2 id="pathing-palette">PATHING PALETTE</h2>
+
+<p>No matter how clearly you delineate an environment in the Editor,
+players will always probe at its edges and explore beyond the intended
+boundaries of the map. As a result, maps require information about where
+certain types of basic actions should and shouldn’t be allowed,
+otherwise gameplay falls apart. You can introduce this information to
+the map using rule-enforcing pathing zones.</p>
+
+<p>Creating pathing zones is fairly straightforward. All you’ll need is an
+understanding of what the specific types of zones prohibit, then all you
+need to do is decide on where to apply these rules. You can find the
+tools for creating pathing zones in the Pathing Palette. The palette
+itself is in the Terrain Editor at the Pathing Layer.</p>
+
+<p><img src="./026_Pathing_Layer/image2.png" alt="Image" /></p>
+
+<p>Pathing Palette Views</p>
+
+<h2 id="pathing-types">PATHING TYPES</h2>
+
+<p><img src="./026_Pathing_Layer/image6.png" alt="Image" /> several types of pathing zones
+using a brush-like tool. These zones are painted onto the terrain as an
+overlay, coloring the map with a different shade for each of the four
+different pathing types. When a player launches your game, the pathing
+rules will be applied to the marked areas. Below you’ll find a breakdown
+of the modifiers available for this tool.</p>
+
+<hr />
+<p>Property    Effect
+  ———– ————————————————————–
+  Add Pathing Applies the selected pathing type to the target area.</p>
+
+<p>Remove      Removes all pathing from the target area.
+  Pathing</p>
+
+<p>Size        Changes the size of the area to which pathing is being
+              applied.</p>
+
+<p>Shape       Changes the shape of the area to which pathing is being
+              applied.</p>
+
+<p>No Pathing  This pathing type prevents any units from pathing into this
+              area. Colorized red.</p>
+
+<p>Ground      This pathing type describes the area, as Ground, which has
+              special rules set for certain abilities and other data types.
+              Colorized green.</p>
+
+<p>No Building This pathing type prevents any units from building structures
+              in the area. Colorized yellow.</p>
+
+<p>No          This pathing type prevents any units from using a burrow
+  Burrowing   ability in the area. Colorized blue.
+  ————————————————————————–</p>
+
+<p>The following image shows an area making use of painted pathing.</p>
+
+<p><img src="./026_Pathing_Layer/image4.png" alt="Image" /></p>
+
+<p>Painted Pathings</p>
+
+<p>Note that the tower structures have been marked with No Pathing zones,
+to prevent units being dropped to their decorative high grounds. An area
+on the ground has been marked with a No Building zone. Here the designer
+has deemed the metal grates of this area to be an unrealistic target for
+any building.</p>
+
+<p><img src="./026_Pathing_Layer/image6.png" alt="Image" /> option for creating No Pathing
+zones. It will set everything at the destination point’s terrain level
+to not support pathing as a sort of flood fill.</p>
+
+<p><img src="./026_Pathing_Layer/image6.png" alt="Image" /> Pathing Fill, but apply to
+flying units pathing over the area.</p>
+
+<p>You can find both of the last two pathing options under a separate view
+of the Pathing Palette. This view provides a list of every active
+dynamic pathing object, similar to the lists found in the Points Layer
+and Regions Layer. Unlike the colorized regions of Painted Pathing,
+dynamic pathing objects are displayed within the Editor using markers,
+as you can see in the image below.</p>
+
+<p><img src="./026_Pathing_Layer/image7.png" alt="Image" /></p>
+
+<p>Dynamic Pathing Fill and No Fly Zone</p>
+
+
+
+  <small>tags: <em></em></small>
+
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

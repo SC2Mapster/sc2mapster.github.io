@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=e59fb72e5ef60f32a67b812874e7b28118997c7b">
+
+<!-- Begin Jekyll SEO tag v2.3.0 -->
+<title>Banks | Sc2mapster Github</title>
+<meta property="og:title" content="Banks" />
+<meta name="author" content="jrepp" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="BANKS" />
+<meta property="og:description" content="BANKS" />
+<link rel="canonical" href="http://localhost:4000/editor_tutorials/03_Trigger_Editor/051_Banks.html" />
+<meta property="og:url" content="http://localhost:4000/editor_tutorials/03_Trigger_Editor/051_Banks.html" />
+<meta property="og:site_name" content="Sc2mapster Github" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-02-11T11:12:18+00:00" />
+<script type="application/ld+json">
+{"publisher":null,"headline":"Banks","dateModified":"2018-02-11T11:12:18+00:00","datePublished":"2018-02-11T11:12:18+00:00","sameAs":null,"url":"http://localhost:4000/editor_tutorials/03_Trigger_Editor/051_Banks.html","author":{"@type":"Person","name":"jrepp"},"description":"BANKS","image":null,"name":null,"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/editor_tutorials/03_Trigger_Editor/051_Banks.html"},"@type":"BlogPosting","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Sc2mapster Github</h1>
+        <h2>Github page for Starcraft 2 Modding Guides</h2>
+
+        <section id="downloads">
+          
+          <a href="http://github.com/Sc2mapster/sc2mapster.github.io" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        
+
+<h1>Banks</h1>
+<p class="view">by <a href="mailto:jacobrepp@gmail.com">jrepp</a> (<em><small>11 February 2018</small></em>)</p>
+
+<ul>
+  <li><a href="#banks">BANKS</a>
+    <ul>
+      <li><a href="#bank-actions">BANK ACTIONS</a></li>
+      <li><a href="#finding-local-bank-storage">FINDING LOCAL BANK STORAGE</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="banks">BANKS</h1>
+
+<p>Banks are the Editor’s method for storing information and using it
+between projects. Below you can see a sample bank file.</p>
+
+<p><img src="./051_Banks/image1.png" alt="Image" /></p>
+
+<p>Custom Game Bank File</p>
+
+<p>This bank stores a player’s personal statistics from a type of custom
+game. Note the structure here. A bank is separated hierarchically first
+by sections and then into key-value pairings. As values are stored in
+the bank, they are written to the bank file in a target section, and by
+their associated key, but in no particular order beyond that.</p>
+
+<h2 id="bank-actions">BANK ACTIONS</h2>
+
+<p>The controls for bank handling can be found during action creation under
+the label ‘Bank.’ This is shown below, followed by a table that breaks
+down these controls.</p>
+
+<p><img src="./051_Banks/image2.png" alt="Image" /></p>
+
+<p>Bank Actions</p>
+
+<hr />
+<p>Action    Effect
+  ——— —————————————————————-
+  Preload   Preloads and synchronizes a Bank for a specific Player.
+  Bank</p>
+
+<p>Create    Creates a bank Section, which can then accept key-value pairs.
+  Bank    <br />
+  Section</p>
+
+<p>Save Bank Saves a Bank, making sure that all changes to the file are
+            maintained after the game.</p>
+
+<p>Store     Stores a Value as a Key to a certain Section of a Bank. There
+  Data      are several types available for storage: Boolean, Integer, Real,
+            Point, String, Text, and Unit.</p>
+
+<p>Reload    Reloads a Bank, reverting any changes that might have occurred
+  Bank      between saves.</p>
+
+<p>Open Bank Opens a Bank for use and alteration.</p>
+
+<p>Restore   Creates a unit that was previously stored through a Store Unit
+  Unit      action. The unit is restored from a Key within a Section from a
+            Bank. This results in the unit being created at a Point, for a
+            Player, and facing an Angle.</p>
+
+<p>Wait For  This is a Wait control statement that pauses until the condition
+  Bank      of a specific Bank being reloaded is True.</p>
+
+<p>Set Bank  Sets the Signature option of a Bank to Enable or Disable. The
+  Option    signature provides an encryption option for banks, so that they
+            cannot be altered by players.</p>
+
+<p>Remove    Removes a Key from the Section of a Bank and its associate
+  Bank Key  value.</p>
+
+<p>Remove    Removes a Section from a Bank and all of the key-value pairs it
+  Bank      contains.
+  Section <br />
+  ————————————————————————–</p>
+
+<h2 id="finding-local-bank-storage">FINDING LOCAL BANK STORAGE</h2>
+
+<p>You can find the local bank storage at the Windows location described
+below.</p>
+
+<ul>
+  <li>Libraries
+    <ul>
+      <li>Documents
+        <ul>
+          <li>StarCraft II
+            <ul>
+              <li>StarCraftPlayer.ID@#
+                <ul>
+                  <li>Banks
+                    <ul>
+                      <li>ID Code
+                        <ul>
+                          <li>Bank Files</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>This procedure is shown in the following image sequence.</p>
+
+<p><img src="./051_Banks/image3.png" alt="Image" /></p>
+
+<p>Accessing Local Bank Storage</p>
+
+
+
+  <small>tags: <em></em></small>
+
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

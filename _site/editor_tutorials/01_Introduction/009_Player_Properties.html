@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=e59fb72e5ef60f32a67b812874e7b28118997c7b">
+
+<!-- Begin Jekyll SEO tag v2.3.0 -->
+<title>Player Properties | Sc2mapster Github</title>
+<meta property="og:title" content="Player Properties" />
+<meta name="author" content="jrepp" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="PLAYER PROPERTIES" />
+<meta property="og:description" content="PLAYER PROPERTIES" />
+<link rel="canonical" href="http://localhost:4000/editor_tutorials/01_Introduction/009_Player_Properties.html" />
+<meta property="og:url" content="http://localhost:4000/editor_tutorials/01_Introduction/009_Player_Properties.html" />
+<meta property="og:site_name" content="Sc2mapster Github" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-02-11T11:12:18+00:00" />
+<script type="application/ld+json">
+{"publisher":null,"headline":"Player Properties","dateModified":"2018-02-11T11:12:18+00:00","datePublished":"2018-02-11T11:12:18+00:00","sameAs":null,"url":"http://localhost:4000/editor_tutorials/01_Introduction/009_Player_Properties.html","author":{"@type":"Person","name":"jrepp"},"description":"PLAYER PROPERTIES","image":null,"name":null,"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/editor_tutorials/01_Introduction/009_Player_Properties.html"},"@type":"BlogPosting","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Sc2mapster Github</h1>
+        <h2>Github page for Starcraft 2 Modding Guides</h2>
+
+        <section id="downloads">
+          
+          <a href="http://github.com/Sc2mapster/sc2mapster.github.io" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        
+
+<h1>Player Properties</h1>
+<p class="view">by <a href="mailto:jacobrepp@gmail.com">jrepp</a> (<em><small>11 February 2018</small></em>)</p>
+
+<ul>
+  <li><a href="#player-properties">PLAYER PROPERTIES</a>
+    <ul>
+      <li><a href="#player-property-fields">PLAYER PROPERTY FIELDS</a></li>
+      <li><a href="#customizing-players">CUSTOMIZING PLAYERS</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="player-properties">PLAYER PROPERTIES</h1>
+
+<p>Player Properties is where you’ll find many essential options for
+settings up your game. You can find them by navigating to Map -&gt; Player
+Properties from any module of the Editor. This will launch the window
+shown below.</p>
+
+<p><img src="./009_Player_Properties/image1.png" alt="Image" /></p>
+
+<p>Player Properties Window</p>
+
+<h2 id="player-property-fields">PLAYER PROPERTY FIELDS</h2>
+
+<p>Player Properties addresses questions of control, start location, race,
+and color. In that regard, it is similar to the typical Battle.net
+lobby. Changing these properties will influence how the game lobby
+appears when playing online. However, these options extend further, as
+they also control global properties relevant to non-traditional games.</p>
+
+<p>The following table details the options in Player Properties, along with
+a description of each.</p>
+
+<hr />
+<p>Action     Effect
+  ———- ——————————————————————–
+  #         A number used for ordering and referencing players.</p>
+
+<p>Name       A multipurpose ID. This is typically displayed when highlighting a
+             unit owned by the named player, but it can be used in other
+             capacities. In online games, the player’s Battle.net ID is always
+             displayed as the Name property. Names are not displayed for units
+             owned by Hostile or Neutral controlled players.</p>
+
+<p>Color      Determines a player’s team color. If set, this is unchangeable in
+             the game lobby. Unlike melee play, multiple players can be assigned
+             the same team color. There are 16 color options in total, setting
+             (Any) will allow players to choose their color from a lobby.</p>
+
+<p>Race       Determines a player’s race from the options Protoss, Terran, Zerg,
+             Neutral, or (Any). Selecting Neutral will set a player’s race to
+             random, while setting (Any) will allow the player to choose their
+             race from the lobby.</p>
+
+<p>Control    Determines the controller for each player slot. User creates a slot
+             for human players, adding an open slot in the game’s lobby that can
+             be filled with either a human player or an AI controlled computer.
+             None sets a player slot to no player. This is the default value.
+             Computer creates a player to be controlled by the game’s default AI.
+             Neutral creates a computer-controlled player that has a Neutral
+             Alliance setting with all other players. Hostile creates a computer
+             controlled player that has an Enemy Alliance setting with all other
+             players.</p>
+
+<p>Start      Determines where the default units are created via the ‘Create Melee
+  Location   Starting Units For Each Player’ action. In all other map types, this
+             controls the starting location of a player’s camera, unless
+             otherwise specified.</p>
+
+<p>Decal      Sets the default decal used for any of a player’s units that support
+             decals.</p>
+
+<p>Default    Determines the camera settings of Observer players when no specific
+  Observed   player’s vision is being viewed.
+  ——————————————————————————-</p>
+
+<p>Note that, while there are 16 player slots, StarCraft II supports a
+maximum of 15 human players. At least one slot must be set to Neutral,
+Hostile, or None. This includes players observing an online match.</p>
+
+<h2 id="customizing-players">CUSTOMIZING PLAYERS</h2>
+
+<p>In melee maps, player properties alone can be used to customize
+scenarios. See below for a method of creating a simple Protoss versus
+Zerg themed map.</p>
+
+<p><img src="./009_Player_Properties/image2.png" alt="Image" /></p>
+
+<p>Custom Game Player Properties</p>
+
+
+
+  <small>tags: <em></em></small>
+
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

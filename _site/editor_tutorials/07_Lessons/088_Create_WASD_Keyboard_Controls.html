@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=e59fb72e5ef60f32a67b812874e7b28118997c7b">
+
+<!-- Begin Jekyll SEO tag v2.3.0 -->
+<title>Create WASD Keyboard Controls | Sc2mapster Github</title>
+<meta property="og:title" content="Create WASD Keyboard Controls" />
+<meta name="author" content="jrepp" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="CREATE WASD KEYBOARD CONTROLS" />
+<meta property="og:description" content="CREATE WASD KEYBOARD CONTROLS" />
+<link rel="canonical" href="http://localhost:4000/editor_tutorials/07_Lessons/088_Create_WASD_Keyboard_Controls.html" />
+<meta property="og:url" content="http://localhost:4000/editor_tutorials/07_Lessons/088_Create_WASD_Keyboard_Controls.html" />
+<meta property="og:site_name" content="Sc2mapster Github" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-02-11T11:12:18+00:00" />
+<script type="application/ld+json">
+{"publisher":null,"headline":"Create WASD Keyboard Controls","dateModified":"2018-02-11T11:12:18+00:00","datePublished":"2018-02-11T11:12:18+00:00","sameAs":null,"url":"http://localhost:4000/editor_tutorials/07_Lessons/088_Create_WASD_Keyboard_Controls.html","author":{"@type":"Person","name":"jrepp"},"description":"CREATE WASD KEYBOARD CONTROLS","image":null,"name":null,"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/editor_tutorials/07_Lessons/088_Create_WASD_Keyboard_Controls.html"},"@type":"BlogPosting","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Sc2mapster Github</h1>
+        <h2>Github page for Starcraft 2 Modding Guides</h2>
+
+        <section id="downloads">
+          
+          <a href="http://github.com/Sc2mapster/sc2mapster.github.io" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        
+
+<h1>Create WASD Keyboard Controls</h1>
+<p class="view">by <a href="mailto:jacobrepp@gmail.com">jrepp</a> (<em><small>11 February 2018</small></em>)</p>
+
+<ul>
+  <li><a href="#create-wasd-keyboard-controls">CREATE WASD KEYBOARD CONTROLS</a>
+    <ul>
+      <li><a href="#keypress-ui-events">KEYPRESS UI EVENTS</a></li>
+      <li><a href="#key-storage-array">KEY STORAGE ARRAY</a></li>
+      <li><a href="#switch-actions">SWITCH ACTIONS</a></li>
+      <li><a href="#keypress-detection-loop">KEYPRESS DETECTION LOOP</a></li>
+      <li><a href="#moving-the-unit">MOVING THE UNIT</a></li>
+      <li><a href="#connecting-it-together">CONNECTING IT TOGETHER</a></li>
+      <li><a href="#testing-the-controls">TESTING THE CONTROLS</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="create-wasd-keyboard-controls">CREATE WASD KEYBOARD CONTROLS</h1>
+
+<p>Using the keyboard to control a game character’s movement is a classic
+control scheme. The best known example of this is the WASD keyboard
+controls, in which the W, A, S, and D keys are bound to the directions
+up, left, right, and down. This is often used as an ergonomic,
+universally available option that can be operated one hand while the
+other uses the mouse.</p>
+
+<p>Although StarCraft uses a mouse and keyboard control scheme, it does not
+tie any keyboard controls directly to movement. Still, this is possible
+for custom projects made using the Editor. Learning to implement the
+WASD keyboard controls can be very educational and has many practical
+applications in action, adventure, and simulation games.</p>
+
+<h2 id="keypress-ui-events">KEYPRESS UI EVENTS</h2>
+
+<p>A keyboard control system requires some way of getting between player
+inputs and the game. UI events usually suit this requirement and in this
+case you’ll make use of the Key Pressed event. The triggers
+‘KeyPressDOWN’ and ‘KeyPressUP’ create events that respond to the four
+keys of the WASD controls. ‘KeyPressDOWN’ runs when any of these keys is
+pushed down, while ‘KeyPressUP’ runs when any of these keys are
+released. You can see the composition of these triggers in the image
+below.</p>
+
+<p><img src="./088_Create_WASD_Keyboard_Controls/image7.png" alt="Image" /></p>
+
+<p>Keypress UI Event Triggers</p>
+
+<p>By separating the keys out individually, this system supports
+combinations of keys being pressed and released in any way the hardware
+supports. As a result, combinations like pressing the W and A keys
+together will give the proper response of moving the character both up
+and left at the same time.</p>
+
+<h2 id="key-storage-array">KEY STORAGE ARRAY</h2>
+
+<p>In order to track all concurrent key presses, this design requires an
+array for storage. The ‘KEYPRESS’ array is of the Boolean type and sized
+to a value of 3. Considering that arrays begin at a zero index, the
+total storage available here is 4 keys, enough for the entire WASD
+control system. Using a Boolean array allows each array value to
+represent whether or not a certain key is currently pressed. The keys
+will use the following mapping.</p>
+
+<p>W == Index 0</p>
+
+<p>A == Index 1</p>
+
+<p>S == Index 2</p>
+
+<p>D == Index 3</p>
+
+<p>A True value represents pressed, while a False value represents not
+being pressed. All the spots in the array are set to False by default.
+The array itself is shown below.</p>
+
+<p><img src="./088_Create_WASD_Keyboard_Controls/image8.png" alt="Image" /></p>
+
+<p>Key Storage Array</p>
+
+<h2 id="switch-actions">SWITCH ACTIONS</h2>
+
+<p>As you’ve already seen, the two keypress triggers will each respond to
+any of the four WASD keys. This saves the design from having to rely on
+eight separate events to monitor keyboard inputs. However, this creates
+a need for some control statements to properly parse the input. You can
+use a switch statement to solve this by providing a case for each of the
+four Key values. The switch statement used for the ‘KeyPressUP’ trigger
+is shown in the image below.</p>
+
+<p><img src="./088_Create_WASD_Keyboard_Controls/image9.png" alt="Image" /></p>
+
+<p>KeyPressUP Switch</p>
+
+<p>For each trigger, the switch statement contains a ‘Set Variable’ action
+that sets the index of the array associated with that case’s Key. For
+the ‘KeyPressUP’ trigger the values are set to True, indicating that the
+key is now down. Conversely, for ‘KeyPressDOWN” trigger the values are
+set to False, indicating that the key has been released.</p>
+
+<h2 id="keypress-detection-loop">KEYPRESS DETECTION LOOP</h2>
+
+<p>To create a constant a feed of keypress inputs into movement logic, a
+loop ‘KeyPress Detect’ is used. The loop itself is quite extensive and
+has been reproduced below, annotated with comments.</p>
+
+<ul>
+  <li>General – While (Conditions) are true, do (Actions) // While loop
+allows for constant movement</li>
+</ul>
+
+<!-- -->
+<ul>
+  <li>Conditions</li>
+</ul>
+
+<!-- -->
+<ul>
+  <li>(WASD Unit is alive) == True // Checks that the controlled unit is
+still alive</li>
+</ul>
+
+<!-- -->
+<ul>
+  <li>Actions</li>
+</ul>
+
+<!-- -->
+<ul>
+  <li>General – If (Conditions) then do multiple (Actions) // Sets off a
+series of input checks</li>
+</ul>
+
+<!-- -->
+<ul>
+  <li>If Then Else</li>
+</ul>
+
+<!-- -->
+<ul>
+  <li>General – Else If // These checks look for a specific</li>
+</ul>
+
+<!-- -->
+<ul>
+  <li>Else If // input case</li>
+</ul>
+
+<!-- -->
+<ul>
+  <li>KEYPRESS[0] == False</li>
+  <li>KEYPRESS[1] == False</li>
+  <li>KEYPRESS[2] == False // The case here is all four keys</li>
+  <li>KEYPRESS[3] == False // not being pressed</li>
+</ul>
+
+<!-- -->
+<ul>
+  <li>Then</li>
+</ul>
+
+<!-- -->
+<ul>
+  <li>Unit – Order WASD Unit to (Stop)(Replace Existing Orders) // Cease
+movement</li>
+</ul>
+
+<!-- -->
+<ul>
+  <li>General – Else If</li>
+</ul>
+
+<!-- -->
+<ul>
+  <li>Else If</li>
+</ul>
+
+<!-- -->
+<ul>
+  <li>KEYPRESS[0] == True</li>
+  <li>KEYPRESS[1] == True // W and A keys are pressed</li>
+</ul>
+
+<!-- -->
+<ul>
+  <li>Then</li>
+</ul>
+
+<!-- -->
+<ul>
+  <li>Execute Move(145.0, 1.0) // Moves the unit northeast</li>
+</ul>
+
+<!-- -->
+<ul>
+  <li>General – Else If</li>
+</ul>
+
+<!-- -->
+<ul>
+  <li>Else If</li>
+</ul>
+
+<!-- -->
+<ul>
+  <li>KEYPRESS[0] == True // W and D keys are pressed</li>
+  <li>KEYPRESS[3] == True</li>
+</ul>
+
+<!-- -->
+<ul>
+  <li>Then</li>
+</ul>
+
+<!-- -->
+<ul>
+  <li>Execute Move(45.0, 1.0) // Moves the unit northwest</li>
+</ul>
+
+<!-- -->
+<ul>
+  <li>General – Else If</li>
+</ul>
+
+<!-- -->
+<ul>
+  <li>Else If</li>
+</ul>
+
+<!-- -->
+<ul>
+  <li>KEYPRESS[2] == True // S and A keys are pressed</li>
+  <li>KEYPRESS[1] == True</li>
+</ul>
+
+<!-- -->
+<ul>
+  <li>Then</li>
+</ul>
+
+<!-- -->
+<ul>
+  <li>Execute Move(45.0, -1.0) // Moves the unit southeast</li>
+</ul>
+
+<!-- -->
+<ul>
+  <li>General – Else If</li>
+</ul>
+
+<!-- -->
+<ul>
+  <li>Else If</li>
+</ul>
+
+<!-- -->
+<ul>
+  <li>KEYPRESS[2] == True // S and D keys are pressed</li>
+  <li>KEYPRESS[3] == True</li>
+</ul>
+
+<!-- -->
+<ul>
+  <li>Then</li>
+</ul>
+
+<!-- -->
+<ul>
+  <li>Execute Move(145.0, -1.0) // Moves the unit southwest</li>
+</ul>
+
+<!-- -->
+<ul>
+  <li>General – Else If</li>
+</ul>
+
+<!-- -->
+<ul>
+  <li>Else If</li>
+</ul>
+
+<!-- -->
+<ul>
+  <li>KEYPRESS[0] == True // W key is pressed</li>
+</ul>
+
+<!-- -->
+<ul>
+  <li>Then</li>
+</ul>
+
+<!-- -->
+<ul>
+  <li>Execute Move(90.0, 1.0) // Moves the unit north</li>
+</ul>
+
+<!-- -->
+<ul>
+  <li>General – Else If</li>
+</ul>
+
+<!-- -->
+<ul>
+  <li>Else If</li>
+</ul>
+
+<!-- -->
+<ul>
+  <li>KEYPRESS[1] == True // A key is pressed</li>
+</ul>
+
+<!-- -->
+<ul>
+  <li>Then</li>
+</ul>
+
+<!-- -->
+<ul>
+  <li>Execute Move(180.0, 1.0) // Moves the unit west</li>
+</ul>
+
+<!-- -->
+<ul>
+  <li>General – Else If</li>
+</ul>
+
+<!-- -->
+<ul>
+  <li>Else If</li>
+</ul>
+
+<!-- -->
+<ul>
+  <li>KEYPRESS[2] == True // S key is pressed</li>
+</ul>
+
+<!-- -->
+<ul>
+  <li>Then</li>
+</ul>
+
+<!-- -->
+<ul>
+  <li>Execute Move(90.0, -1.0) // Moves the unit south</li>
+</ul>
+
+<!-- -->
+<ul>
+  <li>General – Else If</li>
+</ul>
+
+<!-- -->
+<ul>
+  <li>Else If</li>
+</ul>
+
+<!-- -->
+<ul>
+  <li>KEYPRESS[3] == True // D key is pressed</li>
+</ul>
+
+<!-- -->
+<ul>
+  <li>Then</li>
+</ul>
+
+<!-- -->
+<ul>
+  <li>Execute Move(0.0, -1.0) // Moves the unit east</li>
+</ul>
+
+<!-- -->
+<ul>
+  <li>General – Wait 0.0 Real Time Seconds // Creates a pause for test
+outputs</li>
+</ul>
+
+<h2 id="moving-the-unit">MOVING THE UNIT</h2>
+
+<p>‘KeyPress Detect’ pushes a set of instructions to the ‘Execute Move’
+action, which handles moving the controlled unit. These instructions
+include an Angle and Offset that are sent to an ‘Order Targeting Point’
+command. This command makes use of the ‘Move’ ability, sending the unit
+to a ‘Point with a Polar Offset.’ By sending the unit to its current
+position altered by the Offset, the command effectively moves the unit
+in the direction of the Angle by the offset magnitude.</p>
+
+<p>When the Offset is set to a negative value, this actually represents
+moving the unit in the opposite direction. So an Angle of 145.0 with an
+Offset of -1.0, which occurs when the S and D keys are pressed, will
+send the unit in the southwest direction. When the values are an Angle
+of 145.0 and an Offset of 1.0, as is the case when the W and A keys are
+pressed, the unit is sent in the northeast direction. The ‘Execute Move’
+action definition can be seen in the image below.</p>
+
+<p><img src="./088_Create_WASD_Keyboard_Controls/image10.png" alt="Image" /></p>
+
+<p>Execute Move Action Definition</p>
+
+<h2 id="connecting-it-together">CONNECTING IT TOGETHER</h2>
+
+<p>For this demonstration, the movement system is initiated on map start.
+This isn’t necessary, but it is the most likely scenario. Control
+schemes seldom change within the body of a game, but shifting the
+initialization actions elsewhere is still an option. The ‘Melee
+Initialization’ trigger is shown below.</p>
+
+<p><img src="./088_Create_WASD_Keyboard_Controls/image11.png" alt="Image" /></p>
+
+<p>Melee Initialization Trigger</p>
+
+<p>This trigger sets a pre-placed unit to the ‘WASD Unit’ variable. This
+makes it the controlled unit for the movement system. Additionally, the
+‘KeyPress Detect’ loop begins, at which point it immediately starts
+searching for player inputs. Whenever you’re working with a constantly
+running UI events system, you should monitor the large quantity of loop
+and event checks closely for performance. When designing a system like
+this for online use, be sure to do careful testing to ensure latency
+doesn’t become a problem.</p>
+
+<h2 id="testing-the-controls">TESTING THE CONTROLS</h2>
+
+<p>Launching the map will allow you to control the marine with the WASD
+keys.</p>
+
+<p><img src="./088_Create_WASD_Keyboard_Controls/image12.png" alt="Image" /></p>
+
+<p>WASD Keyboard Controls</p>
+
+
+
+  <small>tags: <em></em></small>
+
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=e59fb72e5ef60f32a67b812874e7b28118997c7b">
+
+<!-- Begin Jekyll SEO tag v2.3.0 -->
+<title>Terrain Editor Interface | Sc2mapster Github</title>
+<meta property="og:title" content="Terrain Editor Interface" />
+<meta name="author" content="jrepp" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="TERRAIN EDITOR INTERFACE" />
+<meta property="og:description" content="TERRAIN EDITOR INTERFACE" />
+<link rel="canonical" href="http://localhost:4000/editor_tutorials/02_Terrain_Editor/019_Terrain_Editor_Interface.html" />
+<meta property="og:url" content="http://localhost:4000/editor_tutorials/02_Terrain_Editor/019_Terrain_Editor_Interface.html" />
+<meta property="og:site_name" content="Sc2mapster Github" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-02-11T11:12:18+00:00" />
+<script type="application/ld+json">
+{"publisher":null,"headline":"Terrain Editor Interface","dateModified":"2018-02-11T11:12:18+00:00","datePublished":"2018-02-11T11:12:18+00:00","sameAs":null,"url":"http://localhost:4000/editor_tutorials/02_Terrain_Editor/019_Terrain_Editor_Interface.html","author":{"@type":"Person","name":"jrepp"},"description":"TERRAIN EDITOR INTERFACE","image":null,"name":null,"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/editor_tutorials/02_Terrain_Editor/019_Terrain_Editor_Interface.html"},"@type":"BlogPosting","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Sc2mapster Github</h1>
+        <h2>Github page for Starcraft 2 Modding Guides</h2>
+
+        <section id="downloads">
+          
+          <a href="http://github.com/Sc2mapster/sc2mapster.github.io" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        
+
+<h1>Terrain Editor Interface</h1>
+<p class="view">by <a href="mailto:jacobrepp@gmail.com">jrepp</a> (<em><small>11 February 2018</small></em>)</p>
+
+<ul>
+  <li><a href="#terrain-editor-interface">TERRAIN EDITOR INTERFACE</a>
+    <ul>
+      <li><a href="#the-interface">THE INTERFACE</a></li>
+      <li><a href="#view-options">VIEW OPTIONS</a></li>
+      <li><a href="#render-options">RENDER OPTIONS</a></li>
+      <li><a href="#layer-options">LAYER OPTIONS</a></li>
+      <li><a href="#tools">TOOLS</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="terrain-editor-interface">TERRAIN EDITOR INTERFACE</h1>
+
+<p>The Terrain Editor is probably the most diverse section of the Editor.
+Beyond its use as a workspace for map design, it is also where many of
+the Editor’s other sections interact with the map file itself. The
+Trigger Editor, for example, communicates with the Terrain Editor
+through points and regions. The Data Editor communicates with it through
+units and other entities, while the Cutscene Editor works through
+cameras, and much more.</p>
+
+<h2 id="the-interface">THE INTERFACE</h2>
+
+<p><img src="./019_Terrain_Editor_Interface/image1.png" alt="Image" /></p>
+
+<p>Interface View of Uvantak’s Ganymede</p>
+
+<p>As you may have guessed from the above, the Terrain Editor serves as a
+sort of project hub. The end result is that it features a wide range of
+options and functions. This has led to its being divided into seven
+individual layers. You can navigate these layers using the Terrain Bar
+on the Main Toolbar. There you’ll find buttons which take you directly
+to each layer, as seen below.</p>
+
+<p><img src="./019_Terrain_Editor_Interface/image2.png" alt="Image" /></p>
+
+<p>Terrain Bar</p>
+
+<p>By default, the layers are distinctly separated. Once a layer is active,
+you may only work on elements designated to that layer. While using the
+Terrain Editor, you will always have one active layer. You can find your
+current location by checking which layer button is currently
+highlighted.</p>
+
+<p>Every layer features its own options. These are presented on a large
+panel on the left-hand side of the main terrain view. This is called the
+UI Panel. The image below shows how it looks with the Units Layer open.</p>
+
+<p><img src="./019_Terrain_Editor_Interface/image3.png" alt="Image" /></p>
+
+<p>UI Panel</p>
+
+<p>The <strong>UI Panel</strong> changes depending on the current layer. Each layer has
+a Palette that offers most of the major controls within that layer. You
+can read about Palettes in more detail in the individual articles
+dealing with each layer. It is also worth noting that the top File Tab
+offers many options, which are broken into subtabs. Those are described
+below.</p>
+
+<h2 id="view-options">VIEW OPTIONS</h2>
+
+<p>These options control the visibility of individual components within the
+Editor, change the current viewport properties, and offer some support
+for camera features. You can reach them from the View Tab, as shown
+below.</p>
+
+<p><img src="./019_Terrain_Editor_Interface/image4.png" alt="Image" /></p>
+
+<p>View Tab</p>
+
+<hr />
+<p>Action         Effect
+  ————– ——————————————————–
+  Show UI Panel  Controls the visibility of the UI Panel.</p>
+
+<p>Show UI        Controls the visibility of several advanced UI features,
+                 such as framerate.</p>
+
+<p>Show Layer     Controls the visibility of each layer individually.</p>
+
+<p>Show Names     Controls the visibility of the names of elements like
+                 points and regions.</p>
+
+<p>Show Tags      Controls the visibility of tags created within the ‘Map
+                 Properties’ menu.</p>
+
+<p>Show           Controls the visibility of the difficulty setting of
+  Difficulty     units.</p>
+
+<p>Show           Controls the visibility of the skybox in the Editor
+  Background     display.</p>
+
+<p>Show Placement Controls the visibility of grid components.
+  Grid</p>
+
+<p>Show Pathing   Controls the visibility of differing types of pathing,
+                 such as ‘Unpathable Areas’.</p>
+
+<p>Show Terrain   Controls the visibility of certain terrain components
+                 such as creep, water, or map bounds.</p>
+
+<p>Enable Object  Toggles the sound effects for placing objects in the
+  Sounds         Editor.</p>
+
+<p>Lock Game View Locks the camera to the specific settings found in melee
+                 games.
+  ———————————————————————–</p>
+
+<h2 id="render-options">RENDER OPTIONS</h2>
+
+<p>This section contains options you can use to control the visibility of
+advanced graphical elements in the Editor. You can find them using the
+Render Tab, as seen below.</p>
+
+<p><img src="./019_Terrain_Editor_Interface/image5.png" alt="Image" /></p>
+
+<p>Render Tab</p>
+
+<hr />
+<p>Action         Effect
+  ————– ——————————————————–
+  Show Shader    Controls the visibility of the different types of
+  Mode           shaders.</p>
+
+<p>Show Lighting  Choose to display either the game lighting or custom
+                 lighting currently being edited.</p>
+
+<p>Show Fog       Controls the visibility of fog features.
+  Effects</p>
+
+<p>Show Particles Controls the visibility of particle elements including
+                 models, actors, and so forth.</p>
+
+<p>Show Wireframe Enables a mode that displays every element in wireframe.
+  Mode         <br />
+  ———————————————————————–</p>
+
+<p>Below is a shot of a few hydralisks that has been set to show in
+wireframe mode.</p>
+
+<p><img src="./019_Terrain_Editor_Interface/image6.png" alt="Image" /></p>
+
+<p>Wireframe Mode</p>
+
+<h2 id="layer-options">LAYER OPTIONS</h2>
+
+<p>This section allows you to control which layers are active at any given
+time, breaking their default separation. You can do this using the
+Select From field to activate different configurations of layers. You
+will also find the navigational options here, which allow you to move
+from layer to layer, the same as the Terrain Bar. You can find layer
+options using the Layer Tab, shown below.</p>
+
+<p><img src="./019_Terrain_Editor_Interface/image7.png" alt="Image" /></p>
+
+<p>Layer Tab</p>
+
+<h2 id="tools">TOOLS</h2>
+
+<p>Here you’ll find options supporting basic functions like selecting and
+designing a map. You can navigate the tools using the Tools Tab.</p>
+
+<p><img src="./019_Terrain_Editor_Interface/image8.png" alt="Image" /></p>
+
+<p>Tools Tab</p>
+
+<hr />
+<p>Action           Effect
+  —————- ——————————————————
+  Selection Mode   Allows you to select objects using the mouse.</p>
+
+<p>Measure Distance Changes the cursor into a measuring tool.</p>
+
+<p>Snap to Grid     Alters grid-snapping behavior for placing elements.</p>
+
+<p>Diagonal         Rotates the axis for selection, so box selection
+  Selection        occurs along a 45° axis.</p>
+
+<p>Use Group        Changes selection behavior to only affect units within
+  Selection        a group.</p>
+
+<p>Use Symmetry     Toggles the symmetry behavior used for the map.
+  ———————————————————————–</p>
+
+<p>The Measure Distance option changes the default mouse so that you can
+measure from one point to another. This can be useful in determining
+rough distances for things like melee map design, as well as helping
+with calculations for triggers or data. You can use the tool by clicking
+once to begin measuring, then clicking at your desired endpoint. The
+image below shows Measure Distance in action.</p>
+
+<p><img src="./019_Terrain_Editor_Interface/image9.png" alt="Image" /></p>
+
+<p>Measuring Tool</p>
+
+
+
+  <small>tags: <em></em></small>
+
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

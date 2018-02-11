@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=e59fb72e5ef60f32a67b812874e7b28118997c7b">
+
+<!-- Begin Jekyll SEO tag v2.3.0 -->
+<title>Control Statements | Sc2mapster Github</title>
+<meta property="og:title" content="Control Statements" />
+<meta name="author" content="jrepp" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="CONTROL STATEMENTS" />
+<meta property="og:description" content="CONTROL STATEMENTS" />
+<link rel="canonical" href="http://localhost:4000/editor_tutorials/03_Trigger_Editor/042_Control_Statements.html" />
+<meta property="og:url" content="http://localhost:4000/editor_tutorials/03_Trigger_Editor/042_Control_Statements.html" />
+<meta property="og:site_name" content="Sc2mapster Github" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-02-11T11:12:18+00:00" />
+<script type="application/ld+json">
+{"publisher":null,"headline":"Control Statements","dateModified":"2018-02-11T11:12:18+00:00","datePublished":"2018-02-11T11:12:18+00:00","sameAs":null,"url":"http://localhost:4000/editor_tutorials/03_Trigger_Editor/042_Control_Statements.html","author":{"@type":"Person","name":"jrepp"},"description":"CONTROL STATEMENTS","image":null,"name":null,"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/editor_tutorials/03_Trigger_Editor/042_Control_Statements.html"},"@type":"BlogPosting","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Sc2mapster Github</h1>
+        <h2>Github page for Starcraft 2 Modding Guides</h2>
+
+        <section id="downloads">
+          
+          <a href="http://github.com/Sc2mapster/sc2mapster.github.io" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        
+
+<h1>Control Statements</h1>
+<p class="view">by <a href="mailto:jacobrepp@gmail.com">jrepp</a> (<em><small>11 February 2018</small></em>)</p>
+
+<ul>
+  <li><a href="#control-statements">CONTROL STATEMENTS</a>
+    <ul>
+      <li><a href="#loops">LOOPS</a></li>
+      <li><a href="#waits">WAITS</a></li>
+      <li><a href="#using-control-statements">USING CONTROL STATEMENTS</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="control-statements">CONTROL STATEMENTS</h1>
+
+<p>Control Statements are actions that control when other actions are
+executed. Since the standard order of execution in the Trigger Editor is
+linear, these statements offer the unique ability to disrupt that linear
+flow and create dynamic systems. You can find control statements during
+action creation under the ‘General’ label, as shown in the image below.</p>
+
+<p><img src="./042_Control_Statements/image1.png" alt="Image" /></p>
+
+<p>Control Statement Actions</p>
+
+<h2 id="loops">LOOPS</h2>
+
+<p>Loops create a repeating cycle of statements that continues until
+broken. The types of loops are distinguished by how they’re broken and
+in what manner they proceed with their containing statements. The loop
+types are described in the table below.</p>
+
+<hr />
+<p>Loop Type  Details
+  ———- ————————————————————
+  Repeat     Containing actions are repeated until a Count variable is
+             reached. The count is incremented after all the contents are
+             executed.</p>
+
+<p>Repeat     Runs indefinitely until broken with another control
+  Forever    statement.</p>
+
+<p>Pick Each  Runs until its Start value reaches its End value. This value
+  Integer    is incremented after each run through the loop. The Picked
+             Integer function identifier is used to access the value for
+             the current iteration.</p>
+
+<p>Pick Each  Runs the loop once for every Player found in the Player
+  Player in  Group. The Picked Player function identifier is used to
+  Player     access the Player for the current iteration.
+  Group</p>
+
+<p>Pick Each  Runs the loop once for every Unit found in the Unit Group.
+  Unit in    The Picked Unit function identifier is used to access the
+  Unit Group Unit for the current iteration.</p>
+
+<p>For Each   Runs the loop until its Start value reaches its End value.
+  Real       After each iteration of the loop the Start value is altered
+             by an Increment that is a Real.</p>
+
+<p>For Each   Runs the loop until its Start value reaches its End value.
+  Integer    After each iteration of the loop the Start value is altered
+             by an Increment that is an Integer.</p>
+
+<p>For Each   Runs the loop once for each Player in the Player Group.
+  Player in<br />
+  Player   <br />
+  Group</p>
+
+<p>For Each   Runs the loop once for every frame in a specified UI
+  UI Frame   Variable.</p>
+
+<p>For Each   Runs the loop once for each Unit in the Unit Group.
+  Unit in  <br />
+  Unit Group</p>
+
+<p>While      Runs the loop until the supplied Condition is not True.
+  ———————————————————————–</p>
+
+<p>There are two supplementary control statements used to manipulate how a
+loop will behave. The first, Break, will terminate its containing loop
+when it is encountered. The second, Continue, will skip every action
+below it and return to the start of the loop when it is encountered.
+These statements are usually used alongside a check like If Then Else to
+control the loop under specific conditions. This is the strategy used in
+Repeat Forever infinite loops, to eventually exit the loop.</p>
+
+<h2 id="waits">WAITS</h2>
+
+<p>Waits grant the ability to pause control. This pause may be indefinite,
+until an event occurs, or until a certain condition is met. The wait
+types are broken down in the following table.</p>
+
+<hr />
+<p>Wait Type    Details
+  ———— ———————————————————-
+  Wait         Pauses control until an amount of Time has elapsed. Also
+               accepts a certain Time Type when setting the wait
+               duration.</p>
+
+<p>Wait For     Pauses until a certain Timer hits an amount of Time either
+  Timer        Elapsed or Remaining.</p>
+
+<p>Wait For     Pauses until a certain Condition is met. The Condition is
+  Condition    checked for on an interval of Time.</p>
+
+<p>Wait For     Pauses until a certain Condition is met. The Condition is
+  Condition    checked for on an interval of Time. There is additionally
+  With Maximum a failsafe Max Duration that is allowed to elapse before
+  Duration     the control is resumed.
+  ———————————————————————–</p>
+
+<h2 id="using-control-statements">USING CONTROL STATEMENTS</h2>
+
+<p>By providing a means of breaking the standard linear flow through a
+project’s logic, control statements become the key action for opening up
+a wider variety of projects that you can make with the Editor. Take a
+look at the following trigger.</p>
+
+<p><img src="./042_Control_Statements/image2.png" alt="Image" /></p>
+
+<p>Trigger Making Use of Control Statements</p>
+
+<p>There are several control statements in use in this trigger. A While
+loop containing a Pick Each Unit in Unit Group loop is used to populate
+a Unit Group from the unit contents of the entire map. The demo map
+contains a set of six marines, and stocking the Unit Group allows the
+interior Pick Each loop to exit out of the While loop by breaking its
+Condition. Once this loop concludes, a For Each Integer loop engages.
+Inside this loop is a Wait of 1.0 seconds and a text output of the
+loop’s counting value. These actions will in turn result in the trigger
+creating a count from 1 to 10 on the player’s screen, happening at an
+interval of 1 second. Now turn your attention to the other trigger.</p>
+
+<p><img src="./042_Control_Statements/image3.png" alt="Image" /></p>
+
+<p>Count Resultant Trigger</p>
+
+<p>This trigger shows a secondary use of the Integer count from the last
+trigger’s counting loop. When the first trigger’s count concludes, this
+trigger will destroy every marine on the map. The result is shown below.</p>
+
+<p><img src="./042_Control_Statements/image4.png" alt="Image" /></p>
+
+<p>Text Tag Styled and Attached to Unit</p>
+
+<p>This demo shows off some simple dynamic structuring enabled by control
+statements communicating between triggers on a timed basis rather than a
+standard linear basis.</p>
+
+
+
+  <small>tags: <em></em></small>
+
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

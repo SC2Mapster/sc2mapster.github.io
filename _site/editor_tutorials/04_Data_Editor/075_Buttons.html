@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=e59fb72e5ef60f32a67b812874e7b28118997c7b">
+
+<!-- Begin Jekyll SEO tag v2.3.0 -->
+<title>Buttons | Sc2mapster Github</title>
+<meta property="og:title" content="Buttons" />
+<meta name="author" content="jrepp" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="BUTTONS" />
+<meta property="og:description" content="BUTTONS" />
+<link rel="canonical" href="http://localhost:4000/editor_tutorials/04_Data_Editor/075_Buttons.html" />
+<meta property="og:url" content="http://localhost:4000/editor_tutorials/04_Data_Editor/075_Buttons.html" />
+<meta property="og:site_name" content="Sc2mapster Github" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-02-11T11:12:18+00:00" />
+<script type="application/ld+json">
+{"publisher":null,"headline":"Buttons","dateModified":"2018-02-11T11:12:18+00:00","datePublished":"2018-02-11T11:12:18+00:00","sameAs":null,"url":"http://localhost:4000/editor_tutorials/04_Data_Editor/075_Buttons.html","author":{"@type":"Person","name":"jrepp"},"description":"BUTTONS","image":null,"name":null,"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/editor_tutorials/04_Data_Editor/075_Buttons.html"},"@type":"BlogPosting","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Sc2mapster Github</h1>
+        <h2>Github page for Starcraft 2 Modding Guides</h2>
+
+        <section id="downloads">
+          
+          <a href="http://github.com/Sc2mapster/sc2mapster.github.io" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        
+
+<h1>Buttons</h1>
+<p class="view">by <a href="mailto:jacobrepp@gmail.com">jrepp</a> (<em><small>11 February 2018</small></em>)</p>
+
+<ul>
+  <li><a href="#buttons">BUTTONS</a>
+    <ul>
+      <li><a href="#button-data-fields">BUTTON DATA FIELDS</a></li>
+      <li><a href="#creating-a-button">CREATING A BUTTON</a></li>
+      <li><a href="#setting-the-button-icon">SETTING THE BUTTON ICON</a></li>
+      <li><a href="#setting-the-button-tooltip">SETTING THE BUTTON TOOLTIP</a></li>
+      <li><a href="#setting-the-button-hotkey">SETTING THE BUTTON HOTKEY</a></li>
+      <li><a href="#adding-a-button-to-a-unit">ADDING A BUTTON TO A UNIT</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="buttons">BUTTONS</h1>
+
+<p>The term ‘button’ is used broadly in StarCraft to refer to any
+interactive interface element, be it a menu button, a dialog, or
+anything clickable. Conversely, in the context of the Data Editor the
+term refers very specifically to an art datatype. These Buttons are the
+visuals for abilities in the command card, the section of a player’s UI
+with which they can interact directly. A typical view of a command card
+filled with buttons is shown below.</p>
+
+<p><img src="./075_Buttons/image1.png" alt="Image" /></p>
+
+<p>Templar Command Card with Buttons</p>
+
+<p>Here there are eight Buttons on the templar’s command card including
+‘Psi Storm,’ ‘Feedback,’ and the basic control elements, such as ‘Move,’
+‘Attack,’ and ‘Stop.’ Each button has been tied into the unit through
+its command card field. This sets the button’s look as well as some
+supplementary properties for use inside the interface.</p>
+
+<h2 id="button-data-fields">BUTTON DATA FIELDS</h2>
+
+<p>Compared with the varied, multi-purpose buttons of the engine at large,
+the Button datatype is quite scant. The properties contained in this
+type are broken down in the table below.</p>
+
+<hr />
+<p>Field       Details
+  ———– —————————————————————-
+  Icon        Sets the texture with which the button will be made. This
+              typically uses a member of the specially styled set of 76x76
+              textures included with the Editor, identified by their prefix
+              btn-.</p>
+
+<p>Hotkey      Sets a keyboard key that, when pressed, will automatically
+              trigger the button in the UI. In StarCraft hotkeys are almost
+              universally used to speed player input.</p>
+
+<p>Tooltip     Sets the text displayed during button mouseover.</p>
+
+<p>Name        Sets the name displayed during button mouseover.</p>
+
+<p>Tint By     Colorizes the button overlay based on race selection. The races
+  Race        are colorized as follows: Zerg – Orange, Terran – Green, and
+              Protoss – Blue.</p>
+
+<p>Universal   Adds the button and its hotkey to every unit. Typically used for
+              only the elementary unit actions, ‘Move,’ ‘Attack,’ ‘Stop,’
+              ‘Cancel,’ and so forth.</p>
+
+<p>Alert Icon  The alert panel can make use of the Button type to push warning
+              or teaching information out to the player. This sets the icon
+              sent by this button’s ability.</p>
+
+<p>Alert       Similar to the Alert Icon, but sets a tooltip to be delivered
+  Tooltip     for alerts.</p>
+
+<p>Alert Name  Similar to the Alert Icon, but sets a name to be delivered for
+              alerts.</p>
+
+<p>Race        Sets a race attribute of the button, for organizational
+              purposes.
+  —————————————————————————-</p>
+
+<p>Leaving the mouse idle over a button will display a dialog containing
+its Tooltip and Name, along with times relevant to the connected
+ability. This dialog is shown below.</p>
+
+<p><img src="./075_Buttons/image2.png" alt="Image" /></p>
+
+<p>Button Mouseover Tooltip and Name</p>
+
+<h2 id="creating-a-button">CREATING A BUTTON</h2>
+
+<p>Open the Data Editor and move to the buttons tab. If it isn’t already
+open, you can navigate there via + -&gt; Edit Art and Sound Data -&gt;
+Buttons, as shown.</p>
+
+<p><img src="./075_Buttons/image3.png" alt="Image" /></p>
+
+<p>Navigating to Buttons in Data</p>
+
+<p>Create a new button by right-clicking in the main window view and
+selecting ‘Add Button.’</p>
+
+<p><img src="./075_Buttons/image4.png" alt="Image" /></p>
+
+<p>Creating a New Button</p>
+
+<p>This will launch the ‘Button Properties’ window. There you can set the
+‘Name’ of the new button, then hit ‘Suggest’ to generate an ID. Note
+that typically a button is named for the ability it will represent,
+rather than being named as a button itself. So choose a name like
+‘Attack’ or ‘Plague’ rather than ‘Attack Button’ or ‘Plague Button.’ A
+typical creation screen is shown below, filled out with the name ‘Demo.’</p>
+
+<p><img src="./075_Buttons/image5.png" alt="Image" /></p>
+
+<p>Completed Button Creation Screen</p>
+
+<h2 id="setting-the-button-icon">SETTING THE BUTTON ICON</h2>
+
+<p>The primary button field you’ll need to set is the icon field. This will
+determine the texture to be transformed into a Button. Highlight the
+‘icon’ field and double click it to launch an ‘Object Values’ window.
+Clicking ‘Browse’ here will launch the Archive Browser. Inside the
+browser, you can select any texture for use as a button, but the
+standard is 76x76 and with the filetype .dds. You can find a large
+collection of these textures by searching with the prefix btn-, as shown
+below.</p>
+
+<p><img src="./075_Buttons/image6.png" alt="Image" /></p>
+
+<p>Icon Selection with the Archive Browser</p>
+
+<p>In this demo, the texture btn-tips-hotkeys.dds has been selected. Note
+that these textures lack the colored border typical of in-game buttons.
+This is because the border is overlaid by the engine and colorized using
+the Tint By Race field. You can see the many types of borders within the
+textures by searching under the prefix btn-border.</p>
+
+<h2 id="setting-the-button-tooltip">SETTING THE BUTTON TOOLTIP</h2>
+
+<p>To provide helpful information to the player, a button is usually fitted
+with a tooltip to be displayed by the game on button mouseover. To
+create that text, navigate to the ‘Tooltip’ field and double click to
+open an ‘Object Values’ editing window.</p>
+
+<p><img src="./075_Buttons/image7.png" alt="Image" /></p>
+
+<p>For this demo, sample text has been inputted containing the message,
+‘This is a button built for a tutorial demo.’ At this point, it is
+common to also set this for the Alert Tooltip field using the same
+procedure.</p>
+
+<h2 id="setting-the-button-hotkey">SETTING THE BUTTON HOTKEY</h2>
+
+<p>For many players, buttons are seldom clicked in what might be considered
+the ‘standard’ fashion. They are usually interacted with via their
+hotkeys. A hotkey sets up an automatic ‘pressing’ of the target button
+in response to the direct press of a player’s keyboard key. This is an
+arrangement built for speed, but some prefer it for simple convenience.</p>
+
+<p>While these hotkeys can be decided by players through the game’s
+‘Hotkeys’ section, base hotkeys are set through data. To do so, move to
+the ‘Hotkeys’ field in the Data Editor and double click it. This will
+launch an ‘Object Values’ window, presenting you with the following
+view.</p>
+
+<p><img src="./075_Buttons/image8.png" alt="Image" /></p>
+
+<p>No Hotkey Assigned</p>
+
+<p>From here you can set the hotkey by clicking inside the ‘Hotkey’ box,
+where the value is currently Unknown. This will turn the current hotkey
+value red and allow for keyboard input. Pressing a key at this time will
+set it as the hotkey. For this demonstration, the D key was hit, giving
+the following result.</p>
+
+<p><img src="./075_Buttons/image9.png" alt="Image" /></p>
+
+<p>Hotkey Assigned</p>
+
+<p>Clicking ‘Ok’ at this point will save the hotkey and return to the main
+Editor view.</p>
+
+<h2 id="adding-a-button-to-a-unit">ADDING A BUTTON TO A UNIT</h2>
+
+<p>Buttons are specifically designed to slot into a unit’s command card. In
+this exercise, you’ll slot the demo button into a pre-existing unit. To
+do this, move to the units tab via + -&gt; Edit Game Data -&gt; Units. Any
+unit would be useable here, but for this instance select the ‘Marine.’
+Then select its ‘Command Card’ field as shown below.</p>
+
+<p><img src="./075_Buttons/image10.png" alt="Image" /></p>
+
+<p>Command Card Field</p>
+
+<p>Double clicking the field will open a subeditor view for configuring a
+unit’s command card. You can add a new button by navigating to an
+unoccupied slot in the command card and clicking the green +. This will
+launch a window called ‘Choose Button.’ Inside that window, select the
+‘Demo’ button for addition to the command card. This procedure is shown
+below.</p>
+
+<p><img src="./075_Buttons/image11.png" alt="Image" /></p>
+
+<p>Adding a Button to the Command Card</p>
+
+<p>Click ‘Ok’ to add the button to the command card. You will now need to
+link an ability to the button in order for it to be functional and
+display in game. Select the new button in the command card subeditor and
+set its ‘Command Type’ to ‘Ability Command,’ set its ‘Ability’ to
+‘Move,’ and then set its ‘Ability Command’ to ‘Move.’ This will give you
+the following view.</p>
+
+<p><img src="./075_Buttons/image12.png" alt="Image" /></p>
+
+<p>Completed Linked Button</p>
+
+<p>From here, you can complete the button by hitting ‘Ok.’ For this demo,
+the ‘Move’ ability is being used as a stand-in for what would normally
+be at least a non-traditional skill on the unit, if not a completely
+custom ability. For the purposes of this demonstration, the ability
+itself isn’t all that relevant. Your button should now be visible in
+game on the command card. You can confirm this by launching the map with
+‘Test Document’ and checking it.</p>
+
+<p>Doing so should give you a result like the one pictured below.</p>
+
+<p><img src="./075_Buttons/image13.png" alt="Image" /></p>
+
+<p>Custom Button In-Game</p>
+
+
+
+  <small>tags: <em></em></small>
+
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

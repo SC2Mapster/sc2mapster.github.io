@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=e59fb72e5ef60f32a67b812874e7b28118997c7b">
+
+<!-- Begin Jekyll SEO tag v2.3.0 -->
+<title>Conditions | Sc2mapster Github</title>
+<meta property="og:title" content="Conditions" />
+<meta name="author" content="jrepp" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="CONDITIONS" />
+<meta property="og:description" content="CONDITIONS" />
+<link rel="canonical" href="http://localhost:4000/editor_tutorials/03_Trigger_Editor/036_Conditions.html" />
+<meta property="og:url" content="http://localhost:4000/editor_tutorials/03_Trigger_Editor/036_Conditions.html" />
+<meta property="og:site_name" content="Sc2mapster Github" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-02-11T11:12:18+00:00" />
+<script type="application/ld+json">
+{"publisher":null,"headline":"Conditions","dateModified":"2018-02-11T11:12:18+00:00","datePublished":"2018-02-11T11:12:18+00:00","sameAs":null,"url":"http://localhost:4000/editor_tutorials/03_Trigger_Editor/036_Conditions.html","author":{"@type":"Person","name":"jrepp"},"description":"CONDITIONS","image":null,"name":null,"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/editor_tutorials/03_Trigger_Editor/036_Conditions.html"},"@type":"BlogPosting","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Sc2mapster Github</h1>
+        <h2>Github page for Starcraft 2 Modding Guides</h2>
+
+        <section id="downloads">
+          
+          <a href="http://github.com/Sc2mapster/sc2mapster.github.io" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        
+
+<h1>Conditions</h1>
+<p class="view">by <a href="mailto:jacobrepp@gmail.com">jrepp</a> (<em><small>11 February 2018</small></em>)</p>
+
+<ul>
+  <li><a href="#conditions">CONDITIONS</a>
+    <ul>
+      <li><a href="#preparing-a-trigger">PREPARING A TRIGGER</a></li>
+      <li><a href="#control-statements">CONTROL STATEMENTS</a></li>
+      <li><a href="#condition-operators">CONDITION OPERATORS</a></li>
+      <li><a href="#configuring-your-condition">CONFIGURING YOUR CONDITION</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="conditions">CONDITIONS</h1>
+
+<p>Conditions are used within triggers to determine whether ‘something
+about the game’ is true or false. The ambiguity here is intentional, as
+conditions can be applied to almost any object and any occurrence in the
+game.</p>
+
+<p>Essentially, conditions pose questions about the game. One example could
+be, ‘Does this player have at least five units?’ The game then responds
+with its knowledge of that property, the player’s unit count, and
+answers – true or false. Based on the answer, statements in the Editor
+can proceed in different ways, a notion typically called ‘Control.’</p>
+
+<p>Control allows you to break the Editor’s basic linear behavior. With
+conditions, elements like a trigger can become non-linear, avoiding
+certain segments of code, repeating certain segments multiple times, or
+completely stopping and jumping to entirely different locations
+altogether. Conditions allow for choices, and this is an important
+aspect of creating things that are dynamic, lively, and interesting.</p>
+
+<p>The idea of conditions as questions is something you should try to keep
+in mind. This is a helpful habit that can be useful in figuring out if a
+condition is appropriate for a given scenario. It will also help when
+you start learning the mathematical notation that the StarCraft Editor
+expresses conditions in.</p>
+
+<h2 id="preparing-a-trigger">PREPARING A TRIGGER</h2>
+
+<p>To demonstrate the use of conditions you’ll need to assemble a trigger.
+Use the following procedure to prepare the base trigger.</p>
+
+<ul>
+  <li>Create a new custom map and navigate to the Trigger Editor.</li>
+  <li>Proceed to the “Melee Initialization” trigger and delete all of the
+default actions and events contained within it.</li>
+  <li>Create a new event by navigating to Events -&gt; Key Pressed.</li>
+  <li>Set the ‘Key’ term of the event to the key ‘1.’</li>
+  <li>Create a new variable via Local Variables -&gt; New Element.</li>
+  <li>Name the local variable ‘Press Count’ and set its type to ‘Integer.’</li>
+  <li>Create a new action by navigating to Actions -&gt; Modify Variable
+(Integer).</li>
+  <li>Set the ‘Variable’ term of the action to the variable ‘Press Count.’</li>
+  <li>Set the ‘Value’ term of the action to ‘1.’</li>
+</ul>
+
+<p>This should leave you with the following.</p>
+
+<p><img src="./036_Conditions/image1.png" alt="Image" /></p>
+
+<p>Trigger Basis</p>
+
+<h2 id="control-statements">CONTROL STATEMENTS</h2>
+
+<p>Conditions aren’t relegated solely to the ‘Conditions’ heading in a
+trigger, they also appear in a type of action called Control Statements.
+One such action is ‘If Then Else.’ This action allows you to specify a
+condition that, depending on the result of a true or false question,
+will proceed to one of two possible blocks of statements, one for true
+and one for false. That block of statements is then run a single time,
+while the other block is skipped. The condition is specified under the
+‘If’ heading of the control statement, while the block of statements for
+a true response is under a ‘Then’ heading, and the block of statements
+for a false response is under an ‘Else’ heading.</p>
+
+<p>As such, the ‘If Then Else’ control statement can be considered as
+question and response in the form, ‘If this happens Then do this, Else
+do this.’</p>
+
+<p>You can investigate the ‘If Then Else’ control statement by adding it to
+your trigger below the ‘Modify Press Count + 1’ statement via New -&gt;
+New Action -&gt; If Then Else. You’ll find the control statements under
+the ‘ – General’ category in the ‘Actions’ window.</p>
+
+<p><img src="./036_Conditions/image2.png" alt="Image" /></p>
+
+<p>Selecting If Then Else Action</p>
+
+<h2 id="condition-operators">CONDITION OPERATORS</h2>
+
+<p>Add a condition to the ‘If Then Else’ action by right-clicking on the
+‘If’ heading and navigating to New -&gt; New Condition. This will launch
+the ‘Configure Condition’ window shown below.</p>
+
+<p><img src="./036_Conditions/image3.png" alt="Image" /></p>
+
+<p>Operators View</p>
+
+<p>Configuring a condition requires two things, assembling the terms of the
+condition and selecting what are known as the Operators. In the question
+model, the former involves what the condition is inquiring about, while
+the latter forms the type of question that a condition will ask. Each
+operator has their own specific function when it comes to forming
+conditions, which are described in the below table.</p>
+
+<hr />
+<p>Oper   Details
+  ator <br />
+  —— —————————————————————-
+  And    Creates a union between two terms. Both terms are then tested
+         together.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     If both terms test true, then the result is true. If both terms
+     test false, then the result is false. If one terms tests true
+     but the other does not, then the result is false.
+</code></pre></div></div>
+
+<p>Comp   Evaluates and compares two terms. This is actually a group of
+  aris   operators, listed in the next six entries.
+  on</p>
+
+<p>!=     If the terms are not equal, return true. If equal, return false.</p>
+
+<p>&lt;     If the leftmost term is smaller than the rightmost term, return
+         true. If not, return false. Equal terms return false.</p>
+
+<p>&lt;=    If the leftmost term is smaller than the rightmost term, return
+         true. If not, return false. Equal terms return false.</p>
+
+<p>==     If the terms are equal, return true. If not, return false.</p>
+
+<p>&gt;     If the leftmost term is larger than the rightmost term, return
+         true. If not, return false. Equal terms return false.</p>
+
+<p>&gt;=    If the leftmost term is larger than the rightmost term, return
+         true. If not, return false. Equal terms return true.</p>
+
+<p>Not    Inverts the term. Testing the Not version of a term will provide
+         a result that is the opposite the normal term’s result.</p>
+
+<p>Or     Creates a union between two terms. Both terms are then tested
+         together.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     Differs from And in that if a single term tests true, then the
+     result is true. If both terms test true, then the result is
+     true. If both test false, then the result is false.
+</code></pre></div></div>
+
+<p>Text   Returns true if the text parameter being tested is not empty.
+  Has  <br />
+  Been <br />
+  Set</p>
+
+<p>With   A composite operator that tests if a term is between two values.
+  in     This will also return true if the Value is equal to either term,
+  Boun   as it uses two &lt;= operators, in the form Min Value &lt;= Term &lt;=
+  ds     Max Value. This operator supports only the Integer, Byte, and
+         Real value types.
+  ———————————————————————–</p>
+
+<h2 id="configuring-your-condition">CONFIGURING YOUR CONDITION</h2>
+
+<p>Finish setting your condition by navigating to the ‘Comparison’ within
+the ‘Configure Condition’ window. Set the terms by clicking on the
+headings within the subview. ‘Value 1’ corresponds to the first term,
+while ‘Value 2’ corresponds to the second term, which follows the
+operator. Set the first term to the variable ‘Press Count’ by double
+clicking on ‘Value 1’ and navigating to Variable -&gt; Press Count. Set
+the second term by double clicking on ‘Value 2’, navigating to Value,
+and inputting 10. Now set the operator by double clicking on ‘Operator’
+and navigating to ==.</p>
+
+<p><img src="./036_Conditions/image4.png" alt="Image" /></p>
+
+<p>Setting the Term</p>
+
+<p>Click ‘Ok’ to return to the Trigger Editor. Now you can finish the
+trigger with the following procedure.</p>
+
+<ul>
+  <li>Under the ‘Then’ heading, create a ‘Text Message’ action. Set the
+Message to ‘High Reset.’</li>
+  <li>Also here, create a ‘Set Variable’ action. Set the variable to Press
+Count and the value to ‘0.’</li>
+  <li>Under the ‘Else’ heading, create a ‘Text Message’ action. Set the
+Message to ‘Low.’</li>
+</ul>
+
+<p>You should now be left with something that looks like the image below.</p>
+
+<p><img src="./036_Conditions/image5.png" alt="Image" /></p>
+
+<p>Completed Trigger</p>
+
+<p>You have assembled a trigger that triggers every time the player presses
+the 1 key on the keyboard. This increments the variable each time. Then,
+depending on the condition Press Count == 10, one of two block
+statements will be run. A true statement results in the message ‘High
+Reset,’ a false statement results in the message ‘Low.’ As such, each
+trigger poses the question, ‘Is the variable equal to 10?’ It then
+determines which procedure to follow based on the condition’s response.</p>
+
+<p>In practice, this should be false for the first nine triggers, then true
+for the tenth. The ‘High Reset’ message will show on the tenth keypress.
+You can test the map to confirm that it’s working correctly by
+navigating to File -&gt; Test Document. If you’ve done everything right,
+you should get the result shown below.</p>
+
+<p><img src="./036_Conditions/image6.png" alt="Image" /></p>
+
+<p>Successful Output</p>
+
+
+
+  <small>tags: <em></em></small>
+
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

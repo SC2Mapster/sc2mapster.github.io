@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=e59fb72e5ef60f32a67b812874e7b28118997c7b">
+
+<!-- Begin Jekyll SEO tag v2.3.0 -->
+<title>Validators | Sc2mapster Github</title>
+<meta property="og:title" content="Validators" />
+<meta name="author" content="jrepp" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="VALIDATORS" />
+<meta property="og:description" content="VALIDATORS" />
+<link rel="canonical" href="http://localhost:4000/editor_tutorials/04_Data_Editor/071_Validators.html" />
+<meta property="og:url" content="http://localhost:4000/editor_tutorials/04_Data_Editor/071_Validators.html" />
+<meta property="og:site_name" content="Sc2mapster Github" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-02-11T11:12:18+00:00" />
+<script type="application/ld+json">
+{"publisher":null,"headline":"Validators","dateModified":"2018-02-11T11:12:18+00:00","datePublished":"2018-02-11T11:12:18+00:00","sameAs":null,"url":"http://localhost:4000/editor_tutorials/04_Data_Editor/071_Validators.html","author":{"@type":"Person","name":"jrepp"},"description":"VALIDATORS","image":null,"name":null,"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/editor_tutorials/04_Data_Editor/071_Validators.html"},"@type":"BlogPosting","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Sc2mapster Github</h1>
+        <h2>Github page for Starcraft 2 Modding Guides</h2>
+
+        <section id="downloads">
+          
+          <a href="http://github.com/Sc2mapster/sc2mapster.github.io" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        
+
+<h1>Validators</h1>
+<p class="view">by <a href="mailto:jacobrepp@gmail.com">jrepp</a> (<em><small>11 February 2018</small></em>)</p>
+
+<ul>
+  <li><a href="#validators">VALIDATORS</a>
+    <ul>
+      <li><a href="#validator-details">VALIDATOR DETAILS</a></li>
+      <li><a href="#validator-applications">VALIDATOR APPLICATIONS</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="validators">VALIDATORS</h1>
+
+<p>Validators conduct tests. While they are a data type themselves, their
+purpose is to hook into other data types and perform tests, checking if
+a statement is true or false. Depending on the result, the hosting data
+type will make a choice and take certain actions accordingly. As such,
+validators control data in a manner reminiscent of the way conditions
+control triggers. Still, the application of validators is quite unique
+and they have extensive uses, from building game objects to controlling
+AI.</p>
+
+<h2 id="validator-details">VALIDATOR DETAILS</h2>
+
+<p>How you apply validators depends on the type of validator and the
+hosting type where the validator will be used. There are many types of
+validator available and they can be used in effects, behaviors,
+abilities, and actors, taking on a slightly different role each time. To
+get a feel for these myriad configurations, it’s best to start by
+looking at the many examples of their use in the existing data
+libraries. You can find validators in the Data Editor by navigating to +
+-&gt; Edit Game Data -&gt; Validators, as shown below.</p>
+
+<p><img src="./071_Validators/image1.png" alt="Image" /></p>
+
+<p>Navigating to Validators in Data</p>
+
+<p>This will launch the validators tab.</p>
+
+<p><img src="./071_Validators/image2.png" alt="Image" /></p>
+
+<p>Validators Tab Listing</p>
+
+<p>In this view, all of the validators are organized by their Validator
+Name, Source, #, and a Validator Type. You’ll see that validators
+typically have names look like sentence fragments. Examples include,
+‘Threatens Baneling,’ ‘Is Phoenix,’ and ‘Can Charge.’ This reflects the
+fact that validators slot into other things and conduct a test. The
+names make more sense when phrased in terms of their host, like ‘Can
+this Zealot Charge?’ or ‘Is this unit a phoenix?’ As a result, a
+validator’s name can give a clue to its eventual use. When you’re
+creating your own custom validators, this is a good style to mimic.</p>
+
+<p>From the validators tab, highlight the ‘Caster Not Attacking’ validator
+in the main editor view to reveal its fields, as shown below.</p>
+
+<p><img src="./071_Validators/image3.png" alt="Image" /></p>
+
+<p>Validators Fields View</p>
+
+<p>This ‘Caster Not Attacking’ validator is a Unit Order Queue validator.
+This type tests if a unit has been ordered by a player to use a certain
+Ability. Having selected the validator, the rightmost view will now show
+fields that enable and support this test. Most validator fields are type
+specific, but examining a typical validator’s composition will help you
+understand how to break them down. There are three main fields to the
+Unit Order Queue validator, which are broken down in the table below.</p>
+
+<hr />
+<p>Field     Details
+  ——— ————————————————————-
+  Ability   Sets the ability to be tested.</p>
+
+<p>Find      Checks the status of the ability. Enabled means it is
+            occurring, Disabled means it is not occurring.</p>
+
+<p>Unit -    Sets the unit being tested by the validator.
+  Value   <br />
+  ———————————————————————–</p>
+
+<p>For the validator you’re examining now, the Ability being tested is
+Attack, the Find status is Disabled, and the Unit – Value is Caster or
+the user of the ability. Together, these will check if a unit is
+currently not using the attack ability, which is neatly covered by its
+name, ‘Caster Not Attacking.’</p>
+
+<h2 id="validator-applications">VALIDATOR APPLICATIONS</h2>
+
+<p>Validators see application in effects, behaviors, and abilities. To
+apply a validator to any of these data types, you can navigate to its
+field, ‘Validators,’ and double click to launch the ‘Object Values’
+window. There, click the green + to add a new validator. This will
+trigger a new ‘Object Value (Array)’ window where the validator is
+selected. This procedure should look as it does in the image below.</p>
+
+<p><img src="./071_Validators/image4.png" alt="Image" /></p>
+
+<p>Applying a Validator</p>
+
+<p>For effects, validators are used to test if the effect should be
+applied. This test will occur at the normal application time for each
+effect type. If the validator returns false, the effect will not take
+action. If it returns true, it will proceed as normal. You can see an
+example of an effect validator below.</p>
+
+<p><img src="./071_Validators/image5.png" alt="Image" /></p>
+
+<p>Effects Validators</p>
+
+<p>Here, the MULE – Repair effect has a set of five validators. Should a
+unit for example be Warping In, then the first validator will fail,
+resulting in the effect not being applied. In this case, every validator
+must be found to be true for the effect to take action.</p>
+
+<p>In behaviors, validators allow you to either disable or completely
+remove a behavior based on the response of a test. This is shown in the
+example below.</p>
+
+<p><img src="./071_Validators/image6.png" alt="Image" /></p>
+
+<p>Behaviors Validators</p>
+
+<p>The validators are broken up into Validators(Disable) and
+Validators(Remove). Each case will apply its specific action to the
+behavior when the validator fails. For Validators(Disable), a false
+result of a validator test causes the behavior to be disabled, but
+remain within the unit for further testing. For Validators(Remove), a
+false test causes the behavior to be stripped from the unit permanently.
+In this example, the Ghost – Cloak will be removed once the unit runs
+out of energy. For the next cloak, the behavior will need to be
+reapplied by another ‘Add Behavior’ effect.</p>
+
+
+
+  <small>tags: <em></em></small>
+
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

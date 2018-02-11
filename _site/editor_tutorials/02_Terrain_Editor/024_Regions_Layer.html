@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=e59fb72e5ef60f32a67b812874e7b28118997c7b">
+
+<!-- Begin Jekyll SEO tag v2.3.0 -->
+<title>Regions Layer | Sc2mapster Github</title>
+<meta property="og:title" content="Regions Layer" />
+<meta name="author" content="jrepp" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="REGIONS LAYER" />
+<meta property="og:description" content="REGIONS LAYER" />
+<link rel="canonical" href="http://localhost:4000/editor_tutorials/02_Terrain_Editor/024_Regions_Layer.html" />
+<meta property="og:url" content="http://localhost:4000/editor_tutorials/02_Terrain_Editor/024_Regions_Layer.html" />
+<meta property="og:site_name" content="Sc2mapster Github" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-02-11T11:12:18+00:00" />
+<script type="application/ld+json">
+{"publisher":null,"headline":"Regions Layer","dateModified":"2018-02-11T11:12:18+00:00","datePublished":"2018-02-11T11:12:18+00:00","sameAs":null,"url":"http://localhost:4000/editor_tutorials/02_Terrain_Editor/024_Regions_Layer.html","author":{"@type":"Person","name":"jrepp"},"description":"REGIONS LAYER","image":null,"name":null,"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/editor_tutorials/02_Terrain_Editor/024_Regions_Layer.html"},"@type":"BlogPosting","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Sc2mapster Github</h1>
+        <h2>Github page for Starcraft 2 Modding Guides</h2>
+
+        <section id="downloads">
+          
+          <a href="http://github.com/Sc2mapster/sc2mapster.github.io" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        
+
+<h1>Regions Layer</h1>
+<p class="view">by <a href="mailto:jacobrepp@gmail.com">jrepp</a> (<em><small>11 February 2018</small></em>)</p>
+
+<ul>
+  <li><a href="#regions-layer">REGIONS LAYER</a>
+    <ul>
+      <li><a href="#regions-palette">REGIONS PALETTE</a></li>
+      <li><a href="#region-properties">REGION PROPERTIES</a></li>
+      <li><a href="#demoing-regions">DEMOING REGIONS</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="regions-layer">REGIONS LAYER</h1>
+
+<p>The Regions Layer allows you to create regions. Regions are marked zones
+of the map that communicate areas for use in other Modules. Regions
+differ from points in that they mark specific shapes on the map, rather
+than single coordinates. Select this layer from the Terrain Bar using
+the icon shown below.</p>
+
+<p><img src="./024_Regions_Layer/image1.png" alt="Image" /></p>
+
+<p>Region Layer Icon</p>
+
+<h2 id="regions-palette">REGIONS PALETTE</h2>
+
+<p>The Regions Palette is where you’ll find the controls for creating
+regions, along with a list of any regions already on the map. This
+palette is on the left-hand side of the main viewport when the Regions
+Layer of the Terrain Editor is active. It looks like the image below.</p>
+
+<p><img src="./024_Regions_Layer/image2.png" alt="Image" /></p>
+
+<p>Regions Palette</p>
+
+<p>Regions consist of shapes applied to the map using three tools: the
+rectangle, the circle, and the diamond. Areas in a region are marked in
+the Editor using a colored overlay, but are invisible during normal
+play. You can also build composite regions by combining any number of
+basic shapes. You can combine shapes either positively, so that their
+areas are added together, or negatively, so that an area is subtracted
+from an existing region.</p>
+
+<p>You can check the composition of a region by selecting a region and
+consulting the bottommost subview of the Regions Palette. This list will
+show a tally of all the primitive forms contained within that region and
+if they were combined in the Positive or Negative method.</p>
+
+<h2 id="region-properties">REGION PROPERTIES</h2>
+
+<p>Composite regions are built using the ‘Region Properties’ window. You
+can find this by double clicking on a pre-existing region either in the
+map view or within the Regions Palette. You can see an example of the
+Region Properties window in the image below.</p>
+
+<p><img src="./024_Regions_Layer/image3.png" alt="Image" /></p>
+
+<p>Composite Region Building</p>
+
+<p>Here, you can build a composite by beginning with a single, positive
+region. You can then add shapes by right-clicking on the shape listing
+and selecting Add Circle, Add Rectangle, or Add Diamond. Any of these
+shapes can be turned into cutouts by selecting the Negative option.
+Positive regions are displayed as a blue overlay, while negative regions
+are displayed in red. Back in the map view, the actual shape will be
+displayed as a colored overlay, with negative cut-out regions appearing
+transparent. In the map view, the example from above would appear as
+shown below.</p>
+
+<p><img src="./024_Regions_Layer/image4.png" alt="Image" /></p>
+
+<p>Composite Region in Editor</p>
+
+<h2 id="demoing-regions">DEMOING REGIONS</h2>
+
+<p>Open the demo map provided with this article. This map consists of a
+small fort on top of a hill, with a pair of player-owned hellions some
+distance away.</p>
+
+<p><img src="./024_Regions_Layer/image5.png" alt="Image" /></p>
+
+<p>Demo Map Course</p>
+
+<p>If you check the Trigger Editor in this map, you’ll find that there is a
+brief action found under ‘Player 1 Captures Base,’ which will turn
+control of the fort’s neutral units over to the player once a unit
+entering a region. To facilitate this, you’ll create a region near the
+fort’s entrance that can be hooked into this trigger.</p>
+
+<p>Create a region by clicking on one of the three region tools in the
+Regions Palette. The Add Region Diamond tool will be most appropriate
+here. Select it, then click and drag on the map view to draw the region.
+This should give you something that looks like the image below.</p>
+
+<p><img src="./024_Regions_Layer/image6.png" alt="Image" /></p>
+
+<p>Creating a Region</p>
+
+<p>If you don’t like the placement of your region, you can resize it by
+toggling the cursor into selection mode. Pressing Space on the keyboard
+will swap the mouse cursor between a normal pointer for selection mode
+and a pointer with a plus sign for region creation. Once you’re in
+selection mode, clicking on a region will reactive it, allowing you to
+move it by clicking and dragging the region to another location. You can
+resize the region by holding down Ctrl and clicking on the edge of the
+region, dragging it to a new size.</p>
+
+<p>Now, click the region in the Regions Palette to launch its ‘Region
+Properties’ window, then navigate to the ‘General’ tab. Set the name to
+‘Capture Base.’ The properties window should look like the one shown
+below.</p>
+
+<p><img src="./024_Regions_Layer/image7.png" alt="Image" /></p>
+
+<p>Region Properties Contents</p>
+
+<p>You can edit the region in the leftmost view under the ‘General’ tab, as
+above. It’s also worth noting that the dimensions and position of the
+region are presented under the ‘Shapes’ tab as Size and Center. You can
+confirm your region size here if you had any trouble during the original
+placement.</p>
+
+<p>Next, return to the Terrain Module and prepare another region by
+selecting the Add Region Rectangle tool. This time, create the region so
+that it encompasses the entire hilltop fort. Rename this region ‘Entire
+Base’. You should be left with something like the image below.</p>
+
+<p><img src="./024_Regions_Layer/image8.png" alt="Image" /></p>
+
+<p>Current Region Layout</p>
+
+<p>If you’re having trouble seeing the entire scene, try either zooming out
+or setting the camera to a bird’s eye view by going to View -&gt; Entire
+Map. From this view, you can zoom in and get the perspective seen in the
+example image. Note that you can also highlight a specific region by
+selecting it in the map view, as has been done for the ‘Capture Base’
+region above.</p>
+
+<p>Unfortunately, there are now minerals fields and a vespene geyser inside
+the ‘Entire Base’ region. According to the actions in the Trigger
+Module, this would result in the player being given control of these
+resources. Resources typically must belong to the Neutral player. You
+can use a composite region to build a region that encompasses the base,
+but also makes allowance for these elements.</p>
+
+<p>Prepare your composite region by creating two rectangular regions, one
+boxing around the mineral line and one around the vespene geyser. You
+can change these to Negative regions that will be cut out of the larger
+shape, ensuring that resources aren’t included in the region. This
+procedure should result in the following view.</p>
+
+<p><img src="./024_Regions_Layer/image9.png" alt="Image" /></p>
+
+<p>Cutout Regions Prepared</p>
+
+<p>To make sure everything is easy to read, the new regions and ‘Capture
+Base’ have had custom colors applied to them. You can do this by heading
+to Region Properties -&gt; General -&gt; Custom Color. You can now create a
+composite region by selecting its three constituent regions, then
+navigating to the ‘Region Properties’ window. Select all the regions by
+holding shift and clicking on ‘Capture Base,’ ‘Region 001,’ and ‘Region
+002.’ Now right-click in the Regions Palette and navigate to Edit -&gt;
+Merge Selection.</p>
+
+<p><img src="./024_Regions_Layer/image10.png" alt="Image" /></p>
+
+<p>Collected Region Properties</p>
+
+<p>This view presents an abstraction of what you can see in the Terrain
+Editor. From here, you can create the cutouts by selecting the two
+smallest regions and changing their State to Negative. The negative
+shapes will be drawn in red, which should give you a result like the one
+shown in the Region Properties window below.</p>
+
+<p><img src="./024_Regions_Layer/image11.png" alt="Image" /></p>
+
+<p>Constructed Composite Region</p>
+
+<p>Returning to the map view should now show the region containing the
+entire fort, but with two holes around the resources.</p>
+
+<p><img src="./024_Regions_Layer/image12.png" alt="Image" /></p>
+
+<p>Cutout Regions Prepared</p>
+
+<p>Now that the regions make sense, you can move to the Trigger Editor and
+back to the ‘Player 1 Capture Base’ trigger. Select the ‘Unit
+Enters/Leaves Region’ event, and double click on the ‘Region’ field.
+This will launch a ‘Regions’ window populated with the active regions on
+the map. Select the composite region ‘Capture Base’ and click ‘Ok,’ as
+in the image below.</p>
+
+<p><img src="./024_Regions_Layer/image13.png" alt="Image" /></p>
+
+<p>Selecting Composite Region</p>
+
+<p>Now move to the ‘Change Owner’ action and set the ‘Region’ field to
+‘Capture Base’ using the method described earlier.</p>
+
+<p>Now that the project is complete, you can take a moment to review its
+function. By moving the hellions at the base of the hill into the
+‘Capture Base’ region, the trigger event will shift everything in the
+‘Entire Base’ region into the player’s control. Due to the cutouts in
+the composite region, the minerals and gas geyser should remain neutral
+entities.</p>
+
+<p>If everything is working, hitting ‘Test Document’ and leading the
+hellions into the fort’s entrance should transfer ownership correctly,
+as shown below.</p>
+
+<p><img src="./024_Regions_Layer/image14.png" alt="Image" /></p>
+
+<p>Claiming the Fort</p>
+
+
+
+  <small>tags: <em></em></small>
+
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

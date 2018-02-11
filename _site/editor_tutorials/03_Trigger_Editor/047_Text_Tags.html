@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=e59fb72e5ef60f32a67b812874e7b28118997c7b">
+
+<!-- Begin Jekyll SEO tag v2.3.0 -->
+<title>Text Tags | Sc2mapster Github</title>
+<meta property="og:title" content="Text Tags" />
+<meta name="author" content="jrepp" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="TEXT TAGS" />
+<meta property="og:description" content="TEXT TAGS" />
+<link rel="canonical" href="http://localhost:4000/editor_tutorials/03_Trigger_Editor/047_Text_Tags.html" />
+<meta property="og:url" content="http://localhost:4000/editor_tutorials/03_Trigger_Editor/047_Text_Tags.html" />
+<meta property="og:site_name" content="Sc2mapster Github" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-02-11T11:12:18+00:00" />
+<script type="application/ld+json">
+{"publisher":null,"headline":"Text Tags","dateModified":"2018-02-11T11:12:18+00:00","datePublished":"2018-02-11T11:12:18+00:00","sameAs":null,"url":"http://localhost:4000/editor_tutorials/03_Trigger_Editor/047_Text_Tags.html","author":{"@type":"Person","name":"jrepp"},"description":"TEXT TAGS","image":null,"name":null,"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/editor_tutorials/03_Trigger_Editor/047_Text_Tags.html"},"@type":"BlogPosting","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Sc2mapster Github</h1>
+        <h2>Github page for Starcraft 2 Modding Guides</h2>
+
+        <section id="downloads">
+          
+          <a href="http://github.com/Sc2mapster/sc2mapster.github.io" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        
+
+<h1>Text Tags</h1>
+<p class="view">by <a href="mailto:jacobrepp@gmail.com">jrepp</a> (<em><small>11 February 2018</small></em>)</p>
+
+<ul>
+  <li><a href="#text-tags">TEXT TAGS</a>
+    <ul>
+      <li><a href="#text-tag-actions">TEXT TAG ACTIONS</a></li>
+      <li><a href="#using-text-tags">USING TEXT TAGS</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="text-tags">TEXT TAGS</h1>
+
+<p>Text Tags display text in game space, rather than in screen space like
+any interface or dialog options for text. They’ve been designed with a
+visual property that hangs them on top of a target unit and reacts to
+camera movements. This ensures that they’re seated in the environment.
+As a result, they are often used in text elements that are halfway
+between being interface elements and gameplay elements. Notable
+applications of text tags include overhead player names, location names,
+and damage numbers. In the following image, you can see that text tags
+are shown above a hatchery and an extractor, giving relevant information
+on the worker count at each resource.</p>
+
+<p><img src="./047_Text_Tags/image1.png" alt="Image" /> Text Tags Showing Worker Counts</p>
+
+<h2 id="text-tag-actions">TEXT TAG ACTIONS</h2>
+
+<p>You can access the text tag actions during action creation by navigating
+to the ‘Text Tags’ label. This will present you with the following view.</p>
+
+<p><img src="./047_Text_Tags/image2.png" alt="Image" /></p>
+
+<p>Text Tag Actions</p>
+
+<p>These actions are broken down in the following table.</p>
+
+<hr />
+<p>Action          Effect
+  ————— ———————————————————-
+  Attach Text Tag Attaches a text Tag to a Unit at a Height Offset.
+  To Unit</p>
+
+<p>Attach Text Tag Attaches a text Tag to a Unit at an Attachment Point with
+  to Unit Attach  offsets X and Y. Note that units contain specific
+  Point           attachment locations in their model data for this purpose,
+                  including Status Bar.</p>
+
+<p>Create Text Tag Creates a text Tag with the Text at a Font Size for
+                  Players. The tag is placed at a Position and Height
+                  Offset.</p>
+
+<p>Destroy Text    Removes a text Tag.
+  Tag</p>
+
+<p>Pause/Unpause   Pauses or Unpauses any actions sent to the text.
+  Text Tag</p>
+
+<p>Set Alignment   Sets the Horizontal alignment and Vertical alignment of a
+  of Text Tag     text Tag.</p>
+
+<p>Set Background  Sets the background border of a text Tag to a Horizontal
+  Border of Text  and Vertical value.
+  Tag</p>
+
+<p>Set Background  Sets the background Image of a text Tag with a certain
+  Image of Text   tiling Type.
+  Tag</p>
+
+<p>Set Background  Sets the background offset of a text Tag to a Horizontal
+  Offset of Text  and Vertical value in terms of screen size percent.
+  Tag</p>
+
+<p>Set Color Of    Sets the Color of a text Tag.
+  Text Tag</p>
+
+<p>Set Edge Image  Sets the Image of a certain Edge of a text Tag with
+  of Text Tag     offsets X and Y.</p>
+
+<p>Set Enforce Fog Sets the Use Fog of War status of a text Tag.
+  Of War Of Text<br />
+  Tag</p>
+
+<p>Set Faded       Sets the faded transparency Type of a text Tag.
+  Transparency Of 
+  Text Tag</p>
+
+<p>Set Font Size   Sets the Font Size of the text used in a text Tag.
+  Of Text Tag</p>
+
+<p>Set Maximum     Text tags adjust their size depending on the camera’s
+  Size of Text    distance from them. This action allows you to set the
+  Tag             maximum size that a text Tag can be in terms of Width and
+                  Height.</p>
+
+<p>Set Position Of Sets the Position of the text Tag with a Height Offset.
+  Text Tag</p>
+
+<p>Set Text        Sets the alignment of a text Tag in the Horizontal and
+  Alignment Of    Vertical axes.
+  Text Tag</p>
+
+<p>Set Text Of     Sets the Text of a text Tag.
+  Text Tag</p>
+
+<p>Set Time Of     Sets the Duration of a text Tag to a Time. Settings a time
+  Text Tag        like this will cause the tag to expire after a Duration.</p>
+
+<p>Set Visibility  Sets the Visibility type of a text Tag.
+  Type Of Text  <br />
+  Tag</p>
+
+<p>Show/Hide       Shows or Hides a background Image for a text Tag.
+  Background For<br />
+  Text Tag</p>
+
+<p>Show/Hide Text  Shows or Hides a shadow for a text Tag.
+  Shadow For Text 
+  Tag</p>
+
+<p>Show/Hide Text  Shows or Hides a text Tag for Players.
+  Tag           <br />
+  ————————————————————————–</p>
+
+<h2 id="using-text-tags">USING TEXT TAGS</h2>
+
+<p>Like dialogs, text tags are often reoriented, moved, and resized after
+creation. To support this, you should give each tag a persistent handle
+using a Set Variable action and the text tag function identifier Last
+Created Text Tag.</p>
+
+<p>Take a look at the sequence of text tag actions below.</p>
+
+<p><img src="./047_Text_Tags/image3.png" alt="Image" /></p>
+
+<p>Text Tags Action Sequence</p>
+
+<p>In this sequence, a text tag has been created with a Create Text Tag
+action. The action determines the tag’s Text and Font Size, then sets
+the tag to the Position of a marine at a Height Offset. Following that,
+the tag is grafted to the marine with the Attach Text Tag To Unit
+action, targeting the Unit at a Height Offset. This pair of actions is a
+standard when using text tags. You should also note that the attachment
+has overwritten the tag position and will cause the text tag to move
+alongside its host unit.</p>
+
+<p><img src="./047_Text_Tags/image4.png" alt="Image" /></p>
+
+<p>Text Tag Styled and Attached to Unit</p>
+
+
+
+  <small>tags: <em></em></small>
+
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

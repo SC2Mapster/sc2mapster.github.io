@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=e59fb72e5ef60f32a67b812874e7b28118997c7b">
+
+<!-- Begin Jekyll SEO tag v2.3.0 -->
+<title>Lighting Window | Sc2mapster Github</title>
+<meta property="og:title" content="Lighting Window" />
+<meta name="author" content="jrepp" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="LIGHTING WINDOW" />
+<meta property="og:description" content="LIGHTING WINDOW" />
+<link rel="canonical" href="http://localhost:4000/editor_tutorials/02_Terrain_Editor/028_Lighting_Window.html" />
+<meta property="og:url" content="http://localhost:4000/editor_tutorials/02_Terrain_Editor/028_Lighting_Window.html" />
+<meta property="og:site_name" content="Sc2mapster Github" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-02-11T11:12:18+00:00" />
+<script type="application/ld+json">
+{"publisher":null,"headline":"Lighting Window","dateModified":"2018-02-11T11:12:18+00:00","datePublished":"2018-02-11T11:12:18+00:00","sameAs":null,"url":"http://localhost:4000/editor_tutorials/02_Terrain_Editor/028_Lighting_Window.html","author":{"@type":"Person","name":"jrepp"},"description":"LIGHTING WINDOW","image":null,"name":null,"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/editor_tutorials/02_Terrain_Editor/028_Lighting_Window.html"},"@type":"BlogPosting","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Sc2mapster Github</h1>
+        <h2>Github page for Starcraft 2 Modding Guides</h2>
+
+        <section id="downloads">
+          
+          <a href="http://github.com/Sc2mapster/sc2mapster.github.io" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        
+
+<h1>Lighting Window</h1>
+<p class="view">by <a href="mailto:jacobrepp@gmail.com">jrepp</a> (<em><small>11 February 2018</small></em>)</p>
+
+<ul>
+  <li><a href="#lighting-window">LIGHTING WINDOW</a>
+    <ul>
+      <li><a href="#global">GLOBAL</a></li>
+      <li><a href="#tone-mapping">TONE MAPPING</a></li>
+      <li><a href="#colorization">COLORIZATION</a></li>
+      <li><a href="#variations">VARIATIONS</a></li>
+      <li><a href="#ssao">SSAO</a></li>
+      <li><a href="#terrain">TERRAIN</a></li>
+      <li><a href="#regions">REGIONS</a></li>
+      <li><a href="#key-fill-and-back-lighting">KEY, FILL, AND BACK LIGHTING</a></li>
+      <li><a href="#customizing-a-light">CUSTOMIZING A LIGHT</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="lighting-window">LIGHTING WINDOW</h1>
+
+<p>The Lighting Window is an interface for altering and previewing lights
+within the Editor. You can use it to create entirely new lighting
+arrangements, as well as using any of the existing lighting assets in
+the game. You can see what it looks like in the image below.</p>
+
+<p><img src="./028_Lighting_Window/image1.png" alt="Image" /></p>
+
+<p>Lighting Window and its Use</p>
+
+<p>You can access the Lighting Window by navigating to Window -&gt; Lighting
+from anywhere in the Editor. Every lighting setting in the game is found
+here, grouped into categories like UI Lighting, Tileset Lighting,
+Portrait Lighting, and Cinematics Lighting. From here you can browse and
+alter these sets, or even import and export lights between projects. To
+do so, navigate to either File -&gt; Export Light or File -&gt; Import
+Light. Outside the Editor, these are stored as .SC2Lighting files.</p>
+
+<p>Modifying lights can be daunting due to the number of parameters in the
+Lighting Window. These parameters are broken down into ten categories:
+Global, Tone Mapping, Colorization, Variations, SSAO, Terrain, Regions,
+Key, Fill, and Back. These are discussed in more detail below.</p>
+
+<p>The easiest way to understand these properties is to use the Lighting
+Window to preview lighting in the main Editor view, which will
+dynamically update with every change. You can do this by opening the
+window, then moving to the Terrain Editor. Configure the lighting to
+show the game lighting by navigating to Render -&gt; Show Lighting -&gt;
+Game Lighting. Any selections and changes to the lighting selection
+should immediately render in the Editor view, giving you ample
+opportunity to test and experiment.</p>
+
+<p>The following sections explore each of the features in the lighting tab,
+along with a description of their properties and a preview of some of
+their effects. Each preview features the base lighting arrangement on
+the leftmost side, set to ‘Agria (Jungle)’ lighting. This will be shown
+alongside various lighting alterations described in the caption for each
+image. These alterations are not cumulative, each one is made to the
+base lighting.</p>
+
+<h2 id="global">GLOBAL</h2>
+
+<p><img src="./028_Lighting_Window/image2.png" alt="Image" /></p>
+
+<p>Global Lighting</p>
+
+<hr />
+<p>Property     Details
+  ———— ————————————————————–
+  Ambient      Defines the color of the global lighting on every surface.
+  Color</p>
+
+<p>Specular     Sets the magnitude of light emitted from reflective surfaces.
+  Multiplier</p>
+
+<p>Emissive     Sets the magnitude of light emitted from emissive textures.
+  Multiplier</p>
+
+<p>Light Time   Sets the light’s time of day value. These are used within
+  of Day       ‘Time of Day’ lighting to simulate, through a series of
+               lights, the changes occurring during a planet’s movements.</p>
+
+<p>Current Test Sets the current time of day in the Editor preview. Setting
+  Time         this to the Light Time of Day will test the current light.
+  —————————————————————————</p>
+
+<p><img src="./028_Lighting_Window/image3.png" alt="Image" /></p>
+
+<p>Base – Red Ambient – Green Ambient – Blue Ambient – High Specular –
+High Emissive – Low Emissive</p>
+
+<h2 id="tone-mapping">TONE MAPPING</h2>
+
+<p><img src="./028_Lighting_Window/image4.png" alt="Image" /></p>
+
+<p>Tone Mapping</p>
+
+<hr />
+<p>Property     Details
+  ———— ————————————————————–
+  Exposure     Sets the amount of light applied to the scene.</p>
+
+<p>Bloom        Sets the minimum light value to apply bloom to. Bloom is a
+  Threshold    type of fringe lighting that has a distinct bleeding effect
+               emitted from shiny objects. Low bloom is common of night time.</p>
+
+<p>Ambient      Sets the magnitude of the ambient light. This is currently not
+  Multiplier   active in the Editor</p>
+
+<p>Diffusive    Sets the amount of white light generated by objects.
+  Multiplier</p>
+
+<p>White Point  Sets the amount of light applied to the scene when the Method
+               is set to Reinhard.</p>
+
+<p>Method       Alters how tone mapping is applied. Each method is a different
+               algorithm, which affects brightness and contrast.
+  —————————————————————————</p>
+
+<p><img src="./028_Lighting_Window/image5.png" alt="Image" /></p>
+
+<p>Base – High Exposure – Low Bloom Threshold – High Diffusive
+Multiplier – Extreme Diffusive Multiplier – High White Point with
+Reinhard Mapping – Linear Tone Mapping</p>
+
+<h2 id="colorization">COLORIZATION</h2>
+
+<p><img src="./028_Lighting_Window/image6.png" alt="Image" /></p>
+
+<p>Colorization</p>
+
+<hr />
+<p>Property     Details
+  ———— —————————————————————
+  Input Low    Controls the contrast in the darks of the scene. Must remain
+               lower than Input High.</p>
+
+<p>Input High   Controls the contrast in the highlights of the scene. Must
+               remain higher than Input Low.</p>
+
+<p>Input Gamma  Controls the contrast in the scene’s midtones.</p>
+
+<p>Output Low   Alters the darks of the scene, while preserving color. Must
+               remain lower than Input High.</p>
+
+<p>Output High  Alters highlight brightness, while preserving color. Must
+               remain higher than Input Low.</p>
+
+<p>Brightness   Sets the magnitude of light being reflected in a scene.</p>
+
+<p>Contrast     Sets the emphasis of the difference between darks and
+               highlights.</p>
+
+<p>Hue          Hue shifts the color value of all objects in the scene. This is
+               much more distinguishable with Colorize turned off.</p>
+
+<p>Saturation   Sets the intensity of color within the scene.</p>
+
+<p>Lightness    Alters the overall amount of light within a scene.</p>
+
+<p>Colorize     Alters the intensity and contrast of color in the scene.
+               Turning this off modifies how hue, saturation, and lightness
+               contribute to the lighting.</p>
+
+<p>Correct      When active, corrects the color of the scene based on monitor’s
+  Gamma        gamma settings.
+  —————————————————————————-</p>
+
+<p><img src="./028_Lighting_Window/image7.png" alt="Image" /></p>
+
+<p>Base – Input Low Increased – Input High Decreased – High Input Gamma
+– Output Low Increased – Output High Increased– High Contrast</p>
+
+<p><img src="./028_Lighting_Window/image8.png" alt="Image" /></p>
+
+<p>Base – High Contrast –Hue Decreased with Colorize Off – Hue Increased
+with Colorize Off – Low Saturation – Lightness Increased – Correct
+Gamma Off</p>
+
+<h2 id="variations">VARIATIONS</h2>
+
+<p>Variations are simple filters that can be used to affect the overall
+lighting of scene. Selecting any of the variation controls will add the
+associated property to the light.</p>
+
+<p><img src="./028_Lighting_Window/image9.png" alt="Image" /></p>
+
+<p>Lighting Variations</p>
+
+<hr />
+<p>Property          Details
+  —————– —————————————————–
+  Region            Sets whether the variation applies to the scene’s
+                    darks, midtones, or highlights.</p>
+
+<p>Sensitivity       Controls the strength of the applied filter. These
+                    are additive; Red 5 is equal to five applications of
+                    Red 1.</p>
+
+<p>Color Settings    Applies the selected color. Options include Red,
+                    Cyan, Magenta, Green, Blue, and Yellow.</p>
+
+<p>Light Settings    Applies more lightness or darks to the scene. These
+                    elements neutralize each other.</p>
+
+<p>Less Saturation &amp; Applies more or less saturation to the scene,
+  More Saturation   changing the emphasis on color. These elements
+                    neutralize each other.
+  ———————————————————————–</p>
+
+<p><img src="./028_Lighting_Window/image10.png" alt="Image" /></p>
+
+<p>Base – Cyan Midtones – Violet Darks – Green Highlights – Darker Blue
+Darks – Yellow Lighter Midtones – More Saturation</p>
+
+<h2 id="ssao">SSAO</h2>
+
+<p><img src="./028_Lighting_Window/image11.png" alt="Image" /></p>
+
+<p>Ambient Occlusion</p>
+
+<p>Screen Space Ambient Occlusion (SSAO) is a rendering technique that
+shades objects based on their distance from the camera. These settings
+are currently inactive.</p>
+
+<h2 id="terrain">TERRAIN</h2>
+
+<p><img src="./028_Lighting_Window/image12.png" alt="Image" /></p>
+
+<p>Terrain Lighting</p>
+
+<hr />
+<p>Property               Details
+  ———————- ————————————————
+  Terrain Specular       Sets the base amount of light reflected from the
+  Exponent               terrain’s highlights.</p>
+
+<p>Terrain Diffuse        Sets the magnitude of the terrain’s general
+  Multiplier             light reflectivity.</p>
+
+<p>Terrain Specular       Sets the magnitude of the terrain’s highlight
+  Multiplier             reflectivity.</p>
+
+<p>Creep Specular         Sets the base amount of light reflected from
+  Exponent               creep.</p>
+
+<p>Creep HDR Diffuse      Sets the magnitude of creep’s general light
+  Multiplier             reflectivity.</p>
+
+<p>Creep HDR Specular     Sets the magnitude of creep’s highlight
+  Multiplier             reflectivity.</p>
+
+<p>Creep HDR Emissive     Sets how much light is created from creep’s
+  Multiplier             emissive texture.
+  ———————————————————————–</p>
+
+<p><img src="./028_Lighting_Window/image13.png" alt="Image" /></p>
+
+<p>Base – Increased Terrain Specular Exponent – Increased Terrain Diffuse
+Exponent – Increased Terrain Specular Multiplier – Decreased Creep
+Specular Exponent – Increased Creep HDR Diffuse Multiplier – Increased
+Creep HDR Specular Multiplier</p>
+
+<h2 id="regions">REGIONS</h2>
+
+<p><img src="./028_Lighting_Window/image14.png" alt="Image" /></p>
+
+<p>Region Lighting</p>
+
+<p>Regions define lighting settings that are applied distinctly to one area
+of the map. Up to four areas can be painted with the lighting brush
+within the Terrain Layer of the Terrain Module. Each region is highly
+configurable with support for individual Key, Back, Fill, and ambient
+settings. Once set, the lighting within a region overrides the global
+lighting. You can apply lighting regions to terrain in the Terrain Layer
+of the Terrain Module.</p>
+
+<p><img src="./028_Lighting_Window/image15.png" alt="Image" /></p>
+
+<p>Base – Painted Regions</p>
+
+<h2 id="key-fill-and-back-lighting">KEY, FILL, AND BACK LIGHTING</h2>
+
+<p>These three associated categories make up a three-point lighting model,
+a traditional method of lighting scenes in various media. The Key is the
+principal light, it illuminates the main components of the scene and is
+the primary emphasizer of looks, colors, and shadows. The Fill is a
+secondary light that traditionally shines from an angle to the side of
+the Key. This contributes body, lessening the impact of individual
+shadows and creating softer lighting.</p>
+
+<p>Back lights, as the name suggests, shine either from behind or from
+another side of the scene. Usually Back lighting is set to give a sort
+of halo effect to objects in the scene, separating them from their
+surroundings with lighting around their rim. You’ll find these lighting
+types in three similar tabs in the Lighting Window. One of these is
+shown below.</p>
+
+<p><img src="./028_Lighting_Window/image16.png" alt="Image" /></p>
+
+<p>Key Lighting</p>
+
+<hr />
+<p>Property     Details
+  ———— ——————————————————————
+  Diffuse      Sets the color of the light’s entire surface reflection.
+  Color</p>
+
+<p>Diffuse      Sets the strength of the light’s entire surface reflection.
+  Multiplier</p>
+
+<p>Specular     Sets the color of the light’s direct reflection.
+  Color</p>
+
+<p>Specular     Sets the strength of the light’s direct reflection.
+  Multiplier</p>
+
+<p>Direction    Sets the heading of the light using the H and V controls. H, or
+               Horizontal angle, corresponds to cardinal direction as follows:
+               North is 0, East is 90, South is 180, and West is 270. V, or
+               Vertical angle, corresponds to the light’s altitude. Directly
+               above the target is 90, directly below is 270. Note that a light
+               positioned below the horizon will not light the terrain’s texture.
+  ——————————————————————————-</p>
+
+<h2 id="customizing-a-light">CUSTOMIZING A LIGHT</h2>
+
+<p>Open the demo map provided with this article. There you should see the
+scene used in the creation of some of this article’s images. It’s a film
+noir styled bar front. Unfortunately, the clean daytime lighting is
+spoiling the mood. You can use the lighting interface to solve this
+problem. To explore light customization, navigate to the Lighting Window
+via Window -&gt; Lighting Window. Now select the premade light set ‘Custom
+Night Light’ and click on the ‘00:00:00’ to open the light.</p>
+
+<p><img src="./028_Lighting_Window/image17.png" alt="Image" /></p>
+
+<p>Starting Light</p>
+
+<p>From here you’ll make a series of adjustments to the lighting, they will
+be listed with their effects shown in the photo strip below. Unlike the
+images used in our previous examples, these effects are cumulative.
+Compare the results of each step using this sample image to get a feel
+for the effects of different lighting properties. By the end of this
+exercise, this scene should have much more film noir appeal.</p>
+
+<ol>
+  <li>In Global, set the Ambient Color to R86, G79, B147. Set the Specular
+Multiplier to 0.6, and the Emissive Multiplier to 1.1.</li>
+  <li>In Tone Mapping, lower the Exposure from 1.5 to 0.6.</li>
+  <li>Lower the Bloom Threshold from 1.0 to 0.1. Increase the Diffuse
+Multiplier from 1.0 to 1.4.</li>
+  <li>In Colorization, increase the Input Low from 0 to 0.05. Decrease the
+Input High from 1 to 0.9.</li>
+  <li>Increase the Colorization from 0.3 to 0.5.</li>
+  <li>In Terrain, decrease the Terrain Diffuse Multiplier from 1.0 to 0.
+Decrease the Terrain Specular Multiplier from 3.75 to 0.</li>
+</ol>
+
+<p><img src="./028_Lighting_Window/image18.png" alt="image0" /></p>
+
+<p>Base – Step 1 – Step 2 – Step 3 – Step 4 – Step 5 – Step 6</p>
+
+
+
+  <small>tags: <em></em></small>
+
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

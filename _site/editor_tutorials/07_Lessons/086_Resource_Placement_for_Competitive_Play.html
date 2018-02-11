@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=e59fb72e5ef60f32a67b812874e7b28118997c7b">
+
+<!-- Begin Jekyll SEO tag v2.3.0 -->
+<title>Resource Placement for Competitive Play | Sc2mapster Github</title>
+<meta property="og:title" content="Resource Placement for Competitive Play" />
+<meta name="author" content="jrepp" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="RESOURCE PLACEMENT FOR COMPETITIVE PLAY" />
+<meta property="og:description" content="RESOURCE PLACEMENT FOR COMPETITIVE PLAY" />
+<link rel="canonical" href="http://localhost:4000/editor_tutorials/07_Lessons/086_Resource_Placement_for_Competitive_Play.html" />
+<meta property="og:url" content="http://localhost:4000/editor_tutorials/07_Lessons/086_Resource_Placement_for_Competitive_Play.html" />
+<meta property="og:site_name" content="Sc2mapster Github" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-02-11T11:12:18+00:00" />
+<script type="application/ld+json">
+{"publisher":null,"headline":"Resource Placement for Competitive Play","dateModified":"2018-02-11T11:12:18+00:00","datePublished":"2018-02-11T11:12:18+00:00","sameAs":null,"url":"http://localhost:4000/editor_tutorials/07_Lessons/086_Resource_Placement_for_Competitive_Play.html","author":{"@type":"Person","name":"jrepp"},"description":"RESOURCE PLACEMENT FOR COMPETITIVE PLAY","image":null,"name":null,"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/editor_tutorials/07_Lessons/086_Resource_Placement_for_Competitive_Play.html"},"@type":"BlogPosting","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Sc2mapster Github</h1>
+        <h2>Github page for Starcraft 2 Modding Guides</h2>
+
+        <section id="downloads">
+          
+          <a href="http://github.com/Sc2mapster/sc2mapster.github.io" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        
+
+<h1>Resource Placement for Competitive Play</h1>
+<p class="view">by <a href="mailto:jacobrepp@gmail.com">jrepp</a> (<em><small>11 February 2018</small></em>)</p>
+
+<ul>
+  <li><a href="#resource-placement-for-competitive-play">RESOURCE PLACEMENT FOR COMPETITIVE PLAY</a>
+    <ul>
+      <li><a href="#map-symmetry">MAP SYMMETRY</a></li>
+      <li><a href="#placement-considerations">PLACEMENT CONSIDERATIONS</a></li>
+      <li><a href="#placing-resources">PLACING RESOURCES</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="resource-placement-for-competitive-play">RESOURCE PLACEMENT FOR COMPETITIVE PLAY</h1>
+
+<p>Every element placed in a melee map has at least a small gameplay
+connotation, this varies from a single grass doodad shaping the way a
+battlefield feels, to the paths and terrain layout that shape the
+possible styles of gameplay that might emerge.</p>
+
+<p>As a melee map maker, your greatest adventure is in exploring and
+experimenting with this relationship between shape, look, and gameplay.
+However, there is one area in which you have very little room to
+experiment. For competitive play, there is an established model
+dictating how resources need to be placed on the map. Introducing even
+the smallest variation to this layout can have a profound impact on the
+game’s resource model, altering the state of balance for the competitive
+game.</p>
+
+<p><img src="./086_Resource_Placement_for_Competitive_Play/image1.png" alt="Image" /></p>
+
+<p>Cassandra Gemini’s Well Designed Third by SeinGalton</p>
+
+<h2 id="map-symmetry">MAP SYMMETRY</h2>
+
+<p>Placing melee resources properly is fairly simple, but there are a few
+rules and techniques you’ll need to use to meet the requirements. Begin
+by going over map symmetry, as this will save time compared with
+configuring every base individually. Access the symmetry controls by
+navigating to Map -&gt; Map Symmetry, this will launch the ‘Map
+Properties’ window shown below.</p>
+
+<p><img src="./086_Resource_Placement_for_Competitive_Play/image2.png" alt="Image" /></p>
+
+<p>Map Symmetry Controls</p>
+
+<p>Applying a ‘Symmetry Type’ results in the construction of a mirror axis,
+across which all units created in the map will be duplicated. Connecting
+a map design to symmetry doesn’t necessarily need to be permanent; you
+can use it and then toggle it off later without losing the results.</p>
+
+<h2 id="placement-considerations">PLACEMENT CONSIDERATIONS</h2>
+
+<p>When preparing to place resources, consider using the ‘Placement Grid’
+overlay available in the Editor. You can activate it by navigating to
+View -&gt; Show Placement Grid -&gt; Show Grid. This overlay will show the
+area of three units around any resource item in which players can’t
+place a command centre. This overlay is shown below.</p>
+
+<p><img src="./086_Resource_Placement_for_Competitive_Play/image3.png" alt="Image" /></p>
+
+<p>Placement Grid</p>
+
+<p>Next, consider the possible resource layouts for a base. There are two
+standard plans that account for almost all of the competitive layouts.
+Those two plans are shown in the images below.</p>
+
+<p><img src="./086_Resource_Placement_for_Competitive_Play/image4.png" alt="Image" /></p>
+
+<p>Same-sides Vespene Base Layout</p>
+
+<p><img src="./086_Resource_Placement_for_Competitive_Play/image5.png" alt="Image" /></p>
+
+<p>Both-sides Vespene Base Layout</p>
+
+<h2 id="placing-resources">PLACING RESOURCES</h2>
+
+<p>Now it’s finally time to place some resources. You can find them in the
+Units Layer of the Terrain Editor. Navigate to the Units Palette and set
+the ‘Object Type’ search filter to Resources. This will show all of the
+available melee resources, as in the image below.</p>
+
+<p><img src="./086_Resource_Placement_for_Competitive_Play/image6.png" alt="Image" /></p>
+
+<p>Resources in the Unit Palette</p>
+
+<p>Select the minerals and lay them out in your base structure, keeping the
+standard layouts in mind. Remember that the traditional base plan
+contains eight mineral fields, and two vespene geysers. There are also
+high-yield bases with six mineral fields and a pair of geysers. Although
+these standards are negotiable, be aware that every liberty you take
+with a competitive map endangers its chances of play. Despite this, some
+experimentation and play is required in every map.</p>
+
+<p>You should avoid placing vespene geysers diagonally, as it can cause a
+reduced harvesting rate. You can see this in a test by checking to see
+if the geyser can support a fourth worker. Testing in general can be a
+great method for feeling out whether or not your resource placement is
+correct. Resources are so fundamental to the feel of a melee game that
+the slightest changes in their layout can be discernible even to amateur
+players.</p>
+
+<p>Note, that you should also consider the version of StarCraft that you
+are designing for. In Legacy of the Void, there is a different resource
+model than the earlier incarnations of the game. These require different
+values inside mineral deposits.</p>
+
+
+
+  <small>tags: <em></em></small>
+
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>
