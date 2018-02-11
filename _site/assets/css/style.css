@@ -139,3 +139,5 @@ h1, h2, h3, h4, h5, h6, header h1 { color: #FA8103; }
 pre code { tab-size: 4; }
 
 section img { max-height: 300px; }
+
+code.highlighter-rouge { background-color: black; padding: 5px; }
