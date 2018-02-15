@@ -10,7 +10,7 @@ collections:
     output: true
   editor_tutorials:
     output: true
-theme: jekyll-theme-hacker
+theme: jekyll-theme-primer
 repository: Sc2mapster/sc2mapster.github.io
 defaults:
   - scope:
@@ -18,3 +18,4 @@ defaults:
       type: "editor_tutorials"
     values:
       layout: post
+incremental: true

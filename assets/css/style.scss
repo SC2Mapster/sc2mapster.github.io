@@ -2,25 +2,114 @@
 ---
 
 @import "{{ site.theme }}";
-h1, h2, h3, h4, h5, h6, header h1 {
 
-    color: #FA8103;
+html {
+    box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+body {
+    background: #222 url(https://hydra-media.cursecdn.com/sc2mapster.gamepedia.com/9/98/Bg.jpg) repeat scroll!important;
+}
 
-}
-.container {
-    max-width: 800px;
- 
+header {
+	background: #222;
 }
 
-pre code {
-	tab-size: 4;	
+
+
+p, h1, li, span, footer {
+	color: #bbb;
 }
+
+a {
+    color: #FF9F15;
+}
+
+nav {
+	color: #fff;
+	background: url(https://hydra-media.cursecdn.com/sc2mapster.gamepedia.com/1/15/Head-bg.png) repeat-x !important;
+    box-shadow: rgba(17, 17, 17, 1) 0 0.1em 0.75em;
+	border-bottom: 3px solid #FF9F15;
+	height: 50px;
+}
+
+header h1 {
+    padding-top: 20px;    
+}
+
+header h1 a {
+    background-image: url(https://d1u5p3l4wpay3k.cloudfront.net/sc2mapster/b/bc/Wiki.png);
+    background-position: 50% 35%;
+    margin-left: 165px;
+    height: 40px;
+    width: 210px;
+    margin-top: 0px;
+    margin-bottom: 20px;
+        display: block;
+}
+
+main.container-lg {
+	background: url(https://hydra-media.cursecdn.com/sc2mapster.gamepedia.com/4/4b/Orangerays-bg.png) repeat-y!important;
+	max-width: 990px;
+    border: 1px solid #c23f15;
+    border-radius: 8px;
+}
+
+section {
+	background: #222;
+	padding-bottom: 40px;		
+}
+
+section p {
+	padding-left: 16px;
+	padding-right: 16px;
+}
+
 
 section img {
 	max-height: 300px;
 }
-
-code.highlighter-rouge {
-    background-color: black;
-    padding: 5px;
+pre code {
+	tab-size: 4;	
 }
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3{
+	padding-left: 16px;
+	padding-right: 16px;
+}
+
+.markdown-body h1{
+    background: url(https://hydra-media.cursecdn.com/sc2mapster.gamepedia.com/1/15/Head-bg.png) repeat-x !important;
+    box-shadow: rgba(17, 17, 17, 1) 0 0.1em 0.75em;
+    
+}
+.markdown-body h2 {
+    color: #96c410!important;
+}
+.markdown-body h3 {
+    color: #c23f15!important;
+}
+
+.markdown-body img {
+	max-width: 920px;
+}
+
+.highlighter-rouge {
+	margin-left: 16px;
+	margin-right: 16px;/*
+    background-color: black;
+    padding: 5px;*/
+}
+
+footer {
+	padding: 16px;
+	font-size: 12px
+}
+/*
+}*/
