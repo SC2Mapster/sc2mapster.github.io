@@ -1,5 +1,6 @@
 ---
 ---
+$baseurl: "{{ site.baseurl }}";
 
 @import "{{ site.theme }}";
 
@@ -12,7 +13,7 @@ html {
     box-sizing: inherit;
 }
 body {
-    background: #222 url(https://hydra-media.cursecdn.com/sc2mapster.gamepedia.com/9/98/Bg.jpg) repeat scroll!important;
+    background: #222 !important;
 }
 
 header {
@@ -31,7 +32,6 @@ a {
 
 nav {
 	color: #fff;
-	background: url(https://hydra-media.cursecdn.com/sc2mapster.gamepedia.com/1/15/Head-bg.png) repeat-x !important;
     box-shadow: rgba(17, 17, 17, 1) 0 0.1em 0.75em;
 	border-bottom: 3px solid #FF9F15;
 	height: 50px;
@@ -42,7 +42,7 @@ header h1 {
 }
 
 header h1 a {
-    background-image: url(https://d1u5p3l4wpay3k.cloudfront.net/sc2mapster/b/bc/Wiki.png);
+    background-image: url('#{$baseurl}/assets/Wiki.png');
     background-position: 50% 35%;
     margin-left: 165px;
     height: 40px;
@@ -53,7 +53,6 @@ header h1 a {
 }
 
 main.container-lg {
-	background: url(https://hydra-media.cursecdn.com/sc2mapster.gamepedia.com/4/4b/Orangerays-bg.png) repeat-y!important;
 	max-width: 990px;
     border: 1px solid #c23f15;
     border-radius: 8px;
@@ -85,9 +84,7 @@ pre code {
 }
 
 .markdown-body h1{
-    background: url(https://hydra-media.cursecdn.com/sc2mapster.gamepedia.com/1/15/Head-bg.png) repeat-x !important;
     box-shadow: rgba(17, 17, 17, 1) 0 0.1em 0.75em;
-    
 }
 .markdown-body h2 {
     color: #96c410!important;
