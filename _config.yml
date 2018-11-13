@@ -18,4 +18,3 @@ defaults:
       type: "editor_tutorials"
     values:
       layout: post
-incremental: true
