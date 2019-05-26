@@ -1,0 +1,194 @@
+<!doctype html><html lang="en" class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="description" content="Tips and tricks for how to set up and work with Starcraft II (SC2) maps, modules, and libraries in a more streamlined, organized, intelligent, and efficient way."><link rel="canonical" href="https://sc2mapster.github.io/mkdocs/getting-started/4-vscode/"><meta name="author" content="folk, Talv, SC2Mapster repo team"><meta name="lang:clipboard.copy" content="Copy to clipboard"><meta name="lang:clipboard.copied" content="Copied to clipboard"><meta name="lang:search.language" content="en"><meta name="lang:search.pipeline.stopwords" content="True"><meta name="lang:search.pipeline.trimmer" content="True"><meta name="lang:search.result.none" content="No matching documents"><meta name="lang:search.result.one" content="1 matching document"><meta name="lang:search.result.other" content="# matching documents"><meta name="lang:search.tokenizer" content="[\s\-]+"><link rel="shortcut icon" href="../../img/favicon.ico"><meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.3.1"><title>4 vscode - Working with SC2</title><link rel="stylesheet" href="../../assets/stylesheets/application.4031d38b.css"><link rel="stylesheet" href="../../assets/stylesheets/application-palette.224b79ff.css"><meta name="theme-color" content="#546e7a"><script src="../../assets/javascripts/modernizr.74668098.js"></script>
+	<!-- Load fonts from Google -->
+	
+	<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+	<link rel="stylesheet" type="text/css"
+		href="https://fonts.googleapis.com/css?family=Rubik:300,400,400i,700|IBM+Plex+Mono|Lora" />
+	<style>
+		body, input {
+			font-family: "TisaPro", "Rubik", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		}
+		h1, h2, h3, h4, h5, h6 {
+			font-family: "Berlingske Serif Bold", "Lora", Georgia, Palatino, Garamond, serif;
+		}
+		pre, code, kbd {
+			font-family: "IBM Plex Mono", "Hasklig", "Fira Code", "Monaco", "Menlo", "Consolas", "Droid Sans Mono", "Inconsolata", "Courier New", monospace;
+		}
+	</style>
+	
+<link rel="stylesheet" href="../../assets/fonts/material-icons.css"><link rel="stylesheet" href="../../css/folk.css"></head><body dir="ltr" data-md-color-primary="blue-grey" data-md-color-accent="indigo"><svg class="md-svg"><defs><svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg></defs></svg> <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off"> <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off"> <label class="md-overlay" data-md-component="overlay" for="__drawer"></label><a href="#download-vscode" tabindex="1" class="md-skip">Skip to content </a><header class="md-header" data-md-component="header"><nav class="md-header-nav md-grid"><div class="md-flex"><div class="md-flex__cell md-flex__cell--shrink"><a href="https://sc2mapster.github.io/mkdocs/" title="Working with SC2" class="md-header-nav__button md-logo"><i class="md-icon">code</i></a></div><div class="md-flex__cell md-flex__cell--shrink"><label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label></div><div class="md-flex__cell md-flex__cell--stretch"><div class="md-flex__ellipsis md-header-nav__title" data-md-component="title"><span class="md-header-nav__topic">Working with SC2</span><span class="md-header-nav__topic">4 vscode</span></div></div><div class="md-flex__cell md-flex__cell--shrink"><label class="md-icon md-icon--search md-header-nav__button" for="__search"></label><div class="md-search" data-md-component="search" role="dialog"><label class="md-search__overlay" for="__search"></label><div class="md-search__inner" role="search"><form class="md-search__form" name="search"><input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active"> <label class="md-icon md-search__icon" for="__search"></label> <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">&#xE5CD;</button></form><div class="md-search__output"><div class="md-search__scrollwrap" data-md-scrollfix><div class="md-search-result" data-md-component="result"><div class="md-search-result__meta">Type to start searching</div><ol class="md-search-result__list"></ol></div></div></div></div></div></div><div class="md-flex__cell md-flex__cell--shrink"><div class="md-header-nav__source"><a href="https://github.com/SC2Mapster/SC2GameData" title="Go to repository" class="md-source" data-md-source="github"><div class="md-source__icon"><svg viewBox="0 0 24 24" width="24" height="24"><use xlink:href="#__github" width="24" height="24"></use></svg></div><div class="md-source__repository">SC2+Storm Game Data</div></a></div></div></div></nav></header><div class="md-container"><main class="md-main"><div class="md-main__inner md-grid" data-md-component="container"><div class="md-sidebar md-sidebar--primary" data-md-component="navigation"><div class="md-sidebar__scrollwrap"><div class="md-sidebar__inner"><nav class="md-nav md-nav--primary" data-md-level="0"><label class="md-nav__title md-nav__title--site" for="__drawer"><a href="https://sc2mapster.github.io/mkdocs/" title="Working with SC2" class="md-nav__button md-logo"><i class="md-icon">code</i></a>Working with SC2</label><div class="md-nav__source"><a href="https://github.com/SC2Mapster/SC2GameData" title="Go to repository" class="md-source" data-md-source="github"><div class="md-source__icon"><svg viewBox="0 0 24 24" width="24" height="24"><use xlink:href="#__github" width="24" height="24"></use></svg></div><div class="md-source__repository">SC2+Storm Game Data</div></a></div><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../.." title="Home" class="md-nav__link">Home</a></li><li class="md-nav__item"><a href="../../setup/" title="Getting Started" class="md-nav__link">Getting Started</a></li><li class="md-nav__item"><a href="../../triggers/" title="Triggers" class="md-nav__link">Triggers</a></li><li class="md-nav__item"><a href="../../galaxy/" title="Galaxy" class="md-nav__link">Galaxy</a></li><li class="md-nav__item"><a href="../../debug/" title="Trigger Debugging" class="md-nav__link">Trigger Debugging</a></li><li class="md-nav__item"><a href="../../data/" title="Data" class="md-nav__link">Data</a></li><li class="md-nav__item"><a href="../../ui/" title="Interface" class="md-nav__link">Interface</a></li><li class="md-nav__item"><a href="../../fonts/" title="Fonts and Styles" class="md-nav__link">Fonts and Styles</a></li><li class="md-nav__item"><a href="../../loadscreen/" title="Loading Screen" class="md-nav__link">Loading Screen</a></li><li class="md-nav__item"><a href="../../security/" title="Security and Banks" class="md-nav__link">Security and Banks</a></li><li class="md-nav__item"><a href="../../tools/" title="Advanced Tools" class="md-nav__link">Advanced Tools</a></li><li class="md-nav__item"><a href="../../git/" title="Git/Version Control" class="md-nav__link">Git/Version Control</a></li><li class="md-nav__item"><a href="../../editor/" title="Advanced Editor" class="md-nav__link">Advanced Editor</a></li></ul></nav></div></div></div><div class="md-sidebar md-sidebar--secondary" data-md-component="toc"><div class="md-sidebar__scrollwrap"><div class="md-sidebar__inner"><nav class="md-nav md-nav--secondary"><label class="md-nav__title" for="__toc">Table of contents</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="#download-vscode" title="Download vscode" class="md-nav__link">Download vscode</a></li><li class="md-nav__item"><a href="#start-vscode" title="Start vscode" class="md-nav__link">Start vscode</a></li><li class="md-nav__item"><a href="#configure-vscode" title="Configure vscode" class="md-nav__link">Configure vscode</a></li><li class="md-nav__item"><a href="#open-your-project" title="Open your project" class="md-nav__link">Open your project</a></li></ul></nav></div></div></div><div class="md-content"><article class="md-content__inner md-typeset"><h1>4 vscode</h1><p>Though Microsoft has always - rightfully - been a despised company, one of their more recent endeavours has resulted in a product called <code>vscode</code>. This editor is simply the best all-round editor on the market, and anyone who claims otherwise has no idea what they're talking about. There are better alternatives for individual languages, like Java, C#, Javascript, and so forth - but as a general purpose development environment, it has no equal or better.</p>
+<p>Visual Studio Code will be referred to as simply <code>vscode</code>, or vscode, throughout this site.</p>
+<h3 id="download-vscode">Download vscode<a class="headerlink" href="#download-vscode" title="Permanent link">&para;</a></h3>
+<p>Download vscode from <a href="https://code.visualstudio.com/">https://code.visualstudio.com/</a> and run the installer, then continue to the next section.</p>
+<p>Alternatively, if you want to live more on the edge and use their development version, get vscode-insiders, from <a href="https://code.visualstudio.com/insiders/">https://code.visualstudio.com/insiders/</a>. The Insiders build is over 99% stable for daily use. It fails occasionally, but at those times you can simply download the previous days build and reinstall that.</p>
+<p>There are even more bleeding-edge versions of vscode, including building it yourself, or their "Explorers" edition. These are not recommended for normal use.</p>
+<h3 id="start-vscode">Start vscode<a class="headerlink" href="#start-vscode" title="Permanent link">&para;</a></h3>
+<p>Upon your first launch of <code>vscode</code>, it may look daunting. But not to worry.</p>
+<ol>
+<li>Hit <code>c-P</code> to open vscode "quick open"</li>
+<li>Enter (or copy+paste) <code>ext install talv.sc2galaxy</code>, and hit <code>Enter</code></li>
+<li>Open <code>c-P</code> again, enter <code>ext install talv.sc2layouts</code>, and hit <code>Enter</code></li>
+<li>Open <code>c-P</code> again, enter <code>ext install alefragnani.project-manager</code>, and hit <code>Enter</code></li>
+<li>Open <code>c-P</code> again, enter <code>ext install azemoh.one-monokai</code>, and hit <code>Enter</code></li>
+<li>Restart <code>vscode</code></li>
+<li>Hit <code>c-K-T</code> (read the <code>Keybindings / Shortcuts</code> section above if you don't understand) and select the "One Monokai" theme (or whatever theme fits your fancy, obviously)</li>
+</ol>
+<h3 id="configure-vscode">Configure vscode<a class="headerlink" href="#configure-vscode" title="Permanent link">&para;</a></h3>
+<p>Hit <code>c-s-P</code> and type in <code>sett</code>, find the <code>Preferences: Open Settings (JSON)</code> item and hit <code>Enter</code>.</p>
+<p>There are a bunch of settings you may or may not want to tweak in vscode. The default settings are OK, but the workspace is fairly cluttered by default.</p>
+<p>To tweak an individual setting, hover your mouse over it on the left-hand side of the split and notice that a pencil icon shows up on the far left. Click the pencil to add the setting to "your" side - the right side.</p>
+<p>It can be easy to get overwhelmed here. Take your time and get familiar with things. VScode nowadays also has an UI version of their settings, which this author has never used. You are, of course, welcome to explore that as well - though it presents nothing new, it just presents it differently.</p>
+<details class="tldr" open="open"><summary>VSCode Settings</summary><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">//</span> <span class="err">Place</span> <span class="err">your</span> <span class="err">settings</span> <span class="err">in</span> <span class="err">this</span> <span class="err">file</span> <span class="err">to</span> <span class="err">overwrite</span> <span class="err">the</span> <span class="err">default</span> <span class="err">settings</span>
+<span class="p">{</span>
+    <span class="nt">&quot;editor.fontFamily&quot;</span><span class="p">:</span> <span class="s2">&quot;Hasklig&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;editor.fontSize&quot;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+    <span class="nt">&quot;editor.insertSpaces&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&quot;editor.roundedSelection&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&quot;editor.mouseWheelZoom&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;editor.fontLigatures&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;editor.hideCursorInOverviewRuler&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;editor.renderIndentGuides&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;editor.folding&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&quot;editor.renderWhitespace&quot;</span><span class="p">:</span> <span class="s2">&quot;boundary&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;editor.renderControlCharacters&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;workbench.editor.showIcons&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&quot;files.trimTrailingWhitespace&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&quot;explorer.openEditors.visible&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&quot;explorer.autoReveal&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&quot;explorer.enableDragAndDrop&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&quot;update.channel&quot;</span><span class="p">:</span> <span class="s2">&quot;default&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;extensions.autoUpdate&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;files.associations&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;*.StormLayout&quot;</span><span class="p">:</span> <span class="s2">&quot;sc2layout&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;*.stormlayout&quot;</span><span class="p">:</span> <span class="s2">&quot;sc2layout&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;release&quot;</span><span class="p">:</span> <span class="s2">&quot;lua&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;stlrel&quot;</span><span class="p">:</span> <span class="s2">&quot;lua&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;linkstl&quot;</span><span class="p">:</span> <span class="s2">&quot;lua&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;window.zoomLevel&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&quot;files.insertFinalNewline&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;editor.wordWrap&quot;</span><span class="p">:</span> <span class="s2">&quot;off&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;workbench.colorTheme&quot;</span><span class="p">:</span> <span class="s2">&quot;One Monokai&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;workbench.iconTheme&quot;</span><span class="p">:</span> <span class="s2">&quot;material-icon-theme&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;editor.acceptSuggestionOnCommitCharacter&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&quot;editor.overviewRulerBorder&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&quot;editor.cursorBlinking&quot;</span><span class="p">:</span> <span class="s2">&quot;phase&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;editor.glyphMargin&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&quot;window.title&quot;</span><span class="p">:</span> <span class="s2">&quot;${dirty}${rootName}&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;files.hotExit&quot;</span><span class="p">:</span> <span class="s2">&quot;onExitAndWindowClose&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;window.restoreFullscreen&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;editor.formatOnPaste&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&quot;workbench.activityBar.visible&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;editor.minimap.enabled&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;window.restoreWindows&quot;</span><span class="p">:</span> <span class="s2">&quot;all&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;workbench.startupEditor&quot;</span><span class="p">:</span> <span class="s2">&quot;newUntitledFile&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;extensions.ignoreRecommendations&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;sc2galaxy.completion.functionExpand&quot;</span><span class="p">:</span> <span class="s2">&quot;ArgumentsDefault&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;window.menuBarVisibility&quot;</span><span class="p">:</span> <span class="s2">&quot;visible&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;editor.snippetSuggestions&quot;</span><span class="p">:</span> <span class="s2">&quot;none&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;editor.suggest.snippetsPreventQuickSuggestions&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&quot;files.autoSave&quot;</span><span class="p">:</span> <span class="s2">&quot;off&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;sc2layout.builtinMods&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;mods/core.sc2mod&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;mods/war3data.sc2mod&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nt">&quot;mods/novastoryassets.sc2mod&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nt">&quot;mods/voidprologue.sc2mod&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nt">&quot;mods/alliedcommanders.sc2mod&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nt">&quot;mods/missionpacks/novacampaign.sc2mod&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nt">&quot;campaigns/liberty.sc2campaign&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;campaigns/swarm.sc2campaign&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;campaigns/swarmstory.sc2campaign&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nt">&quot;campaigns/void.sc2campaign&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nt">&quot;campaigns/voidstory.sc2campaign&quot;</span><span class="p">:</span> <span class="kc">false</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;extensions.showRecommendationsOnlyOnDemand&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;window.titleBarStyle&quot;</span><span class="p">:</span> <span class="s2">&quot;custom&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
+
+</details>
+<div class="admonition tip">
+<p class="admonition-title">Great fonts for coding</p>
+<p>It is advisable to use <a href="http://app.programmingfonts.org/">http://app.programmingfonts.org/</a> to find a monospaced font that suits your style. Common and popular fonts include <code>Fira Code</code>, <code>Hasklig</code>, <code>Plex Mono</code>,  and <code>Source Code Pro</code>. This website uses <code>Plex Mono</code> for monospaced code blocks like the JSON settings above. After installing a custom font, you may be required to restart VSCode before you can select it in the settings.</p>
+</div>
+<h3 id="open-your-project">Open your project<a class="headerlink" href="#open-your-project" title="Permanent link">&para;</a></h3>
+<p>At this point, if you have not yet started your project in <code>sc2edit</code>, it is time to do so. Once you've done that, save the empty map as an <code>.SC2Components</code> map in sc2edit, and come back to <code>vscode</code>.</p>
+<ol>
+<li>Hit <code>c-K-O</code>, navigate to the root folder of your SC2 project, and open it. vscode should look something like this: <img alt="New Project" src="../../img/newproject.jpg" title="vscode with a new project" /></li>
+<li>Hit <code>c-s-P</code>, type <code>pms</code> and hit <code>Enter</code>.</li>
+<li>Enter a project name, like "My SC2 Map", and hit <code>Enter</code>. Your map is now saved as a project.</li>
+<li>Now, download the <a href="https://github.com/SC2Mapster/SC2GameData/archive/master.zip">SC2+Storm game data</a> (alternatively, use some <code>git</code> tool to clone the <a href="https://github.com/SC2Mapster/SC2GameData">repository</a>), and unzip it somewhere (not in your map folder)</li>
+<li>Back to vscode, then hit <code>c-s-N</code> to open a new window, then <code>c-K-O</code>, navigate to the root folder of the unzipped gamedata from the previous step, and open it in this new window.</li>
+<li>Hit <code>c-s-P</code>, type <code>pms</code> and hit <code>Enter</code>.</li>
+<li>Enter a project name, like "SC2 Game Data" (it also contains the game data for Heroes of the Storm), and hit <code>Enter</code>. The SC2+Storm game data is now saved as a project.</li>
+</ol>
+<p>Now, you should have two vscode windows floating on your desktop. One window should contain the code for your SC2 project, and the other window should contain the code for SC2 and Heroes of the Storm.</p>
+<p>Obviously, you will be working in the first one.</p>
+<p>The SC2 gamedata project contains <em>all</em> the interface, map code, and backend data for <em>all</em> of SC2 and Storm. Including the Battle.net interface (not the desktop launcher, but the ingame menus). All of it.</p>
+<p>This is now your reference. It is your bible. This is where you search for answers when you don't know how something works.</p></article></div></div></main><footer class="md-footer"><div class="md-footer-meta md-typeset"><div class="md-footer-meta__inner md-grid"><div class="md-footer-copyright"><div class="md-footer-copyright__highlight">Copyright belongs to the respective authors of each commit. All raw code snippets and art assets (unless owned by Blizzard) from all authors are forcefully relicensed under the UNLICENSE, read more at http://unlicense.org/. For more information on copyrights and licensing, read the README.md file in the git repository that contains the source code of this documentation.</div>powered by <a href="https://www.mkdocs.org">MkDocs</a> and <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a></div><div class="md-footer-social"><link rel="stylesheet" href="../../assets/fonts/font-awesome.css"> <a href="https://github.com/SC2Mapster" class="md-footer-social__link fa fa-github"></a> </div></div></div></footer></div><script src="../../assets/javascripts/application.b260a35d.js"></script><script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script></body></html>
