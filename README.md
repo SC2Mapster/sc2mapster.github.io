@@ -6,7 +6,9 @@ If you wish to contribute, drop a line over the [Issues](https://github.com/SC2M
 
 ## Where to Learn
 
-Head over the [tutorials](tutorials.html).
+First, you should read [the getting started document here](https://sc2mapster.github.io/mkdocs/setup/).
+
+Then, you might want to head over the [tutorials](tutorials.html).
 
 ## Open Development Maps
 
