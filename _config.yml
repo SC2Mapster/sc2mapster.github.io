@@ -18,3 +18,5 @@ defaults:
       type: "editor_tutorials"
     values:
       layout: post
+plugins:
+  - jekyll-redirect-from

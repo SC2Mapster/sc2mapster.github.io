@@ -263,8 +263,9 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
+  jekyll-redirect-from
   minimal-mistakes-jekyll
   tzinfo-data
 
 BUNDLED WITH
-   1.17.1
+   2.0.2
