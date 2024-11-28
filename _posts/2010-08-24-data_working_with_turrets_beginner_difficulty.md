@@ -1,3 +1,16 @@
+---
+title: [Data] Working with Turrets (Beginner Difficulty)
+date: 2010-08-24 00:00:00 Z
+categories:
+- Data
+tags:
+- data
+- turrets
+- siteops
+author: ProzaicMuse
+layout: post
+---
+
 Collected from: https://web.archive.org/web/20160603042600/http://www.sc2mapster.com/forums/resources/tutorials/9000-data-working-with-turrets-beginner-difficulty/
 Original Author: ProzaicMuse
 
