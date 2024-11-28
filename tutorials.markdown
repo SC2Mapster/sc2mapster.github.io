@@ -15,3 +15,14 @@ date: 2018-02-08 06:39:00 Z
     </li>
   {% endfor %}
 </ul>
+
+<h2>Data</h2>
+<ul>
+  {% for post in site.categories.Data %}
+  	{% assign author = site.data.authors[post.author] %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a> by <a href="mailto:{{ author.email }}">{{ author.name | default: site.author }}</a>
+    </li>
+  {% endfor %}
+</ul>
+
