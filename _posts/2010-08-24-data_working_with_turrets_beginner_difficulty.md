@@ -1,5 +1,5 @@
 ---
-title: [Data] Working with Turrets (Beginner Difficulty)
+title: Data - Working with Turrets (Beginner Difficulty)
 date: 2010-08-24 00:00:00 Z
 categories:
 - Data
