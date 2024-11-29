@@ -280,11 +280,11 @@ This event destroys the attachment whenever the hosting unit dies.
 
   
 
-### **Range**
+### Range
 
 This actor is responsible for creating the range indicators for  Abilities,  Behaviors,  Weapons  and the  Sensor Tower  in particular.
 
-##### **Important Fields**
+##### Important Fields
 
 -   **Ability:**  The associated  Ability.
 -   **Arc:**  Normally 360, this can be used to create cone shaped range indicators.
@@ -296,7 +296,7 @@ This actor is responsible for creating the range indicators for  Abilities,  Beh
 -   **Weapon:**  The associated  Weapon.
 -   **Hosting - [Anything]:**  These fields determine what part of the unit the range circle originates from. Thus if you want to offset the center point use these fields.
 
-##### **Important Events**
+##### Important Events
 
 **Ability Range:**
 
@@ -348,7 +348,7 @@ These events are identical to those needed for the  Sight  field, but you are in
 
   
 
-### **Site**
+### Site
 
 These actors are points of reference for other actors. If you want something to originate from a custom anchor point that isn't on a model, this actor allows you to do that. The following tutorials cover this in detail:
 
@@ -359,7 +359,7 @@ These actors are points of reference for other actors. If you want something to 
 
   
 
-### **Site Operations**
+### Site Operations
 
 These actors determine where and how objects attach to each other. The following tutorials cover these in detail:
 
@@ -370,11 +370,11 @@ These actors determine where and how objects attach to each other. The following
 
   
 
-### **Sound**
+### Sound
 
 This actor is so complex. . . that it actually defines the meaning of life. . . or not. It creates sounds. Fairly straightforward. If you want your visual effects to make noise, you need this actor.
 
-##### **Important Fields**
+##### Important Fields
 
 -   **Host:**  The actor creating the sound.
 -   **Host Site Operations:**  Where on the actor the sound originates. This generally only matters when you forget to put anything here after selecting a host OR when you are creating a sound for a very large object.
@@ -382,7 +382,7 @@ This actor is so complex. . . that it actually defines the meaning of life. . . 
 -   **Inherit Type:**  The determines whether the sound is continuous or not.
 -   **Sound:**  The associated  Sound.
 
-##### **Important Events**
+##### Important Events
 
 **One Shot Sound:**
 
@@ -432,11 +432,11 @@ This event destroys your event when the sound completes its default length. If y
 
   
 
-### **Terrain Deformer**
+### Terrain Deformer
 
 This actor allows you to physically change the terrain during a game. While it does little more than change terrain elevation, you can combine this with other actors or triggers to make new ramps, walls and other physical barriers.
 
-##### **Important Fields**
+##### Important Fields
 
 -   **Blend Time:**  The duration over which the elevation changes.
 -   **Footprint:**  The shape of terrain that changes.
@@ -445,7 +445,7 @@ This actor allows you to physically change the terrain during a game. While it d
 -   **Terrain Deformation Flags**  Determines whether or not foliage is destroyed and if the elevation change is permanent.
 -   **Hosting - [Anything]:**  These fields are only important if you want the elevation change to occur at the units location or an offset relative to that point.
 
-##### **Important Events**
+##### Important Events
 
 **Permanent Deformation:**
 
@@ -475,17 +475,17 @@ This event reverts the elevation change after the specified duration has expired
 
   
 
-### **Text**
+### Text
 
 This actor creates floating text that you can see in the game. This is useful for making damage counters, visual updates at specific locations (like quests) or even scrolling text for visual queues of DoT ticks or resource collection cycles. The possibilities are endless.
 
-##### **Important Fields**
+##### Important Fields
 
 -   **Options:**  Determines the origin for  Height Offset.
 -   **Hosting - [Anything]:**  These fields determine where the text shows up.
 -   **UI - [Anything]:**  These fields determine the visual appearance of the text. Everything from alignment to color.
 
-##### **Important Events**
+##### Important Events
 
 **Static Text:**
 
@@ -547,7 +547,7 @@ This event destroys the text after the last  Timer  has expired. By adding these
 
   
 
-### **Turret**
+### Turret**
 
 (Reference:  [Turrets (Beginner)](https://web.archive.org/web/20110912063649/http://forums.sc2mapster.com/resources/tutorials/9000-data-working-with-turrets-beginner-difficulty/))
 
@@ -660,5 +660,5 @@ Likewise if you think a tutorial other than one of my own should be linked to on
 
 As always please inform me of typos or errors in this post. It's quite lengthy and I probably didn't catch all of my mistakes. If you're just plain confused, that's ok too. Ask and I or someone else is likely to come along and set yeh straight  ;)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzQ1NDQxOTc3XX0=
+eyJoaXN0b3J5IjpbMTI3MDQzMzkxM119
 -->
