@@ -68,20 +68,21 @@ These are the Turret weapons that will go on the building.
 You can set these to whatever you'd prefer, but **Idle** controls the turrets action when not in combat, **Arc** controls its range of motion, **Idle Rate** is how quickly the turret rotates out of combat, **Rate** is how quickly the turret rotates in combat and **Start** determines the angle the turret begins facing.
 
 ## Models Tab
-* Create a new Model named Hub Turret
-* set Model: PhotonCannon.m3
-* Create a new Model named Turret Beam
-* set Model: ColossusBeam.m3
-* Create a new Model named Turret Death
-* set Model: PhotonCannonDeath.m3
+* Create a new Model named **Hub Turret**
+	* set **Model**: PhotonCannon.m3
+* Create a new Model named **Turret Beam**
+	* set **Model**: ColossusBeam.m3
+* Create a new Model named **Turret Death**
+	* set **Model**: PhotonCannonDeath.m3
+
 ## Units Tab
 Duplicate the Nexus structure and its corresponding Actor. Everything else will be stock or made from scratch.
 
-* Name it Turret Hub
-* open Abilities + and remove all but [Attack/Stop]
-* open Command Card + and remove all but [Attack/Stop]
-* remove everything in Behaviors +
-* open Weapons + and add NW/NE/SW/SE Turret (Weapon and Turret)
+* Name it **Turret Hub**
+	* open **Abilities +** and remove all but [Attack/Stop]
+	* open **Command Card +** and remove all but [Attack/Stop]
+	* remove everything in **Behaviors +**
+	* open Weapons + and add NW/NE/SW/SE Turret (Weapon and Turret)
 * Name the building's Actor Turret Hub
 
 ## Actors Tab
@@ -168,5 +169,5 @@ These actors allow the turrets to function by tying the Turret objects to their 
 
 You should now have a fully functioning multi-turret structure :D
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzODU5Mzg2NTddfQ==
+eyJoaXN0b3J5IjpbMTg5MTkyMTYzNywtMTM4NTkzODY1N119
 -->
