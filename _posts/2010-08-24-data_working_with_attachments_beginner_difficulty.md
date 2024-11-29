@@ -194,7 +194,7 @@ This will create the shield model and attach it to the turret with the specified
 
 This actor is part of pair. We're going to create its  Attack Actor  next.
 
-##### **Other Actors**
+##### Other Actors
 
 -   Create a new Actor named  **Beam Example Site**  with  **Actor Type: Site**
     -   set  **Host +:**  Subject >  Attachment Turret
@@ -254,6 +254,6 @@ Now the Wraith flies upside down  :)
   
 Feel free to use the attached Test Map or contact me via forum post/IRC if you encounter problems. Keep in mind that I'm a busy person so I may not reply right away, but I'll do my best to answer all questions/concerns that I am aware of  :)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA1NDE5OTc5NiwxMTUzNjA3NjY4LDIwMD
-gwMDIzODBdfQ==
+eyJoaXN0b3J5IjpbLTE0ODMyOTE1MzIsMTE1MzYwNzY2OCwyMD
+A4MDAyMzgwXX0=
 -->
