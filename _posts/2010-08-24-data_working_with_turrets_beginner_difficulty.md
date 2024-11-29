@@ -118,20 +118,20 @@ Duplicate the Nexus structure and its corresponding Actor. Everything else will 
 			* Destroy
 * Duplicate 3 times and change **NE** to **NW**, **SE** and **SW**
 
-These actors will create the turret models and upon dying swap in a Death Model rather than snuffing the model from existence the moment the Host dies.
+These actors will create the turret models and upon dying swap in a **Death Model** rather than snuffing the model from existence the moment the **Host** dies.
 
-* Create a new Actor named Turret Beam with Actor Type: Beam (Simple) and Based On: Beam Simple Animation Style One Shot
-* set Model: Turret Beam
-* open Events + and create the following events:
-* Actor Creation
-* Animation Play (Name: Beam; Animation Properties: Stand; Time Variant: 0.5; Time Type: Duration)
-* Animation Done
-* Destroy
+* Create a new Actor named **Turret Beam** with **Actor Type: Beam (Simple)** and **Based On: Beam Simple Animation Style One Shot**
+	* set **Model**: Turret Beam
+	* open **Events +** and create the following events:
+		* Actor Creation
+			* Animation Play (Name: Beam; Animation Properties: Stand; Time Variant: 0.5; Time Type: Duration)
+		* Animation Done
+			* Destroy
 
 This actor is part of pair. We're going to create its Attack Actors next.
 
 ### Site Actors
-* Create a new Actor named NE Site with Actor Type: Site
+* Create a new Actor named **NE Site** with **Actor Type: Site**
 * set Host +: Subject > NE Turret
 * set Host Site Operations +: SOpAttachWeapon
 * open Events + and create the following events:
@@ -143,7 +143,7 @@ This actor is part of pair. We're going to create its Attack Actors next.
 
 These will allow you to shoot the beams from the turrets by creating reference points.
 
-## Attack Actors
+### Attack Actors
 * Create a new Actor named NE Beam Attack with Actor Type: Action and Based On: GenericAttack
 * set Beam: Turret Beam (Actor)
 * set Launch Assets +: Sound > Colossus_AttachLaunch
@@ -169,6 +169,5 @@ These actors allow the turrets to function by tying the Turret objects to their 
 
 You should now have a fully functioning multi-turret structure :D
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NjI0NTM3NjgsLTEzODU5Mzg2NTddfQ
-==
+eyJoaXN0b3J5IjpbMTcyOTQ0Nzk3MywtMTM4NTkzODY1N119
 -->
