@@ -31,19 +31,19 @@ While we will be working with attached turret models, they aren't required and a
 # Turret Hub
 ## Effects Tab
 * Create a new Effect named **NE Turret (Damage)** with **Effect Type: Damage**
-  * set AI Notify Flags: Hurt Enemy
-  * set Amount: 10
-  * set Death: Fire
-  * set Flags: Notification
-  * set Kind: Ranged
-  * set Response Flags: [Acquire/Flee]
-* Duplicate 3 times and change NE to NW, SE and SW
+  * set **AI Notify Flags**: Hurt Enemy
+  * set **Amount**: 10
+  * set **Death**: Fire
+  * set **Flags**: Notification
+  * set **Kind**: Ranged
+  * set **Response Flags**: [Acquire/Flee]
+* Duplicate 3 times and change **NE** to **NW**, **SE** and **SW**
 
 (Because very little changes between objects I'll be having you duplicate frequently.)
 
 ## Weapons Tab
-* Create a new Weapon named NE Turret
-  * set Effect: NE Turret (Damage)
+* Create a new Weapon named **NE Turret**
+  * set **Effect**: NE Turret (Damage)
   * set Backswing: 0
   * set Damage Point: 0.3333
   * set Period: 1.5
@@ -168,5 +168,5 @@ These actors allow the turrets to function by tying the Turret objects to their 
 
 You should now have a fully functioning multi-turret structure :D
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgyMDc5Njg0MV19
+eyJoaXN0b3J5IjpbLTEzOTU1ODgzMjldfQ==
 -->
