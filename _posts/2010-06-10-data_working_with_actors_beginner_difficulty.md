@@ -32,7 +32,7 @@ Typically the most important field for an actor is  **Events +**. This field con
 
   
 
-## **Index:**
+## Index:
 
 -   Action
 -   Beam (Simple)
@@ -51,11 +51,11 @@ Typically the most important field for an actor is  **Events +**. This field con
 
   
 
-### **Action**
+### Action
 
 Any time you have an effect that deals damage, launches a projectile or creates a beam model you will need what I call the  Attack Actor  This actor controls where a weapon fires from, where it impacts and all of the sounds and graphics associated with these two locations. If a beam is flying off in random directions or missiles are skidding along the ground, this actor is the first place you should check.
 
-##### **Important Fields**
+##### Important Fields
 
 -   **Attack Effect Token:**  Damage effect of a chainless attack - (Effect - Damage).
 
@@ -94,7 +94,7 @@ Alternatively, you can use  Direct  which allows you to pick a specific launch p
 -   **[Anything] Map:**  These fields are identical to the  ****Assets****  field, but are for Impact/Damage effects and have an index allowing you to create specific animations/models/sounds for certain target types.  None, the first row, is applied to all targets unless an index below it like  Flesh  or  Metal  has different animations/models/sounds.
 -   **[Anything] Sound:**  Self-explanatory, but it's important to note that this field does not allow you to simply pick a sound file. You need to have a Sound Actor with the sound that you want before you can link to it with this field.
 
-##### **Important Events**
+##### Important Events
 
 **Normal Attack Actors:**
 
@@ -136,19 +136,19 @@ This event is added to any actor that is created by a channeled ability. This de
 
   
 
-### **Beam (Simple)**
+### Beam (Simple)
 
 -   (Reference:  [Beams (Beginner)](https://web.archive.org/web/20110912063649/http://forums.sc2mapster.com/resources/tutorials/3939-data-working-with-beams-beginner-difficulty/))
 
 If you want to create a Beam in any capacity, this is the actor that does it. The only time you wouldn't use this actor is when you want your Beam to be a physical attachment to another model. In that case you would use a  Model Actor. In the case of Beam Actors, I have never found a reason to use (Standard) over (Simple) and, if you look through the editor, neither has Blizzard. That being said, if I ever DO find such a reason I'll update this tutorial. Until then, this is the actor for you.
 
-##### **Important Fields**
+##### Important Fields
 
 -   **Model:**  The associated  Model.
 -   **Scale:**  This allows you to change the model's size without affecting the model itself.
 -   **Hosting - [Anything]:**  These fields control Site Operations. If you want to change where a beam appears in relation to the unit that creates it, especially in the case of Beams lacking an  Attack Actor, these fields will allow you to attach the model to the unit that creates it or offset it from the weapon that fires it.
 
-##### **Important Events**
+##### Important Events
 
 **Attack Beams:**
 
@@ -186,17 +186,17 @@ If your beam doesn't have an  Attack Actor  this event will also be needed to cr
 
   
 
-### **Missile**
+### Missile
 
 For the purpose of sanity, we're going to ignore Tentacle Missiles as they are incredibly complicated to create despite the brevity of their attacks. Refer to my Customized Projectiles tutorial if you want to see how this is done in detail.
 
-##### **Important Fields**
+##### Important Fields
 
 -   **Model:**  The associated  Model.
 -   **Scale:**  This allows you to change the model's size without affecting the model itself.
 -   **Hosting - [Anything]:**  These fields control Site Operations. The fields are particularly important for returning missiles as you must specify what part of the unit the missile returns to.
 
-##### **Important Events**
+##### Important Events
 
 -   **Condition:**  UnitBirth.[NAME]
 -   **Action:**  Create
@@ -221,18 +221,18 @@ This event destroys the actor whenever the  Unit Missile  is killed.
 
   
 
-### **Model**
+### Model
 
 This actor has a wide range of uses and is very simple to use. The  Based On  menu selection will need to be changed based upon what you want to use the actor for. The most common selections are  BuffContinuous  (for auras),  BuffOneShot  (for spell casting animations),  Model Addition  (for attachments) and  ModelAnimationStyleOneShot  (for impact animations). These won't change the fields available to you, but will pre-fill various fields to save you time when configuring your actor.
 
-##### **Important Fields**
+##### Important Fields
 
 -   **Model:**  The associated  Model.
 -   **Scale:**  This allows you to change the model's size without affecting the model itself.
 -   **Hosting - [Anything]:**  These fields control Site Operations. If you want impact explosions to center on a target, these fields will allow you to do that. Additionally, if you are using the Model actor as attachments these fields are required to anchor the model to the position you want.
 -   **Properties - [Anything]:**  These fields control what properties the model will receive from the units it attaches to or fires from. So if you wanted an attachment to NOT cloak when its host cloaks, these fields would allow that.
 
-##### **Important Events**
+##### Important Events
 
 **Visual Effects:**
 
@@ -660,5 +660,5 @@ Likewise if you think a tutorial other than one of my own should be linked to on
 
 As always please inform me of typos or errors in this post. It's quite lengthy and I probably didn't catch all of my mistakes. If you're just plain confused, that's ok too. Ask and I or someone else is likely to come along and set yeh straight  ;)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg3NzgyNzU3N119
+eyJoaXN0b3J5IjpbNzQ1NDQxOTc3XX0=
 -->
