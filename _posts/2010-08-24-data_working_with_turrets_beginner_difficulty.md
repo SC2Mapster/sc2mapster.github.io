@@ -44,25 +44,25 @@ While we will be working with attached turret models, they aren't required and a
 ## Weapons Tab
 * Create a new Weapon named **NE Turret**
   * set **Effect**: NE Turret (Damage)
-  * set Backswing: 0
-  * set Damage Point: 0.3333
-  * set Period: 1.5
-  * set Damage Display Effect: NE Turret (Damage)
-  * set Icon: btn-building-protoss-photoncannon.dds
-  * set Options: [Can Initiate Attack/Only Fire While Attacking]
-  * set Target Filters: Exclude [Dead/Hidden/Invulnerable/Missile/Self/Stasis] and Require [Visible]
-* Duplicate 3 times and change NE to NW, SE and SW
-  * set Damage Point: 0.6666, 1.0 and 1.3333
+  * set **Backswing**: 0
+  * set **Damage Point**: 0.3333
+  * set **Period**: 1.5
+  * set **Damage Display Effect**: NE Turret (Damage)
+  * set **Icon**: btn-building-protoss-photoncannon.dds
+  * set **Options**: [Can Initiate Attack/Only Fire While Attacking]
+  * set **Target Filters**: Exclude [Dead/Hidden/Invulnerable/Missile/Self/Stasis] and Require [Visible]
+* Duplicate 3 times and change **NE** to **NW**, **SE** and **SW**
+  * set **Damage Point**: 0.6666, 1.0 and 1.3333
 
 These are the Turret weapons that will go on the building.
 
 ## Turrets Tab
-* Create a new Turret named NE Turret
-* set Idle: Spin
-* set Yaw Arc: 360
-* set Yaw Idle Rate: 45
-* set Yaw Rate: 360
-* set Yaw Start: 0
+* Create a new Turret named **NE Turret**
+* set **Idle**: Spin
+* set **Yaw Arc**: 360
+* set **Yaw Idle Rate**: 45
+* set **Yaw Rate**: 360
+* set **Yaw Start**: 0
 * Duplicate 3 times and change NE to NW, SE and SW
 
 You can set these to whatever you'd prefer, but Idle controls the turrets action when not in combat, Arc controls its range of motion, Idle Rate is how quickly the turret rotates out of combat, Rate is how quickly the turret rotates in combat and Start determines the angle the turret begins facing.
@@ -168,5 +168,5 @@ These actors allow the turrets to function by tying the Turret objects to their 
 
 You should now have a fully functioning multi-turret structure :D
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzOTU1ODgzMjldfQ==
+eyJoaXN0b3J5IjpbMzg2ODMzMTc1XX0=
 -->
