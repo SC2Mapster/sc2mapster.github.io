@@ -58,14 +58,14 @@ These are the Turret weapons that will go on the building.
 
 ## Turrets Tab
 * Create a new Turret named **NE Turret**
-* set **Idle**: Spin
-* set **Yaw Arc**: 360
-* set **Yaw Idle Rate**: 45
-* set **Yaw Rate**: 360
-* set **Yaw Start**: 0
-* Duplicate 3 times and change NE to NW, SE and SW
+	* set **Idle**: Spin
+	* set **Yaw Arc**: 360
+	* set **Yaw Idle Rate**: 45
+	* set **Yaw Rate**: 360
+	* set **Yaw Start**: 0
+* Duplicate 3 times and change **NE** to **NW**, **SE** and **SW**
 
-You can set these to whatever you'd prefer, but Idle controls the turrets action when not in combat, Arc controls its range of motion, Idle Rate is how quickly the turret rotates out of combat, Rate is how quickly the turret rotates in combat and Start determines the angle the turret begins facing.
+You can set these to whatever you'd prefer, but **Idle** controls the turrets action when not in combat, **Arc** controls its range of motion, **Idle Rate** is how quickly the turret rotates out of combat, **Rate** is how quickly the turret rotates in combat and **Start** determines the angle the turret begins facing.
 
 ## Models Tab
 * Create a new Model named Hub Turret
@@ -168,5 +168,5 @@ These actors allow the turrets to function by tying the Turret objects to their 
 
 You should now have a fully functioning multi-turret structure :D
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzg2ODMzMTc1XX0=
+eyJoaXN0b3J5IjpbLTEzODU5Mzg2NTddfQ==
 -->
