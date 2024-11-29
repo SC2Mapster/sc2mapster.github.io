@@ -12,6 +12,7 @@ layout: post
 ---
 
 Collected from: https://web.archive.org/web/20160603042600/http://www.sc2mapster.com/forums/resources/tutorials/9000-data-working-with-turrets-beginner-difficulty/
+
 Original Author: ProzaicMuse
 
 [Data] Working with Turrets (Beginner Difficulty)
@@ -22,9 +23,9 @@ If you're like me, one of the first things you did was add a weapon to a buildin
 # Turret Basics
 While we will be working with attached turret models, they aren't required and are merely for aesthetics. The core parts of any turret are:
 
-* Turret Object: This controls the turrets rotation speeds, range of motion and behavior. Without this you WILL get errors any time you try to attack with your Weapon. The only exception is if the unit can change its own facing through movement. Thus this is crucial to stationary objects like buildings.
-* Turret Actor: This is responsible for "turning on" the turret. Without this, your turret won't function even if your Turret Object is setup properly. It allows you to control what model rotates (as the turret) and what anchor point to use for the axis. Keep in mind that only certain points can be used. Turret Z being the most obvious choice.
-Weapon: Once you have your turret setup, you need to attach it to a Weapon. Then whenever the Weapon would fire, the Turret Object will rotate to face its target and fire away. In the case of buildings, you won't see any rotation (unless you chose to), but the Turret Object will rotate the invisible, non-existent Turret Actor to face the target.
+* **Turret Object:** This controls the turrets rotation speeds, range of motion and behavior. Without this you WILL get errors any time you try to attack with your `Weapon`. The only exception is if the unit can change its own facing through movement. Thus this is crucial to stationary objects like buildings.
+* **Turret Actor:** This is responsible for "turning on" the turret. Without this, your turret won't function even if your `Turret Object` is setup properly. It allows you to control what model rotates (as the turret) and what anchor point to use for the axis. Keep in mind that only certain points can be used. `Turret Z` being the most obvious choice.
+* **Weapon:** Once you have your turret setup, you need to attach it to a `Weapon`. Then whenever the Weapon would fire, the Turret Object will rotate to face its target and fire away. In the case of buildings, you won't see any rotation (unless you chose to), but the Turret Object will rotate the invisible, non-existent Turret Actor to face the target.
 
 
 # Turret Hub
@@ -166,3 +167,6 @@ The Launch Assets + controls the sounds/models created at the Launch Site and th
 These actors allow the turrets to function by tying the Turret objects to their Turret actors.
 
 You should now have a fully functioning multi-turret structure :D
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMzE2NzI2MTEzXX0=
+-->
