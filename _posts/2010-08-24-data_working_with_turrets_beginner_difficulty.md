@@ -15,8 +15,6 @@ Collected from: [https://web.archive.org/web/20160603042600/http://www.sc2mapste
 
 * **Original Author**: ProzaicMuse
 
-# [Data] Working with Turrets (Beginner Difficulty)
-
 If you're like me, one of the first things you did was add a weapon to a building in the hopes that you could have structures start shooting laser beams at everything that moves. What you probably discovered is that the weapon never fired and you were left with a normal building that just spewed errors at you. This tutorial remedies this problem by walking through the process of creating turrets.
 
 
@@ -169,6 +167,6 @@ These actors allow the turrets to function by tying the **Turret** objects to th
 
 You should now have a fully functioning multi-turret structure :D
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NTA1NTQ2NTQsLTEzODU5Mzg2NTddfQ
-==
+eyJoaXN0b3J5IjpbMTcxMTI0OTUxMSwtMTU1MDU1NDY1NCwtMT
+M4NTkzODY1N119
 -->
