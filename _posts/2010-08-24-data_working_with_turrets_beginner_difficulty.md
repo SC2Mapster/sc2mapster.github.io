@@ -11,9 +11,9 @@ author: ProzaicMuse
 layout: post
 ---
 
-Collected from: https://web.archive.org/web/20160603042600/http://www.sc2mapster.com/forums/resources/tutorials/9000-data-working-with-turrets-beginner-difficulty/
+Collected from: [https://web.archive.org/web/20160603042600/http://www.sc2mapster.com/forums/resources/tutorials/9000-data-working-with-turrets-beginner-difficulty/](https://web.archive.org/web/20160603042600/http://www.sc2mapster.com/forums/resources/tutorials/9000-data-working-with-turrets-beginner-difficulty/)
 
-Original Author: ProzaicMuse
+* **Original Author**: ProzaicMuse
 
 [Data] Working with Turrets (Beginner Difficulty)
 
@@ -152,22 +152,22 @@ These will allow you to shoot the beams from the turrets by creating reference p
 	* open **Events +** and create the following events:
 		* Effect - NE Turret (Damage) - Start
 			* Create
-* Duplicate 3 times and change NE to NW, SE and SW
+* Duplicate 3 times and change **NE** to **NW**, **SE** and **SW**
 
-The Launch Assets + controls the sounds/models created at the Launch Site and the Impact Map + controls the sounds/models created at the impact point.
+The **Launch Assets +** controls the sounds/models created at the Launch Site and the **Impact Map +** controls the sounds/models created at the impact point.
 
 ## Turret Actors
-* Create a new Actor named NE Turret Actor with Actor Type: Turret
-* set Turret Body +: NE Turret (Actor)
-* set Yaw Query +: Direct > Turret Z
-* open Events + and create the following events:
-* Turret Enable - NE Turret
-* Create
-* Duplicate 3 times and change NE to NW, SE and SW
+* Create a new Actor named **NE Turret Actor** with **Actor Type: Turret**
+	* set **Turret Body +:** NE Turret (Actor)
+	* set **Yaw Query +**: Direct > Turret Z
+	* open **Events +** and create the following events:
+		* Turret Enable - NE Turret
+			* Create
+* Duplicate 3 times and change **NE** to **NW**, **SE** and **SW**
 
-These actors allow the turrets to function by tying the Turret objects to their Turret actors.
+These actors allow the turrets to function by tying the **Turret** objects to their Turret actors.
 
 You should now have a fully functioning multi-turret structure :D
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzQ4ODg4MjA1LC0xMzg1OTM4NjU3XX0=
+eyJoaXN0b3J5IjpbLTg5MTk5NDgxMywtMTM4NTkzODY1N119
 -->
