@@ -1,3 +1,14 @@
+---
+title: Data - Working with Beams (Beginner Difficulty)
+date: 2010-06-21 00:00:00 Z
+categories:
+- Data
+tags:
+- data
+- beams
+author: ProzaicMuse
+layout: post
+---
 First things first, I expect that if you're reading this, you're clueless when it comes to beams. Why? Because you saw beginner and came to this tutorial. That being said, my job is to help you no longer be clueless and show off your awesome beam weapons and abilities in your future maps  :D  This will also help to prepare you for my more advanced beam tutorial.
 
 ## The Basics
@@ -392,5 +403,5 @@ If you have any questions or concerns, feel free to post them here. Especially i
 
 If you'd like to learn a more advanced method of beam chaining, see my  [Dynamic Beam Chains](https://web.archive.org/web/20110724033316/http://forums.sc2mapster.com/resources/tutorials/3888-data-dynamic-beam-chains-intermediate-difficulty/)  tutorial.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MDkwNjY2NjddfQ==
+eyJoaXN0b3J5IjpbMjA2MzYyMDgwOF19
 -->
