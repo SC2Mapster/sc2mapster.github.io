@@ -24,15 +24,11 @@ The vast majority of attachments are based upon  Site Operation Actors. Even whe
 -   **Host Supporter:**  The actor that  Signals  are sent to/from. This is ONLY needed used with  Signals,  ::Supporter  values or  SupporterDestruction  events. We won't be covering this, but it's important to understand that this field has a wide range of uses. Look at stock units made by Blizzard to see the various ways they use it.
 -   **[ANY] Site Operations:**  This is where you specify offsets, rotations and other modifications by linking Site Operation Actors.
 
-----------
-
-  
-
-## **Bunker Turret**
+## Bunker Turret
 
 We're going to make a bunker with a fully functioning turret. The turret will fire a beam and have its own attachment. In my Test Map I've removed all abilities unrelated to this turret, but you can easily keep the basic functions of the bunker as well as the added turret weapon.
 
-### **Effects Tab**
+### Effects Tab
 
 -   Create a new Effect named  **Attachment Turret (Damage)**  with  **Effect Type: Damage**
     -   set  **AI Notify Flags:**  Hurt Enemy
@@ -58,7 +54,7 @@ The 3 Flag fields are what cause the unit you attack to respond to you. Either t
 
 This is the Turrets weapon that will go on the unit.
 
-### **Turrets Tab**
+### Turrets Tab
 
 -   Create a new Turret named  **Attachment Turret**
     -   set  **Idle:**  Spin
@@ -69,7 +65,7 @@ This is the Turrets weapon that will go on the unit.
 
 You can set these to whatever you'd prefer, but  Idle  controls the turrets action when not in combat,  Yaw Arc  controls its range of motion,  Yaw Idle Rate  is how quickly the turret rotates out of combat,  Yaw Rate  is how quickly the turret rotates in combat and  Yaw Start  determines the angle the turret begins facing.
 
-### **Models Tab**
+### Models Tab
 
 -   Create a new Model named  **Attachment Shield**
     -   set  **Model:**  MarineShieldUpgrade.m3
@@ -258,5 +254,5 @@ Now the Wraith flies upside down  :)
   
 Feel free to use the attached Test Map or contact me via forum post/IRC if you encounter problems. Keep in mind that I'm a busy person so I may not reply right away, but I'll do my best to answer all questions/concerns that I am aware of  :)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAwODAwMjM4MF19
+eyJoaXN0b3J5IjpbMTE1MzYwNzY2OCwyMDA4MDAyMzgwXX0=
 -->
