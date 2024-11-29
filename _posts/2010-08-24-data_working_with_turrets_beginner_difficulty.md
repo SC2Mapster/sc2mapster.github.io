@@ -25,12 +25,12 @@ While we will be working with attached turret models, they aren't required and a
 
 * **Turret Object:** This controls the turrets rotation speeds, range of motion and behavior. Without this you WILL get errors any time you try to attack with your `Weapon`. The only exception is if the unit can change its own facing through movement. Thus this is crucial to stationary objects like buildings.
 * **Turret Actor:** This is responsible for "turning on" the turret. Without this, your turret won't function even if your `Turret Object` is setup properly. It allows you to control what model rotates (as the turret) and what anchor point to use for the axis. Keep in mind that only certain points can be used. `Turret Z` being the most obvious choice.
-* **Weapon:** Once you have your turret setup, you need to attach it to a `Weapon`. Then whenever the Weapon would fire, the Turret Object will rotate to face its target and fire away. In the case of buildings, you won't see any rotation (unless you chose to), but the Turret Object will rotate the invisible, non-existent Turret Actor to face the target.
+* **Weapon:** Once you have your turret setup, you need to attach it to a `Weapon`. Then whenever the `Weapon` would fire, the `Turret Object` will rotate to face its target and fire away. In the case of buildings, you won't see any rotation (unless you chose to), but the `Turret Object` will rotate the invisible, non-existent `Turret Actor` to face the target.
 
 
 # Turret Hub
 ## Effects Tab
-* Create a new Effect named NE Turret (Damage) with Effect Type: Damage
+* Create a new Effect named **NE Turret (Damage)** with **Effect Type: Damage**
   * set AI Notify Flags: Hurt Enemy
   * set Amount: 10
   * set Death: Fire
@@ -168,5 +168,5 @@ These actors allow the turrets to function by tying the Turret objects to their 
 
 You should now have a fully functioning multi-turret structure :D
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzE2NzI2MTEzXX0=
+eyJoaXN0b3J5IjpbLTgyMDc5Njg0MV19
 -->
