@@ -13,12 +13,12 @@ html {
     box-sizing: inherit;
 }
 body {
-    background: #222 !important;
+    background: #222; //!important;
     background-image: url('#{$baseurl}/assets/bg.jpg');
 }
 
 header {
-	background: #222;
+	//background: #222;
 }
 
 
@@ -61,7 +61,8 @@ main.container-lg {
 
 section {
 	background: #222;
-	padding-bottom: 40px;		
+	padding-bottom: 40px;
+	border: 1px solid #7e7a74;
 }
 
 section p {
@@ -86,6 +87,8 @@ pre code {
 
 .markdown-body h1{
     box-shadow: rgba(17, 17, 17, 1) 0 0.1em 0.75em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
 }
 .markdown-body h2 {
     color: #96c410!important;
