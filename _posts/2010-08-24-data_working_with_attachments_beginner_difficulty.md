@@ -149,7 +149,7 @@ Up - (X:  **1.0**, Y:  **1.0**, Z: 0.0)
 Forward - (X: 0.0, Y:  **-1.0**, Z: 0.0)  
 Up - (X: 0.0, Y: 0.0, Z:  **-1.0**)
 
-##### **Model Actors**
+##### Model Actors
 
 -   Create a new Actor named  **Attachment Turret**  with  **Actor Type: Model**  and  **Based On: ModelAddition**
     -   set  **Model:**  Attachment Turret
@@ -229,11 +229,11 @@ This actor allows the turret to function by tying the Turret object to the Turre
 
   
 
-## **Flipped Wraith**
+## Flipped Wraith
 
 Fairly self-explanatory. We're going to flip a Wraith upside down. While not incredibly impressive on its own, this is to demonstrate how to change the angle of ships. I've seen a lot of posts asking how to change the Yaw, Pitch and Roll of flying ships and this portion of the tutorial aims to answer those questions.
 
-### **Actors Tab**
+### Actors Tab
 
 -   Create a new Actor named  **SOpFlip**  with  **Actor Type: Site Operation (Explicit Rotation)**
     -   set  **Forward:**  (0.0, -1.0, 0.0)
@@ -254,5 +254,6 @@ Now the Wraith flies upside down  :)
   
 Feel free to use the attached Test Map or contact me via forum post/IRC if you encounter problems. Keep in mind that I'm a busy person so I may not reply right away, but I'll do my best to answer all questions/concerns that I am aware of  :)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE1MzYwNzY2OCwyMDA4MDAyMzgwXX0=
+eyJoaXN0b3J5IjpbLTEzOTkwODU1MTYsMTE1MzYwNzY2OCwyMD
+A4MDAyMzgwXX0=
 -->
