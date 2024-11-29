@@ -13,9 +13,6 @@ First and foremost, this will not begin as a full index of all the actors and ev
 
 ----------
 
-
-
-
 ## Actor Basics
 
 Actors are essentially the Data Editor's version of triggers. The simplest way to understand them would be to take a look at anything in the game that has a graphical representation. Whatever it is, there is a 95% (yes, I mathematically deduced this through rigorous calculations and hard facts. My findings are immutable!) chance that an actor was involved. This is not their only function, however, as they also play sounds, control abilities, deform terrain and setup turrets amongst other things. Thus it is safe to say that if you haven't yet created an actor in your map, you haven't been properly introduced to the Data Editor.
@@ -60,7 +57,7 @@ Any time you have an effect that deals damage, launches a projectile or creates 
 
 ##### Important Fields
 
--   **Attack Effect Token:**  Damage effect of a chainless attack - (Effect - Damage).
+* **Attack Effect Token**:  Damage effect of a chainless attack - (Effect - Damage).
 
 **OR**
 
@@ -663,5 +660,5 @@ Likewise if you think a tutorial other than one of my own should be linked to on
 
 As always please inform me of typos or errors in this post. It's quite lengthy and I probably didn't catch all of my mistakes. If you're just plain confused, that's ok too. Ask and I or someone else is likely to come along and set yeh straight  ;)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDU4OTM2NjIzLC03MDgzNTI3MTFdfQ==
+eyJoaXN0b3J5IjpbMTUwNjQwMzM4MiwtNzA4MzUyNzExXX0=
 -->
