@@ -132,26 +132,26 @@ This actor is part of pair. We're going to create its Attack Actors next.
 
 ### Site Actors
 * Create a new Actor named **NE Site** with **Actor Type: Site**
-* set Host +: Subject > NE Turret
-* set Host Site Operations +: SOpAttachWeapon
-* open Events + and create the following events:
-* Unit Birth - Turret Hub
-* Create
-* Unit Death - Turret Hub
-* Destroy
-* Duplicate 3 times and change NE to NW, SE and SW
+	* set **Host +**: Subject > NE Turret
+	* set **Host Site Operations +**: SOpAttachWeapon
+	* open **Events +** and create the following events:
+		* Unit Birth - Turret Hub
+			* Create
+		* Unit Death - Turret Hub
+			* Destroy
+* Duplicate 3 times and change **NE** to **NW**, **SE** and **SW**
 
 These will allow you to shoot the beams from the turrets by creating reference points.
 
 ### Attack Actors
-* Create a new Actor named NE Beam Attack with Actor Type: Action and Based On: GenericAttack
-* set Beam: Turret Beam (Actor)
-* set Launch Assets +: Sound > Colossus_AttachLaunch
-* set Impact Map +: 1st Row > (Art > Colossus Attack Beam Impact | Sound > Colossus_AttackImpact)
-* set Launch Site: NE Site (Actor)
-* open Events + and create the following events:
-* Effect - NE Turret (Damage) - Start
-* Create
+* Create a new Actor named **NE Beam Attack** with **Actor Type: Action** and **Based On: GenericAttack**
+	* set **Beam**: Turret Beam (Actor)
+	* set **Launch Assets +**: Sound > Colossus_AttachLaunch
+	* set **Impact Map +**: 1st Row > (Art > Colossus Attack Beam Impact | Sound > Colossus_AttackImpact)
+	* set **Launch Site**: NE Site (Actor)
+	* open **Events +** and create the following events:
+		* Effect - NE Turret (Damage) - Start
+			* Create
 * Duplicate 3 times and change NE to NW, SE and SW
 
 The Launch Assets + controls the sounds/models created at the Launch Site and the Impact Map + controls the sounds/models created at the impact point.
@@ -169,5 +169,5 @@ These actors allow the turrets to function by tying the Turret objects to their 
 
 You should now have a fully functioning multi-turret structure :D
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTcyOTQ0Nzk3MywtMTM4NTkzODY1N119
+eyJoaXN0b3J5IjpbNzQ4ODg4MjA1LC0xMzg1OTM4NjU3XX0=
 -->
