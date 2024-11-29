@@ -28,7 +28,7 @@ Let's get started!
 
   
 
-## **Testing My Map**
+## Testing My Map
 
 Before you create the beams it's important that you see what it is they do in game. Look at the terrain before you Test Document (Ctrl + F9). In the middle are the two units that shoot beams and in the NE corner is the tower that shoots lightning. All the other zerg units are stock. Now test the document. It's going to say it's tied (I ignore triggers in example maps) so click "Return to game."
 
@@ -108,7 +108,6 @@ Duplicate  **Marine**  and check the following boxes:
 
 Start by renaming the Marine model  **Lancer**. Go on to rename the actors  **Lancer**  and  **Lancer_Death**  and the weapon  **Plasma Lance ("Lancer -" in the Editor Prefix field)**. Now delete any abilities, command card buttons or behaviors you don't want and decide on your structure stats (HP, armor etc). Finish by renaming the unit  **Lancer**.
 
-##### Go to the weapon
 -   set  **Effect - Effect**  to Lancer (Damage)
 -   set  **Stats - Period**  to 1.5
 -   set both  **Random Delay Maximum and Minimum**  to 0
@@ -218,8 +217,6 @@ Duplicate  **Hellion**  and check the following boxes:
 
 Start by renaming the Hellion model  **Ionic Splitter.**  Go on to rename the actor  **Ionic Spliter,**  the turret  **Ionic Splitter**  and the weapon  **Ion Cannon ("Ionic Splitter -" in the Editor Prefix field)**. Now delete any abilities, command card buttons or behaviors you don't want and decide on your structure stats (HP, armor etc). Finish by renaming the unit  **Ionic Splitter**.
 
-##### Go to the weapon
-
 -   set  **Effect - Effect**  to Splitter (Set)
 -   set  **Stats - Period**  to 2.0
 -   set both**Random Delay Maximum and Minimum**  to 0
@@ -243,9 +240,9 @@ Now you have a forking beam weapon  :D
 
   
 
-## **The Lightning Tower**
+## The Lightning Tower
 
-### **Effects Tab**
+### Effects Tab
 
 -   Create a new effect named  **Beam Bounce 3 (Damage)**  with  **Effect Type: Damage**
     -   set  **AI - AI Notify Flags**  to Hurt Enemy
@@ -302,12 +299,12 @@ Weapon Fires > Set 1 [Search 1 + Damage 1] > Search 1 Impact: Set 2 [Search 2 + 
 
 Following this pattern you can make the chain as long as you want  :)
 
-### **Models Tab**
+### Models Tab
 
 -   Create a new model named  **Bounce Beam**  with  **Model Type: Generic**
     -   set  ****Model****  to ArchonBeamSuper.m3
 
-### **Actors Tab**
+### Actors Tab
 
 -   Create a new actor named  **SOpLowerBy1p25**  with  **Actor Type: Site Operation (Local Offset)**
     -   set  **Actor - Local Offset**  to (0.0, 0.0, -1.25)
@@ -370,15 +367,13 @@ This actor is what is going to allow us to adjust where the beam chain shoots fr
         -   Effect - Beam Bounce 3 (Damage) - Start
             -   Create
 
-### **Units Tab**
+### Units Tab
 
 Duplicate  **Sensor Tower**  and check the following boxes:
 
 ![Sensor Tower](https://web.archive.org/web/20110724033316im_/http://static.sc2mapster.com/content/attachments/3/749/Sensor-Tower.jpg "Sensor Tower")
 
 Start by renaming the Sensor Tower model  **Lightning Tower.**  Go on to rename the actor  **Lightning Tower.**  This structure doesn't have a weapon so you'll have to add one. Hop over to the Weapons Tab and make a new weapon named  **Energy Coil**  using the default settings. Add "Lightning Tower -" in the  **Editor - Editor Prefix**  field. Now return to the unit to delete any abilities, command card buttons or behaviors you don't want and decide on your structure stats (HP, armor etc). Finish by renaming the unit  **Lightning Tower**  and adding a new weapon to  **Combat - Weapons +**  using the  **Ionic Splitter**  turret and your newly created weapon.
-
-##### **Go to the weapon**
 
 -   set  **Effect - Effect**  to Beam Bounce 1 (Set)
 -   set  **Stats - Period**  to 3.0
@@ -397,5 +392,5 @@ If you have any questions or concerns, feel free to post them here. Especially i
 
 If you'd like to learn a more advanced method of beam chaining, see my  [Dynamic Beam Chains](https://web.archive.org/web/20110724033316/http://forums.sc2mapster.com/resources/tutorials/3888-data-dynamic-beam-chains-intermediate-difficulty/)  tutorial.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MTUyMjkxMjRdfQ==
+eyJoaXN0b3J5IjpbLTE0MDkwNjY2NjddfQ==
 -->
