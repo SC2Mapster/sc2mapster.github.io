@@ -15,12 +15,12 @@ Collected from: [https://web.archive.org/web/20160603042600/http://www.sc2mapste
 
 * **Original Author**: ProzaicMuse
 
-[Data] Working with Turrets (Beginner Difficulty)
+# [Data] Working with Turrets (Beginner Difficulty)
 
 If you're like me, one of the first things you did was add a weapon to a building in the hopes that you could have structures start shooting laser beams at everything that moves. What you probably discovered is that the weapon never fired and you were left with a normal building that just spewed errors at you. This tutorial remedies this problem by walking through the process of creating turrets.
 
 
-# Turret Basics
+## Turret Basics
 While we will be working with attached turret models, they aren't required and are merely for aesthetics. The core parts of any turret are:
 
 * **Turret Object:** This controls the turrets rotation speeds, range of motion and behavior. Without this you WILL get errors any time you try to attack with your `Weapon`. The only exception is if the unit can change its own facing through movement. Thus this is crucial to stationary objects like buildings.
@@ -28,8 +28,8 @@ While we will be working with attached turret models, they aren't required and a
 * **Weapon:** Once you have your turret setup, you need to attach it to a `Weapon`. Then whenever the `Weapon` would fire, the `Turret Object` will rotate to face its target and fire away. In the case of buildings, you won't see any rotation (unless you chose to), but the `Turret Object` will rotate the invisible, non-existent `Turret Actor` to face the target.
 
 
-# Turret Hub
-## Effects Tab
+## Turret Hub
+### Effects Tab
 * Create a new Effect named **NE Turret (Damage)** with **Effect Type: Damage**
   * set **AI Notify Flags**: Hurt Enemy
   * set **Amount**: 10
@@ -41,7 +41,7 @@ While we will be working with attached turret models, they aren't required and a
 
 (Because very little changes between objects I'll be having you duplicate frequently.)
 
-## Weapons Tab
+### Weapons Tab
 * Create a new Weapon named **NE Turret**
   * set **Effect**: NE Turret (Damage)
   * set **Backswing**: 0
@@ -56,7 +56,7 @@ While we will be working with attached turret models, they aren't required and a
 
 These are the Turret weapons that will go on the building.
 
-## Turrets Tab
+### Turrets Tab
 * Create a new Turret named **NE Turret**
 	* set **Idle**: Spin
 	* set **Yaw Arc**: 360
@@ -67,7 +67,7 @@ These are the Turret weapons that will go on the building.
 
 You can set these to whatever you'd prefer, but **Idle** controls the turrets action when not in combat, **Arc** controls its range of motion, **Idle Rate** is how quickly the turret rotates out of combat, **Rate** is how quickly the turret rotates in combat and **Start** determines the angle the turret begins facing.
 
-## Models Tab
+### Models Tab
 * Create a new Model named **Hub Turret**
 	* set **Model**: PhotonCannon.m3
 * Create a new Model named **Turret Beam**
@@ -75,7 +75,7 @@ You can set these to whatever you'd prefer, but **Idle** controls the turrets ac
 * Create a new Model named **Turret Death**
 	* set **Model**: PhotonCannonDeath.m3
 
-## Units Tab
+### Units Tab
 Duplicate the Nexus structure and its corresponding Actor. Everything else will be stock or made from scratch.
 
 * Name it **Turret Hub**
@@ -85,8 +85,8 @@ Duplicate the Nexus structure and its corresponding Actor. Everything else will 
 	* open **Weapons +** and add **NW/NE/SW/SE Turret** (Weapon and Turret)
 * Name the building's Actor **Turret Hub**
 
-## Actors Tab
-### Site Operation Actors
+### Actors Tab
+#### Site Operation Actors
 * Create a new Actor named **SOpAdjustNE** with **Actor Type: Site Operation (Local Offset)**
 	* set **Local Offset**: (0.0, 3.0, 0.0)
 * Create a new Actor named **SOpAdjustNW** with **Actor Type: Site Operation (Local Offset)**
@@ -98,7 +98,7 @@ Duplicate the Nexus structure and its corresponding Actor. Everything else will 
 
  Each of these will offset the attached turret models to the specified coordinates.
 
-### Model Actors
+#### Model Actors
 * Create a new Actor named **NE Turret** with **Actor Type: Model and Based On: ModelAddition**
 	* set **Model**: Hub Turret
 	* set **Scale**: 0.8
@@ -130,7 +130,7 @@ These actors will create the turret models and upon dying swap in a **Death Mode
 
 This actor is part of pair. We're going to create its Attack Actors next.
 
-### Site Actors
+#### Site Actors
 * Create a new Actor named **NE Site** with **Actor Type: Site**
 	* set **Host +**: Subject > NE Turret
 	* set **Host Site Operations +**: SOpAttachWeapon
@@ -143,7 +143,7 @@ This actor is part of pair. We're going to create its Attack Actors next.
 
 These will allow you to shoot the beams from the turrets by creating reference points.
 
-### Attack Actors
+#### Attack Actors
 * Create a new Actor named **NE Beam Attack** with **Actor Type: Action** and **Based On: GenericAttack**
 	* set **Beam**: Turret Beam (Actor)
 	* set **Launch Assets +**: Sound > Colossus_AttachLaunch
@@ -156,7 +156,7 @@ These will allow you to shoot the beams from the turrets by creating reference p
 
 The **Launch Assets +** controls the sounds/models created at the Launch Site and the **Impact Map +** controls the sounds/models created at the impact point.
 
-## Turret Actors
+#### Turret Actors
 * Create a new Actor named **NE Turret Actor** with **Actor Type: Turret**
 	* set **Turret Body +:** NE Turret (Actor)
 	* set **Yaw Query +**: Direct > Turret Z
@@ -169,5 +169,6 @@ These actors allow the turrets to function by tying the **Turret** objects to th
 
 You should now have a fully functioning multi-turret structure :D
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg5MTk5NDgxMywtMTM4NTkzODY1N119
+eyJoaXN0b3J5IjpbLTE1NTA1NTQ2NTQsLTEzODU5Mzg2NTddfQ
+==
 -->
