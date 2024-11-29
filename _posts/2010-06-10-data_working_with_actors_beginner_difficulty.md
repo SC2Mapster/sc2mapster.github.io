@@ -547,19 +547,19 @@ This event destroys the text after the last  Timer  has expired. By adding these
 
   
 
-### Turret**
+### Turret
 
 (Reference:  [Turrets (Beginner)](https://web.archive.org/web/20110912063649/http://forums.sc2mapster.com/resources/tutorials/9000-data-working-with-turrets-beginner-difficulty/))
 
 If you want a structure to fire a weapon or a unit's weapon to fire independently of its facing, you need a  Turret Actor  that will create the actual turret from the  Turrets Tab.  Otherwise your weapon won't work properly and the weapon that should be rotating will be stuck in place.
 
-##### **Important Fields**
+##### Important Fields
 
 -   **Pitch Query:**  Determines the point of rotation for up and down movement.
 -   **Turret Body:**  The associated  Actor  that will rotate.
 -   **Yaw Query:**  Determines the point of rotation for left and right movement.
 
-##### **Important Events**
+##### Important Events
 
 -   **Condition:**  TurretEnable.[NAME]
 -   **Action:**  Create
@@ -580,11 +580,11 @@ This event destroys the actor when the turret has been destroyed or disabled.
 
   
 
-### **Unit**
+### Unit
 
 This actor is, in my opinion, the most complex and involved actor to make from scratch. Thus it is typically better to duplicate a unit and simply rename the actor before making the needed adjustments and adding your own events. I'm aware it's not complete and only covers some of the MANY things you might need. I'll do my best to update this as people have questions about it.
 
-##### **Important Fields**
+##### Important Fields
 
 -   **[Token] Unit Name:**  This is the field at the top that is set apart. This is VITAL to connecting your actor to its unit. Without it, your unit won't have an actor.
 -   **Actor - Aliases:**  These function like labels or categories. You can use an alias as a  Host  for any  Site Operation. If you used  _Unit, a common alias, the SOp would attach itself to any actor with that alias provided that its events create it at or very near to said actor. You can even create your own so that if you need to divide your custom units into groups, you could do so with this.
@@ -602,7 +602,7 @@ This actor is, in my opinion, the most complex and involved actor to make from s
 -   **UI - Status Bar Flags:**  This field allows you to turn off some or all of the status bars.
 -   **UI - Status Colors +:**This field allows you to change the color of any status bar.
 
-##### **Important Events**
+##### Important Events
 
 -   **Condition:**  UnitBirth.[NAME]
 -   **Action:**  Create
@@ -652,7 +652,7 @@ This event will clear a given animation whenever the unit moves. This prevents a
 
   
 
-## **Building the Catalog**
+## Building the Catalog
 
 If you have an actor that isn't on this list that you need help with, just ask. I'll slowly add actors as people begin to experiment with them. The idea being that you should look at these actors first before moving on to the more advanced ones. The same goes for events. If you want to know how to implement certain events with an actor in this catalog, let me know.
 
@@ -660,5 +660,5 @@ Likewise if you think a tutorial other than one of my own should be linked to on
 
 As always please inform me of typos or errors in this post. It's quite lengthy and I probably didn't catch all of my mistakes. If you're just plain confused, that's ok too. Ask and I or someone else is likely to come along and set yeh straight  ;)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI3MDQzMzkxM119
+eyJoaXN0b3J5IjpbLTcwODM1MjcxMV19
 -->
