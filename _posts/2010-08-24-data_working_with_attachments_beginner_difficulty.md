@@ -41,7 +41,7 @@ We're going to make a bunker with a fully functioning turret. The turret will fi
 
 The 3 Flag fields are what cause the unit you attack to respond to you. Either they will attack you or run away based upon what responses the unit has been given.
 
-### **Weapons Tab**
+### Weapons Tab
 
 -   Create a new Weapon named  **Attachment Turret**
     -   set  **Effect:**  Attachment Turret (Damage)
@@ -76,7 +76,7 @@ You can set these to whatever you'd prefer, but  Idle  controls the turrets acti
 -   Create a new Model named  **Beam Example**
     -   set  **Model:**  DiamondbackBeam.m3
 
-### **Units Tab**
+### Units Tab
 
 Duplicate the Bunker structure and its corresponding Actor. Everything else will be stock or made from scratch.
 
@@ -88,9 +88,9 @@ Duplicate the Bunker structure and its corresponding Actor. Everything else will
 
 -   Name the building's Actor  **Attachment Bunker**
 
-### **Actors Tab**
+### Actors Tab
 
-##### **Site Operation Actors**
+##### Site Operation Actors
 
 -   Create a new Actor named  **SOpAttachDamage03**  with  **Actor Type: Site Operation (Attachment)**
     -   set  **Attachment Query +:**  Direct > Damage [Index 3]
@@ -254,6 +254,6 @@ Now the Wraith flies upside down  :)
   
 Feel free to use the attached Test Map or contact me via forum post/IRC if you encounter problems. Keep in mind that I'm a busy person so I may not reply right away, but I'll do my best to answer all questions/concerns that I am aware of  :)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzOTkwODU1MTYsMTE1MzYwNzY2OCwyMD
-A4MDAyMzgwXX0=
+eyJoaXN0b3J5IjpbMjA1NDE5OTc5NiwxMTUzNjA3NjY4LDIwMD
+gwMDIzODBdfQ==
 -->
