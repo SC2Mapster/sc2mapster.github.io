@@ -134,9 +134,9 @@ This will create the "panicked" model and attach it to each unit affected by the
 
   
 
-## **Berserk Unit State**
+## Berserk Unit State
 
-### **Effects Tab**
+### Effects Tab**
 
 -   Create a new Effect named  **Berserk (Stop)**  with  **Effect Type: Issue Order**
     -   set  **Ability:**  Stop
@@ -168,7 +168,7 @@ This effect is how the unit will find targets to attack, but we will use this to
 
 This is a placeholder in the effect chain until you have created the actual behavior.
 
-### **Behaviors Tab**
+### Behaviors Tab
 
 -   Create a new Behavior named  **Berserk**  with  **Behavior Type: Buff**
     -   set  **Alignment:**  Negative
@@ -186,13 +186,13 @@ This is a placeholder in the effect chain until you have created the actual beha
 
 This behavior increases the speed and damage of the berserking unit, shifts control to the neutral AI (an alternate method of preventing player control) and determines how long/frequently the unit rages and selects targets. It also causes negative life gain, degenerating 3 hit points per second to represent the self-destruction nature of rage.
 
-### **Buttons Tab**
+### Buttons Tab
 
 -   Create a new Button named  **Berserk**
     -   set  **Hotkey:**  F
     -   set  **Icon:**  btn-ability-zerg-corruption-multi.dds
 
-### **Abilities Tab**
+### Abilities Tab
 
 -   Create a new Ability named  **Berserk**  with  **Ability Type: Effect - Target**
     -   open  **Commands +**  and set the Default Button for Execute to  Berserk
@@ -201,12 +201,12 @@ This behavior increases the speed and damage of the berserking unit, shifts cont
     -   set  **Effect:**  Berserk (Berserk)
     -   set  **Range:**  6
 
-### **Models Tab**
+### Models Tab
 
 -   Create a new Model named  **Berserk (Rage)**
     -   set  **Model:**  ZergResearchPickUp.m3
 
-### **Actors Tab**
+### Actors Tab
 
 -   Create a new Actor named  **Berserk (Rage)**  with  **Actor Type: Model Animation Style Continuous**
     -   set  **Model:**  Berserk (Rage)
@@ -236,11 +236,11 @@ There is a lot going on with this actor, but it's actually quite simple when bro
 
   
 
-## **Caster Test Unit**
+## Caster Test Unit
 
 We're going to use an Observer for our abilities, so you won't need to do anything other than add abilities. I duplicated the Observer and its actor for the text map while renaming it  Provocateur.
 
-### **Units Tab**
+### Units Tab
 
 -   Select the  **Provocateur**  (duplicated or otherwise)
     -   open  **Abilities +**  and add  Berserk  and  Panic
@@ -252,5 +252,5 @@ We're going to use an Observer for our abilities, so you won't need to do anythi
   
 Feel free to use the attached Test Map or contact me via forum post/IRC if you encounter problems. Keep in mind that I'm a busy person so I may not reply right away, but I'll do my best to answer all questions/concerns that I am aware of  :)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTczMjYzNDQwXX0=
+eyJoaXN0b3J5IjpbODA5MzM1NDQwXX0=
 -->
