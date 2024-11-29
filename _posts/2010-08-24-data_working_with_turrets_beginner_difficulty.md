@@ -82,19 +82,19 @@ Duplicate the Nexus structure and its corresponding Actor. Everything else will 
 	* open **Abilities +** and remove all but [Attack/Stop]
 	* open **Command Card +** and remove all but [Attack/Stop]
 	* remove everything in **Behaviors +**
-	* open Weapons + and add NW/NE/SW/SE Turret (Weapon and Turret)
-* Name the building's Actor Turret Hub
+	* open **Weapons +** and add **NW/NE/SW/SE Turret** (Weapon and Turret)
+* Name the building's Actor **Turret Hub**
 
 ## Actors Tab
 ### Site Operation Actors
-* Create a new Actor named SOpAdjustNE with Actor Type: Site Operation (Local Offset)
-* set Local Offset: (0.0, 3.0, 0.0)
-* Create a new Actor named SOpAdjustNW with Actor Type: Site Operation (Local Offset)
-* set Local Offset: (-3.0, 0.0, 0.0)
-* Create a new Actor named SOpAdjustSE with Actor Type: Site Operation (Local Offset)
-* set Local Offset: (3.0, 0.0, 0.0)
-* Create a new Actor named SOpAdjustSW with Actor Type: Site Operation (Local Offset)
-* set Local Offset: (0.0, -3.0, 0.0)
+* Create a new Actor named **SOpAdjustNE** with **Actor Type: Site Operation (Local Offset)**
+	* set **Local Offset**: (0.0, 3.0, 0.0)
+* Create a new Actor named **SOpAdjustNW** with **Actor Type: Site Operation (Local Offset)**
+	* set **Local Offset**: (-3.0, 0.0, 0.0)
+* Create a new Actor named **SOpAdjustSE** with **Actor Type: Site Operation (Local Offset)**
+	* set **Local Offset**: (3.0, 0.0, 0.0)
+* Create a new Actor named **SOpAdjustSW** with **Actor Type: Site Operation (Local Offset)**
+	* set **Local Offset**: (0.0, -3.0, 0.0)
 
  Each of these will offset the attached turret models to the specified coordinates.
 
@@ -169,5 +169,5 @@ These actors allow the turrets to function by tying the Turret objects to their 
 
 You should now have a fully functioning multi-turret structure :D
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg5MTkyMTYzNywtMTM4NTkzODY1N119
+eyJoaXN0b3J5IjpbMjE2MDg5MjUzLC0xMzg1OTM4NjU3XX0=
 -->
