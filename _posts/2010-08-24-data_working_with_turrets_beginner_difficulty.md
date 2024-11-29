@@ -99,23 +99,23 @@ Duplicate the Nexus structure and its corresponding Actor. Everything else will 
  Each of these will offset the attached turret models to the specified coordinates.
 
 ### Model Actors
-* Create a new Actor named NE Turret with Actor Type: Model and Based On: ModelAddition
-* set Model: Hub Turret
-* set Scale: 0.8
-* set Host +: Subject > Turret Hub
-* set Host Site Operations +: SOpAttachOrigin and SOpAdjustNE
-* open Events + and create the following events:
-* Unit Birth - Turret Hub
-* Create
-* Unit Death - Turret Hub
-* Model Swap (Name: Turret Death)
-* Actor Creation
-* Animation Play (Name: Attach; Animation Properties: Stand; Flags: Play Forever)
-* Model Swapped
-* Animation Play (Name: Death; Animation Properties: Death)
-* Animation Done
-* Animation Name Death (Term)
-* Destroy
+* Create a new Actor named **NE Turret** with **Actor Type: Model and Based On: ModelAddition**
+	* set Model: Hub Turret
+	* set Scale: 0.8
+	* set Host +: Subject > Turret Hub
+	* set Host Site Operations +: SOpAttachOrigin and SOpAdjustNE
+	* open Events + and create the following events:
+		* Unit Birth - Turret Hub
+			* Create
+		* Unit Death - Turret Hub
+			* Model Swap (Name: Turret Death)
+		* Actor Creation
+			* Animation Play (Name: Attach; Animation Properties: Stand; Flags: Play Forever)
+		* Model Swapped
+			* Animation Play (Name: Death; Animation Properties: Death)
+		* Animation Done
+			* Animation Name Death (Term)
+			* Destroy
 * Duplicate 3 times and change NE to NW, SE and SW
 
 These actors will create the turret models and upon dying swap in a Death Model rather than snuffing the model from existence the moment the Host dies.
@@ -130,7 +130,7 @@ These actors will create the turret models and upon dying swap in a Death Model 
 
 This actor is part of pair. We're going to create its Attack Actors next.
 
-## Site Actors
+### Site Actors
 * Create a new Actor named NE Site with Actor Type: Site
 * set Host +: Subject > NE Turret
 * set Host Site Operations +: SOpAttachWeapon
@@ -169,5 +169,5 @@ These actors allow the turrets to function by tying the Turret objects to their 
 
 You should now have a fully functioning multi-turret structure :D
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjE2MDg5MjUzLC0xMzg1OTM4NjU3XX0=
+eyJoaXN0b3J5IjpbMjMzMDAzMTI4LC0xMzg1OTM4NjU3XX0=
 -->
