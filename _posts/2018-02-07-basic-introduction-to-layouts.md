@@ -191,7 +191,7 @@ A basic frame declaration looks like this:
 <Frame type="Image" name="FullScreenImage">
 ```
 
-You declare the type of frame with `type=` and then give it a name with `name=`. You can view a list of most Frame types here: https://sc2mapster.gamepedia.com/UI/Frame_Types
+You declare the type of frame with `type=` and then give it a name with `name=`. You can view a list of most Frame types here: https://sc2mapster.wiki.gg/UI/Frame_Types
 
 If you’ve made Dialogs with Triggers before, some of them like “Labels” or “Buttons” you should already be familiar with. 
 
@@ -386,7 +386,7 @@ In the SC2 editor, if you go to Window > Console, and then type “Browse” int
  
 ### Texture Types
 
-Different textures have to be set to different Texture Types. Ours is NineSlice, but you can see the [Wiki for other TextureTypes](https://sc2mapster.gamepedia.com/UI/Frame_Properties/TextureType).
+Different textures have to be set to different Texture Types. Ours is NineSlice, but you can see the [Wiki for other TextureTypes](https://sc2mapster.wiki.gg/UI/Frame_Properties/TextureType).
 
 ```xml
 <Anchor relative="$parent"/>
@@ -710,7 +710,7 @@ Zerg Button Anchors:
 
 This is cool, because now if you want to move all of the buttons, you can change the Protoss button’s offset from the top of the dialog, and the other two buttons will move with it -- rather than having to change 3 values, you only have to change one.
 
-You can learn more about referencing at: https://sc2mapster.gamepedia.com/UI/Referencing
+You can learn more about referencing at: https://sc2mapster.wiki.gg/UI/Referencing
 
 ### Constants
 You can define constants to use in your layouts:
@@ -750,7 +750,7 @@ Now if we want to change the space between the Protoss, Terran, and Zerg buttons
 Asset referencing lets you set up layouts to automatically use different textures (and other assets) depending on the race of the player.
 
 A good explanation can be found here:
-https://sc2mapster.gamepedia.com/UI/Referencing#Asset_Reference
+https://sc2mapster.wiki.gg/UI/Referencing#Asset_Reference
 
 You just need to go to your Mod folder in File Explorer,
 
@@ -780,8 +780,8 @@ Boom! Now your frame will look differently depending on the race of the player.
 ### Stategroups and Animations
 
 You can do a lot with both Animations and State Groups and they are pretty complicated so I wont be explaining them in-depth. I advise reading about them on the Wiki:
-* sc2mapster.gamepedia.com/UI/Animations
-* sc2mapster.gamepedia.com/UI/State_Groups
+* sc2mapster.wiki.gg/UI/Animations
+* sc2mapster.wiki.gg/UI/State_Groups
 
 And looking up existing layouts in the game that use them.
 
@@ -850,8 +850,8 @@ And try to learn how Stategroups can be used and how they can interact with anim
 
 How do you learn more from here? I advise looking up Frame Types and Frame Properties on the Wiki.
 
-* Frame Types: https://sc2mapster.gamepedia.com/UI/Frame_Types
-* Frame Properties: https://sc2mapster.gamepedia.com/UI/Frame_Properties
+* Frame Types: https://sc2mapster.wiki.gg/UI/Frame_Types
+* Frame Properties: https://sc2mapster.wiki.gg/UI/Frame_Properties
 
 Anything that’s yellow has more information about if you click on it -- you can start by skimming those, looking for anything you think you’ll want to use.
 
